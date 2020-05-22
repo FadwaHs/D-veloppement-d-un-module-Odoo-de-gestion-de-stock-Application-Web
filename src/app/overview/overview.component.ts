@@ -1,21 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
-  styleUrls: ['./overview.component.css']
+  styleUrls: ['./overview.component.css'],
+  
 })
+
 export class OverviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _activatedroute:ActivatedRoute,private _route:Router) { }
 
   ngOnInit(): void {
     
   }
-  Function2(id1:string) {
+  FunctionClickMenuButton(id1:string) {
     document.getElementById(id1).classList.toggle("show");
   }
-  myFunction(id:string) {
+  myFunctionClickedSousMenu(id:string) {
     
     var x = document.getElementById(id);
     if (x.style.display === "block") {
@@ -23,5 +26,9 @@ export class OverviewComponent implements OnInit {
     } else {
       x.style.display = "block";
     }
+  }
+  FunctionClickedInButtonReceipts()
+  {
+    this._route.navigate(['receipt']);
   }
 }

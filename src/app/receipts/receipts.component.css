@@ -8,7 +8,6 @@
     margin-bottom: 5px;
     margin-top: 25px;
 }
-
 .input-group .input-group-btn .btn i{
     color: #007bff;
 }
@@ -30,7 +29,7 @@ head2 begin
 {
 
     margin-bottom: 10px;
-     padding-right: 97px;
+     padding-right: 0px;
 
 }
 .head-principal
@@ -107,7 +106,7 @@ head2 end
 
 .main
 {
-    margin-top: 120px;
+    margin-top: 100px;
    
 }
 @media (max-width:428px)
@@ -123,6 +122,10 @@ head2 end
 }
 @media (max-width:650px)
 {
+.head2
+{
+    padding-right: 0px;
+}
 .button-group
 {
     text-align: center;
@@ -153,10 +156,15 @@ head2 end
     display: block;
     width: 100%;
     padding-left: 10px;
+    
 }
 .main
 {
-    margin-top: 150px;
+    margin-top: 180px;
+}
+
+table{
+   width: 1200px;
 }
 }
 
@@ -165,7 +173,10 @@ head2 end
    .head-principal
    {
        width: 100%;
-       padding-right: 20px;
+       padding-right: 0px;
+   }
+   .head{
+    padding-right: 20px;
    }
    .button-group
    {
@@ -191,114 +202,167 @@ head2 end
 }
 @media (max-width:977px)
 {
-   .head-principal
+   .head
    {
-       padding-right: 20px;
+       padding-right: 50px;
    }
 }
 @media only screen and (max-width: 1200px) {
     .head-principal{
-      padding-right: 50px;
+  
       padding-left: 20px;
     }
+    .head
+    {
+        padding-right: 20px;
+    }
 }
-
-/*-------------------------------------------------------------------------------------*/
-.header
+/*------------------------------------------------------------------------*/
+.btn1
 {
-    padding-left: 38px;
-    margin-bottom: 5px;
-}
-.body
-{
-
-    width: 97.3%;
-    padding-left: 38px;
-}
-.col-md-2
-{
-    
-    height: 300px;
-    width: 488px;
-    
+    margin-left: 30px;
+    color:black;
     background-color: white;
-    border: 1px solid #bdbdbd;
-    border-radius: 5px;
-    padding: 7px;
-    margin-right: 15px;
-    margin-bottom: 5px;
-   
+    padding: 6px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    border: #BDBDBD 1px solid;
+    border-radius: 3px;
+    margin-right: 5px;
 }
-
-div.col-md-3
+.btn2
 {
-    height: 130px;
-    width: 240px;
-    max-width: 240px !important;
-    margin-right: 10px;
-    margin-bottom: 5px;
-    border-radius: 4px;
-    padding-right: 0px !important; 
-    padding-left: 0px !important;
-
+    color:black;
+    background-color: white;
+    padding: 6px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border: #BDBDBD 1px solid;
+    border-radius: 3px;
+    margin-right: 5px;
 }
-
-.product
-{
-    background-color: #17a2b8;
-}
-.transfers
-{
-  background-color: #28a745;
-}
-.alerts
-{
-  background-color: #ffc107;
-}
-.scrap
-{
-  background-color: #dc3545;
-}
-.icon
-{
-    
-    color: rgba(0, 0,0, 0.2);
-    font-size: 50px;
-    float: right;
-    padding: 20px;
-
-}
-.inside
-{
-    
-    margin-top: 12px;
-    margin-left: 12px;
-    width: 90%;
-    height: 80%;
-    
-}
-.info
+.button-group1
 {
     float: left;
-    height: 100%;
+    
 }
-
-.info .info1
+.button1
 {
+    background-color:#007bff;
     color: white;
-    font:35.2px"Source sans pro";
-    display: block;
-    margin-bottom: 25px;
-    font-weight: bold;
+    padding: 7px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border: #BDBDBD 1px solid;
+    border-radius: 3px;
+    margin-right: 5px;
 }
-.info .info2
+.button2
+{
+    color:black;
+    background-color: white;
+    padding: 7px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border: #BDBDBD 1px solid;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+.button2:hover{
+    color: #4c4c4c;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+@media (max-width:428px)
+{
+    .btn1
+    {
+        margin-left: 0px;
+        margin-right: 2px;
+    }
+}
+@media (max-width:650px)
+{
+
+.button-group1
 {
     
-    color: white;
-    font:20.2px"Source sans pro";
-    display: block;
+    padding-left: 10px;
+    margin-top: 10px;
 }
-.alerts .inside .info .info1 ,.alerts .inside .info .info2
+
+}
+/*-------------------------------------------------------------------------------------*/
+.table
 {
-    color: #1F2D3D;
+    overflow: auto;
+    background-color: white;
+}
+.table-header
+{
+    background-color: #007bff;  
+}
+.table-header td
+{
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 3px;
+    color: white;
+    font-weight: 590;
+}
+.table-body td
+{
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 3px;
+}
+.table-header td input
+{
+   margin-left: 7px;
+} 
+.table-body td input
+{
+   margin-left: 7px;
+} 
+@media (max-width:428px)
+{
+    table
+    {
+        width: 1200px;
+    }
+}
+@media (max-width:650px)
+{
+
+table{
+   width: 1200px;
+}
+}
+
+@media (max-width:960px)
+{
+    table{
+        width: 1000px;
+     }
+}
+
+@media (max-width:1170px)
+{
+    table{
+        width: 1100px;
+     }
+}
+.section-title2
+{
+    float: left;
+    color: #2a3f5a;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    margin-left: 15px;
 }

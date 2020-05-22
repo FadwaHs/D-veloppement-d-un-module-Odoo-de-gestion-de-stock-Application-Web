@@ -17,7 +17,7 @@
        <div class="row head2">
            <div class="button-group2">
             <div class="dropdown">
-                <button (click)="Function2('myDropdown1')" class="dropbtn">
+                <button (click)="FunctionClickMenuButton('myDropdown1')" class="dropbtn">
                     <i class="glyphicon glyphicon-filter"></i>
                     Filters
                     <i class="glyphicon glyphicon-menu-down"></i>
@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="dropdown">
-                <button (click)="Function2('myDropdown2')" class="dropbtn">
+                <button (click)="FunctionClickMenuButton('myDropdown2')" class="dropbtn">
                     <i class="glyphicon glyphicon-tasks"></i>
                     Group By
                     <i class="glyphicon glyphicon-menu-down"></i>
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="dropdown">
-                <button (click)="Function2('myDropdown3')" class="dropbtn">
+                <button (click)="FunctionClickMenuButton('myDropdown3')" class="dropbtn">
                     <i class="glyphicon glyphicon-star"></i>
                     Favorites
                     <i class="glyphicon glyphicon-menu-down"></i>
@@ -66,7 +66,7 @@
                    Receipts
                 </span>
                  <div class="menu">
-                  <a  class="icon" (click)="myFunction('myLinks1')">
+                  <a  class="icon" (click)="myFunctionClickedSousMenu('myLinks1')">
                     <i class="glyphicon glyphicon-option-vertical"></i>
                   </a>
                   <div class="options" id="myLinks1">
@@ -88,7 +88,7 @@
                  </span>
                 </div>
               <div class="menu-inside">
-               <button class="button-comp" >3 To Process</button>
+               <button (click)="FunctionClickedInButtonReceipts()" class="button-comp" >3 To Process</button>
   
                 <div class="info1">
                 <div class="attribut1">
@@ -107,7 +107,7 @@
           <div class="menu-top">
             <span class="header-title" >Delivery Orders</span>
             <div class="menu">
-              <a  class="icon" (click)="myFunction('myLinks2')">
+              <a  class="icon" (click)="myFunctionClickedSousMenu('myLinks2')">
                 <i class="glyphicon glyphicon-option-vertical"></i>
               </a>
               <div class="options" id="myLinks2">
@@ -129,7 +129,7 @@
             </span>
            </div>
          <div class="menu-inside">
-          <button class="button-comp" >3 To Process</button>
+          <button  class="button-comp" >3 To Process</button>
 
              <div class="info1">
                <div class="attribut1">

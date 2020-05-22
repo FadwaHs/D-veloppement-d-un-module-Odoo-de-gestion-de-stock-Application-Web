@@ -20,7 +20,8 @@ import { RunSchedulersComponent } from './run-schedulers/run-schedulers.componen
 import { RinventoryValuationComponent } from './rinventory-valuation/rinventory-valuation.component';
 import { StockMovesComponent } from './stock-moves/stock-moves.component';
 import { ProcurementExceptionsComponent } from './procurement-exceptions/procurement-exceptions.component';
-
+import { ReceiptsComponent } from './receipts/receipts.component';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { ProcurementExceptionsComponent } from './procurement-exceptions/procure
     RunSchedulersComponent,
     RinventoryValuationComponent,
     StockMovesComponent,
-    ProcurementExceptionsComponent
+    ProcurementExceptionsComponent,
+    ReceiptsComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import { ProcurementExceptionsComponent } from './procurement-exceptions/procure
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

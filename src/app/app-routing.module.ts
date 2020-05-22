@@ -11,6 +11,7 @@ import { OverviewComponent } from './overview/overview.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { AllTransfersComponent } from './all-transfers/all-transfers.component';
 import { RunSchedulersComponent } from './run-schedulers/run-schedulers.component';
+import { ReceiptsComponent } from './receipts/receipts.component';
 
 
 const routes: Routes = [
@@ -61,6 +62,10 @@ const routes: Routes = [
   {
     path:'pro-exce',
     component:ProcurementExceptionsComponent
+  },
+  {
+    path:'receipt',
+    component:ReceiptsComponent
   }
   
 ];
