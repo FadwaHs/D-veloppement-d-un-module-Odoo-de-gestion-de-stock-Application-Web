@@ -1,0 +1,167 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Gestion Stock</mat-toolbar>
+    <mat-nav-list>
+      <!--dashboard-->
+      <a mat-list-item class="itemNav">
+        <i class="glyphicon glyphicon-th-large nav-icon1"></i>
+        <span class="item1" >DASHBOARD</span>
+        <div style="width: 100%;">
+        <i class="glyphicon glyphicon-chevron-down nav-icon2" (click)="myFunction('menu1')"></i>
+        </div>
+      </a>
+        <ul  class="sous-menu" id="menu1">
+          <li>
+          <a mat-list-item class="itemNav" [routerLink]="['overview']" routerLinkActive="active">
+            <i class="glyphicon glyphicon-th nav-icon1"></i>
+            <span class="item2">OverView</span>
+          </a>
+          </li>
+          <li>
+            <a mat-list-item class="itemNav" [routerLink]="['statistics']" routerLinkActive="active">
+              <i class="glyphicon glyphicon-signal nav-icon1"></i>
+              <span class="item2">Statistics</span>
+            </a>
+            </li>
+        </ul>
+        <!--Operations-->
+        <a mat-list-item  class="itemNav">
+          <i class="glyphicon glyphicon-folder-close nav-icon1"></i>
+          <span class="item1">OPERATIONS</span>
+          <div style="width: 100%;">
+          <i class="glyphicon glyphicon-chevron-down nav-icon2" (click)="myFunction('menu2')"></i>
+        </div>
+        </a>
+          <ul  class="sous-menu" id="menu2">
+            <li>
+            <a mat-list-item class="itemNav" [routerLink]="['allTransfers']" routerLinkActive="active">
+              <i class="glyphicon glyphicon-th-list nav-icon1"></i>
+              <span class="item2">All Transfers</span>
+            </a>
+            </li>
+          </ul>
+         <!--Inventory control-->
+          <a mat-list-item class="itemNav">
+            <i class="glyphicon glyphicon-check nav-icon1"></i>
+            <span class="item1" >INVENTORY CONTROL</span>
+            <div style="width: 100%;">
+            <i class="glyphicon glyphicon-chevron-down nav-icon2" (click)="myFunction('menu3')"></i>
+          </div>
+          </a>
+            <ul  class="sous-menu" id="menu3">
+              <li>
+              <a mat-list-item class="itemNav" [routerLink]="['product']" routerLinkActive="active">
+                <i class="glyphicon glyphicon-tag nav-icon1"></i>
+                <span class="item2">Products</span>
+              </a>
+              </li>
+              <li>
+                <a mat-list-item class="itemNav" [routerLink]="['reo-rules']" routerLinkActive="active">
+                  <i class="glyphicon glyphicon-refresh nav-icon1"></i>
+                  <span class="item2">Reordering Rules</span>
+                </a>
+              </li>
+              <li>
+                <a mat-list-item class="itemNav" [routerLink]="['inventory-adj']" routerLinkActive="active">
+                  <i class="glyphicon glyphicon-list-alt nav-icon1"></i>
+                  <span class="item2">Inventory Adjustments</span>
+                </a>
+              </li>
+              <li>
+                <a mat-list-item class="itemNav" [routerLink]="['scrap']" routerLinkActive="active">
+                  <i class="glyphicon glyphicon-trash nav-icon1"></i>
+                  <span class="item2">Scrap</span>
+                </a>
+              </li>
+            </ul>
+          <!--Schedulers-->
+            <a mat-list-item  class="itemNav">
+              <i class="glyphicon glyphicon-tasks nav-icon1"></i>
+              <span class="item1" >SCHEDULERS</span>
+              <div style="width: 100%;">
+              <i class="glyphicon glyphicon-chevron-down nav-icon2" (click)="myFunction('menu4')"></i>
+            </div>
+            </a>
+              <ul  class="sous-menu" id="menu4">
+                <li>
+                <a mat-list-item class="itemNav" [routerLink]="['runSchedulers']" routerLinkActive="active">
+                  <i class="glyphicon glyphicon-calendar nav-icon1"></i>
+                  <span class="item2">RUN SCHEDULERS</span>
+                </a>
+                </li>
+              </ul>
+          <!--Reports-->
+          <a mat-list-item  class="itemNav">
+            <i class="glyphicon glyphicon-paperclip nav-icon1"></i>
+            <span class="item1">REPORTS</span>
+            <div style="width: 100%;">
+            <i class="glyphicon glyphicon-chevron-down nav-icon2" (click)="myFunction('menu5')"></i>
+            </div>
+          </a>
+            <ul  class="sous-menu" id="menu5">
+              <li>
+              <a mat-list-item class="itemNav" [routerLink]="['rinventoruValuation']" routerLinkActive="active">
+                <i class="glyphicon glyphicon-th nav-icon1"></i>
+                <span class="item2">Rinventory Valuation</span>
+              </a>
+              </li>
+              <li>
+              <a mat-list-item class="itemNav" [routerLink]="['stock-moves']" routerLinkActive="active">
+                  <i class="glyphicon glyphicon-th nav-icon1"></i>
+                  <span class="item2">Stock Moves</span>
+                </a>
+              </li>
+              <li>
+                <a mat-list-item class="itemNav" [routerLink]="['pro-exce']" routerLinkActive="active">
+                    <i class="glyphicon glyphicon-th nav-icon1"></i>
+                    <span class="item2">Procurement Exceptions</span>
+                  </a>
+                </li>
+            </ul>
+          <!--Alerts-->
+          <a mat-list-item  class="itemNav">
+            <i class="glyphicon glyphicon-bullhorn nav-icon1"></i>
+            <span class="item1">ALERSTS</span>
+            <div style="width: 100%;">
+            <i class="glyphicon glyphicon-chevron-down nav-icon2" (click)="myFunction('menu6')"></i>
+          </div>
+          </a>
+            <ul  class="sous-menu" id="menu6">
+              <li>
+              <a mat-list-item class="itemNav" [routerLink]="['allTransfers']" routerLinkActive="active">
+                <i class="glyphicon glyphicon-th nav-icon1"></i>
+                <span class="item2">All Transfers</span>
+              </a>
+              </li>
+            </ul>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content  style="background-color: #F3F5F7;">
+    <!-- <mat-toolbar style="background-color:white; height: 30px;">
+      <button 
+         type="button"
+         aria-label="Toggle sidenav"
+         mat-icon-button
+         (click)="drawer.toggle()"
+         *ngIf="isHandset$ | async">
+         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        
+        <div class="dropdown">
+          <i (click)="Function2()" class="glyphicon glyphicon-option-vertical dropbtn"></i>
+       
+          <div id="myDropdown" class="dropdown-content">
+            <div class="menu">
+            <a href="#"><i class="glyphicon glyphicon-cog"></i>Account settings</a>
+            <a href="#"><i class="glyphicon glyphicon-off"></i>LogOut</a>
+            
+          </div>
+        </div>
+      </div>
+    </mat-toolbar> -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
