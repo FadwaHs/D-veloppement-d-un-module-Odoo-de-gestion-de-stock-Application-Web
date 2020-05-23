@@ -56,7 +56,7 @@
             
           </div>
           <div class="button-group1">
-           <button class="button1">Create</button>
+           <button (click)="FunctionClickedInButtonReceipts('create-receipt')"class="button1">Create</button>
            <button class="button2">Import</button>
            <button class="button2"><i class="glyphicon glyphicon-save"></i></button>
           </div>
@@ -65,7 +65,7 @@
        <!-- End of head-->
        <div class="main">
          <span class="section-title2">Your Company</span>
-         <table class="table">
+         <table class="table table-hover">
            <tr class="table-header">
             <td><input type="checkbox"></td>
             <td>Reference</td>

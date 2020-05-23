@@ -22,6 +22,7 @@ import { StockMovesComponent } from './stock-moves/stock-moves.component';
 import { ProcurementExceptionsComponent } from './procurement-exceptions/procurement-exceptions.component';
 import { ReceiptsComponent } from './receipts/receipts.component';
 import { RouterModule } from '@angular/router';
+import { CreateReceiptComponent } from './create-receipt/create-receipt.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { RouterModule } from '@angular/router';
     RinventoryValuationComponent,
     StockMovesComponent,
     ProcurementExceptionsComponent,
-    ReceiptsComponent
+    ReceiptsComponent,
+    CreateReceiptComponent
   ],
   imports: [
     BrowserModule,
