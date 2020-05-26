@@ -20,12 +20,9 @@
           <button class="button1">Validate</button>
           <button class="button2">Cancel</button>
          </div>
-         <!-- <div class="comp-right">
-            <span class="item">Draft</span>
-            <span>Wainting</span>
-            <span>Ready</span>
-            <span>Done</span>
-         </div> -->
+         <div class="comp-right">
+      
+         </div>
       </div>
     </div>
        <!-- End of head-->
@@ -57,8 +54,12 @@
                      <td class="label-tab">Scheduled Date</td>
                      <td class="input-tab-td">
                         <div class="input-tab">
-                           <input type="text">
-                           <i class="glyphicon glyphicon-triangle-bottom"></i>
+                           <input [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time">
+                           <span class="trigger" [owlDateTimeTrigger]="dt1">
+                              <i class="glyphicon glyphicon-triangle-bottom"></i>
+                           </span>
+                           <owl-date-time #dt1></owl-date-time>
+                       
                         </div>
                       </td>
                     </tr>
@@ -70,13 +71,13 @@
                               <i class="glyphicon glyphicon-triangle-bottom"></i>
                            </div>
                          </td>
-                           <td class="label-tab">Source Document</td>
+                           <td class="label-tab">
+                              Source Document</td>
                            <td class="input-tab-td">
                               <div class="input-tab">
-                                 <input type="text">
+                                 <input type="text" placeholder="e.g. PO0032">
                               </div>
                             </td>
-                        
                     </tr>
                  </table>
               </div>
@@ -86,22 +87,55 @@
                  <li (click)="FunctionMenuInsideClick('l1','l2','l3','d1','d2','d3')"
                  class="nav-link active" id="l1">Operations</li>
                  <li (click)="FunctionMenuInsideClick('l2','l1','l3','d2','d1','d3')" 
-                  class="nav-link" id="l2">Additional Info</li>
+                  class="nav-link " id="l2">Additional Info</li>
                  <li (click)="FunctionMenuInsideClick('l3','l2','l1','d3','d2','d1')"
                  class="nav-link" id="l3">Note</li>
               </ul>
               <div class="div1" id='d1'>
-                 <span>div1</span>
+               <table class="table-menu1">
+                  <tr class="table-header">
+
+                  </tr>
+               </table>
               </div>
               <div class="div2" id='d2'>
-               <span>div2</span>
+               <span class="Informations-title" >Other Information</span>
+               <table class="table-menu2">
+                  <tr>
+                     <td class="cellule-left">Priority</td>
+                     <td class="cellule-right">
+                        <i class="glyphicon glyphicon-star-empty icon-star"></i>
+                        <i class="glyphicon glyphicon-star-empty icon-star"></i>
+                        <i class="glyphicon glyphicon-star-empty icon-star"></i>
+                     </td>
+                  </tr>
+                  <tr>
+                   <td class="cellule-left">Responsible</td>
+                   <td class="cellule-right">
+                     <div class="input-tab">
+                        <input type="text">
+                        <i class="glyphicon glyphicon-triangle-bottom"></i>
+                     </div>
+                     <i class="glyphicon glyphicon-new-window icon-new"></i>
+                   </td>
+                </tr>
+                <tr>
+                   <td class="cellule-left">Procurement Group Company</td>
+                   <td class="cellule-right">
+                     <span>My Company</span>  
+                   </td>
+                </tr>
+               </table>
               </div>
               <div class="div3" id='d3'>
-               <span>div3</span>
+               <div class="input-notes"> 
+                  <textarea placeholder=" Add an internal note that will be printed on the Picking Operations sheets" 
+                  rows="2" cols="120" maxlength="300"></textarea>
+               </div>
               </div>
            </div>
            </div>
-         
+           
       </div>
          
       

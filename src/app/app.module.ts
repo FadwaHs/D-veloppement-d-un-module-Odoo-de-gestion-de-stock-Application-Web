@@ -23,6 +23,8 @@ import { ProcurementExceptionsComponent } from './procurement-exceptions/procure
 import { ReceiptsComponent } from './receipts/receipts.component';
 import { RouterModule } from '@angular/router';
 import { CreateReceiptComponent } from './create-receipt/create-receipt.component';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +51,9 @@ import { CreateReceiptComponent } from './create-receipt/create-receipt.componen
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    RouterModule
+    RouterModule,
+    OwlDateTimeModule, 
+    OwlNativeDateTimeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

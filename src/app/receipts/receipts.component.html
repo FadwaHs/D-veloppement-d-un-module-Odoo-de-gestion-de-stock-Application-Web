@@ -17,11 +17,33 @@
        </div>
        <div class="row head2">
            <div class="button-group2">
+            <div class="dropdown none" id="dropdown-list1" >
+              <button (click)="Function2('myDropdown4')" class="dropbtn">
+                   Print
+                   <i class="glyphicon glyphicon-triangle-bottom icon"></i>
+              </button>
+              <div id="myDropdown4" class="dropdown-content">
+                <a href="#">Archived</a>
+                <a href="#">Add Custom Filter</a>
+                <a href="#">Link 3</a>
+              </div>
+          </div>
+            <div class="dropdown none" id="dropdown-list2">
+              <button (click)="Function2('myDropdown5')" class="dropbtn">
+                  Action
+                  <i class="glyphicon glyphicon-triangle-bottom icon"></i>
+              </button>
+              <div id="myDropdown5" class="dropdown-content">
+                <a href="#">Archived</a>
+                <a href="#">Add Custom Filter</a>
+                <a href="#">Link 3</a>
+              </div>
+          </div>
             <div class="dropdown">
                 <button (click)="Function2('myDropdown1')" class="dropbtn">
                     <i class="glyphicon glyphicon-filter"></i>
                     Filters
-                    <i class="glyphicon glyphicon-menu-down"></i>
+                    <i class="glyphicon glyphicon-triangle-bottom icon"></i>
                 </button>
                 <div id="myDropdown1" class="dropdown-content">
                   <a href="#">Archived</a>
@@ -33,7 +55,7 @@
                 <button (click)="Function2('myDropdown2')" class="dropbtn">
                     <i class="glyphicon glyphicon-tasks"></i>
                     Group By
-                    <i class="glyphicon glyphicon-menu-down"></i>
+                    <i class="glyphicon glyphicon-triangle-bottom icon"></i>
                 </button>
                 <div id="myDropdown2" class="dropdown-content">
                   <a href="#">Type of Operation</a>
@@ -45,14 +67,14 @@
                 <button (click)="Function2('myDropdown3')" class="dropbtn">
                     <i class="glyphicon glyphicon-star"></i>
                     Favorites
-                    <i class="glyphicon glyphicon-menu-down"></i>
+                    <i class="glyphicon glyphicon-triangle-bottom icon"></i>
                 </button>
                 <div id="myDropdown3" class="dropdown-content">
                   <a href="#">Save Current Search</a>
                 </div>
             </div>
-             <button class="btn1"><i class="glyphicon glyphicon-th-list"></i></button>
-             <button class="btn2"><i class="glyphicon glyphicon-th-large"></i></button>
+             <button (click)="FunctionMoveFromTableToCards('1','2','table','cards')" id="1" class="btn1"><i class="glyphicon glyphicon-th-list"></i></button>
+             <button (click)="FunctionMoveFromTableToCards('2','1','cards','table')" id="2"  class="btn2"><i class="glyphicon glyphicon-th-large"></i></button>
             
           </div>
           <div class="button-group1">
@@ -65,9 +87,10 @@
        <!-- End of head-->
        <div class="main">
          <span class="section-title2">Your Company</span>
+         <div id="table">
          <table class="table table-hover">
            <tr class="table-header">
-            <td><input type="checkbox"></td>
+            <td><input type="checkbox" id="checkbox-principal" (click)="FunctionCheckBox('checkbox','checkbox-principal')"></td>
             <td>Reference</td>
             <td>Contact</td>
             <td>Scheduled Date</td>
@@ -77,7 +100,7 @@
            </tr>
            <tbody class="table-body">
             <tr>
-            <td><input class="checkbox" type="checkbox"></td>
+            <td><input type="checkbox" class="checkbox"(click)="FunctionCheckBox2()" ></td>
             <td>Reference</td>
             <td>Contact</td>
             <td>Scheduled Date</td>
@@ -86,7 +109,7 @@
             <td>Company</td>
             </tr>   
             <tr>
-              <td><input type="checkbox"></td>
+              <td><input type="checkbox" class="checkbox"(click)="FunctionCheckBox2()" ></td>
               <td>Reference</td>
               <td>Contact</td>
               <td>Scheduled Date</td>
@@ -96,5 +119,50 @@
               </tr>  
            </tbody>
          </table>
+        </div>
+        <div id="cards" class="cards">
+          <div class="inside row">
+              <div class="col-md-4">
+                <div class="left">
+                 <span class="text1">WH/IN/0002</span>
+                 <span class="text2">Wood Corner<i class="glyphicon glyphicon-time"></i></span>
+                </div>
+                <div class="right">
+                  <span class="text1"><button>Ready</button></span>
+                  <span class="text2">05/05/2020</span>
+                 </div>
+              </div>
+              <div class="col-md-4">
+                <div class="left">
+                 <span class="text1">WH/IN/0002</span>
+                 <span class="text2">Wood Corner<i class="glyphicon glyphicon-time"></i></span>
+                </div>
+                <div class="right">
+                  <span class="text1"><button>Ready</button></span>
+                  <span class="text2">05/05/2020</span>
+                 </div>
+              </div>
+              <div class="col-md-4">
+                <div class="left">
+                 <span class="text1">WH/IN/0002</span>
+                 <span class="text2">Wood Corner<i class="glyphicon glyphicon-time"></i></span>
+                </div>
+                <div class="right">
+                  <span class="text1"><button>Ready</button></span>
+                  <span class="text2">05/05/2020</span>
+                 </div>
+              </div>
+              <div class="col-md-4">
+                <div class="left">
+                 <span class="text1">WH/IN/0002</span>
+                 <span class="text2">Wood Corner<i class="glyphicon glyphicon-time"></i></span>
+                </div>
+                <div class="right">
+                  <span class="text1"><button>Ready</button></span>
+                  <span class="text2">05/05/2020</span>
+                 </div>
+              </div>
+            </div>
+        </div>
        </div>
 </div>

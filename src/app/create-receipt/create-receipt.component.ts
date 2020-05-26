@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ParamMap, ActivatedRoute,Route } from '@angular/router';
 
 @Component({
   selector: 'app-create-receipt',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateReceiptComponent implements OnInit {
 
-  constructor() { }
+  date : Date = new Date();
+  private Title: string;
+  settings=
+  {
+    bigBanner:true,
+    timePicker:true,
+    format:'dd-MM-yyyy hh:mm a',
+    defaultOpen:false,
+    closeOnSelect:false
+  }
+  constructor() {}
 
   ngOnInit(): void {
+  
   }
   Function2(id:string) {
     document.getElementById(id).classList.toggle("show");

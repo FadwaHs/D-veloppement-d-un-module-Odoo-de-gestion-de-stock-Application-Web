@@ -203,7 +203,16 @@ head2 end
     padding-bottom: 5px;
     margin-right: 10px;
 }
+.item
+{
+    width: 17px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    margin-left: -5px;
 
+}
 /*-------------------------------------------------------------------------------------*/
 .title
 {
@@ -222,13 +231,15 @@ head2 end
    -moz-box-shadow: 0 0 6px 4px #DCDCDC;
     box-shadow: 0 0 6px 4px #DCDCDC;
     border-radius: 4px;
-    width: 1061px;
+    width: 1041px;
+    margin-bottom: 50px;
     
 }
 .main
 {
     overflow:hidden;
-    width: 1100px;
+    width: 1080px;
+
 }
 .inside-header
 {
@@ -290,6 +301,7 @@ td
 {
     width: 200px;
     border: none;
+    padding: 3px 4px;
 }
 
 .inside1 tr  td.input-tab-td .input-tab i
@@ -327,4 +339,77 @@ td
 .div2, .div3
 {
     display: none;
+}
+.div2
+{
+    padding-top: 30px;
+}
+.Informations-title
+{
+    display: block;
+    font-weight: 500;
+    color: #007bff;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.table-menu2
+{
+    width: 70%;
+}
+.cellule-left
+{
+    border-right: 1px solid #ccc;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 10px 0px;
+    width: 30%;
+}
+.cellule-right
+{
+    width: 40%;
+    padding-left: 10px;
+}
+.table-menu2 .cellule-right .icon-star
+{
+    color: gray;
+    font-size: 20px;
+}
+.table-menu2 .cellule-right .input-tab
+{
+    display: inline;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding: 3px;
+   margin-right: 5px;
+}
+.table-menu2 .cellule-right .input-tab input
+{
+    width: 300px;
+    border: none;
+}
+.table-menu2 .cellule-right .input-tab i
+{
+    font-size: 10px;
+}
+.table-menu2 .cellule-right .icon-new
+{
+    color:#007bff;
+}
+.table-menu2 .cellule-right span
+{
+    color:#007bff;
+}
+.div3 .input-notes textarea
+{
+    padding: 7px;
+    border: none;
+    resize: none;
+}
+.div3 .input-notes
+{
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+textarea:focus, input:focus{
+    outline: none;
 }
