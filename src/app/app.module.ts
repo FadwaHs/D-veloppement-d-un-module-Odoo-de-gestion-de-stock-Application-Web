@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';
 import { AllTransfersComponent } from './all-transfers/all-transfers.component';
 import { ProductComponent } from './product/product.component';
 import { RecorderingRulesComponent } from './recordering-rules/recordering-rules.component';
@@ -24,6 +25,15 @@ import { ReceiptsComponent } from './receipts/receipts.component';
 import { RouterModule } from '@angular/router';
 import { CreateReceiptComponent } from './create-receipt/create-receipt.component';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { CreateproductComponent } from './createproduct/createproduct.component';
+import { CreaterulesComponent } from './createrules/createrules.component';
+import { CreatecompanyComponent } from './createcompany/createcompany.component';
+import { SettingsComponent } from './settings/settings.component';
+import { WarehousesComponent } from './warehouses/warehouses.component';
+import { OperationtypesComponent } from './operationtypes/operationtypes.component';
+import { ProductscategorieComponent } from './productscategorie/productscategorie.component';
+import { CreatoperationsComponent } from './creatoperations/creatoperations.component';
+import { CreatecategorisComponent } from './createcategoris/createcategoris.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +49,16 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     StockMovesComponent,
     ProcurementExceptionsComponent,
     ReceiptsComponent,
-    CreateReceiptComponent
+    CreateReceiptComponent,
+    CreateproductComponent,
+    CreaterulesComponent,
+    CreatecompanyComponent,
+    SettingsComponent,
+    WarehousesComponent,
+    OperationtypesComponent,
+    ProductscategorieComponent,
+    CreatoperationsComponent,
+    CreatecategorisComponent
   ],
   imports: [
     BrowserModule,
@@ -53,9 +72,11 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     MatListModule,
     RouterModule,
     OwlDateTimeModule, 
-    OwlNativeDateTimeModule
+    OwlNativeDateTimeModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CreatecompanyComponent] 
 })
 export class AppModule { }

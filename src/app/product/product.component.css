@@ -6,7 +6,7 @@
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 5px;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .input-group .input-group-btn .btn i{
@@ -52,6 +52,8 @@ head2 begin
 {
     float: right;
     display: block;
+    margin-right: 0px;
+    
 }
 /*Dropdown Button */
 .dropbtn {
@@ -105,16 +107,23 @@ head2 end
     margin-left: 15px !important;    
 }
 
-.main
+div#divlistview
 {
     margin-top: 100px;
    
+}
+div#divkanbanview
+{
+    display: none;
+    margin-top: 120px;
 }
 @media (max-width:428px)
 {
 .button-group2
 {
     width: 100%;
+    
+   
 }
 .head2
 {
@@ -133,12 +142,7 @@ head2 end
     margin-top: 5px;
     margin-bottom: 5px;
     width: 330px;
-}
-
-.input-group
-{
-    padding-left: 10px;
-    width: 370px;
+  
 }
 
 .section-title
@@ -156,7 +160,8 @@ head2 end
 }
 .main
 {
-    margin-top: 150px;
+    margin-top: 300px;
+
 }
 }
 
@@ -178,7 +183,7 @@ head2 end
     {
         
         margin-right: 0px !important;
-        margin-left: 0px !important;     
+        margin-left: 0px !important;    
         
     }
     .col-xs-4
@@ -204,3 +209,79 @@ head2 end
 }
 
 /*-------------------------------------------------------------------------------------*/
+
+table#tableproducts
+{
+    background-color: white;
+    color: #0a8ea4;
+   
+}
+thead{
+    background-color: #eeeeee;
+    color: #000;
+    cursor: pointer;
+  
+}
+table td
+{
+  cursor: pointer;
+}
+
+.button-create
+{
+    background-color:#007bff;
+    padding: 8px;
+    margin-right: 10px;
+    font-size: 15px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    
+}
+button#exportbtn
+{
+    margin-left: 10px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+div#kanbanproduct
+{
+    margin-left: 10px;
+    width: 350px;
+    background-color: white;
+    height: 120px;
+    border:#d2d2ff 2px solid;
+    padding-right:0px !important;
+    padding-left: 0px !important;
+    margin-bottom: 7px;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    display: block;
+    float: left;
+    cursor: pointer;
+}
+
+#btnlistview
+{
+  
+    cursor: pointer;
+  
+}
+#btnkanbanview
+{
+    cursor: pointer;
+    margin-left: 18px;
+    margin-right:5px;
+}
+
+@media (max-width:428px)
+{
+    #btnlistview
+    {
+        margin-left: 0px;
+        margin-right: 2px;
+    }
+}
+
+
+

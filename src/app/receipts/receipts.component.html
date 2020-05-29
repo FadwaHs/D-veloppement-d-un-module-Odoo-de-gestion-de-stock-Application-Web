@@ -5,7 +5,7 @@
     <div class="row head">
     
         <div class="section-title">
-           <span>OverView/Receipts</span>
+           <span>OverView / Receipts</span>
         </div>
            <div class="input-group">
                <input type="text" class="form-control" placeholder="Search" name="search">
@@ -73,22 +73,31 @@
                   <a href="#">Save Current Search</a>
                 </div>
             </div>
-             <button (click)="FunctionMoveFromTableToCards('1','2','table','cards')" id="1" class="btn1"><i class="glyphicon glyphicon-th-list"></i></button>
-             <button (click)="FunctionMoveFromTableToCards('2','1','cards','table')" id="2"  class="btn2"><i class="glyphicon glyphicon-th-large"></i></button>
+
+            <button (click)="FunctionMoveFromTableToCards('btn2kanban','btn1list','cards','table')"   id="btn2kanban" class="btn btn-default">
+                <i class="glyphicon glyphicon-th-large"></i>
+               </button>
+            <button (click)="FunctionMoveFromTableToCards('btn1list','btn2kanban','table','cards')"  id="btn1list" class="btn btn-default active">
+               <i class="glyphicon glyphicon-th-list"></i>
+              </button>
+            
             
           </div>
-          <div class="button-group1">
-           <button (click)="FunctionClickedInButtonReceipts('create-receipt')"class="button1">Create</button>
-           <button class="button2">Import</button>
-           <button class="button2"><i class="glyphicon glyphicon-save"></i></button>
-          </div>
+        
+           <button (click)="FunctionClickedInButtonReceipts('create-receipt')" class="button-create">Create</button>
+           <button class="btn btn-default">Import</button>
+           <button id="exportbtn" class="btn btn-default ">
+            <span class="glyphicon glyphicon-download-alt"></span>
+           </button>
+        
+
           </div>
     </div>
        <!-- End of head-->
        <div class="main">
          <span class="section-title2">Your Company</span>
          <div id="table">
-         <table class="table table-hover">
+         <table id ="tablereceipts" class="table table-hover">
            <tr class="table-header">
             <td><input type="checkbox" id="checkbox-principal" (click)="FunctionCheckBox('checkbox','checkbox-principal')"></td>
             <td>Reference</td>
@@ -100,7 +109,7 @@
            </tr>
            <tbody class="table-body">
             <tr>
-            <td><input type="checkbox" class="checkbox"(click)="FunctionCheckBox2()" ></td>
+            <td><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()" ></td>
             <td>Reference</td>
             <td>Contact</td>
             <td>Scheduled Date</td>

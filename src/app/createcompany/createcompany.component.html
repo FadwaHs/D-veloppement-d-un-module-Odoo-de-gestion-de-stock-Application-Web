@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Products table</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="div-2">
+        <div class="title">
+        <button type="button" class="btn btn-default btn-sm" id="close" (click)="Onclose()">
+            <span class="glyphicon glyphicon-remove"></span> 
+        </button>
+        <h3>Open : Company</h3>
+   
+    </div>
+
+      <form >
+          
+        <p>Company name</p>
+        <input class="form-control" id="form-control1" type="text" name ="name" placeholder="My Company Name" />
+
+      </form><br>
+      <ul class="nav nav-tabs" id="ulsize">
+        <li class="nav-link active" ><a id="menucolor" >General Information</a></li>
+      </ul><br><br>
+      <div >
+         
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>Contact</p>
+                    </td>
+                     <td> 
+                        <input type="text" class="form-control" id="form-control2"/>  
+                    </td>
+    
+                    <td> <p>Tax Id</p></td>
+                    <td>
+                        <input type="text" class="form-control" id="form-control2"/>
+                    </td>     
+                </tr>
+                <tr>
+                    <td id="add">
+                        <p>Adresse</p>
+                    </td>
+                    <td>
+                       <input type="text" class="form-control" id="form-control2"/>
+                       <input type="text" class="form-control" id="form-control2"  placeholder="Street2.." />
+                       <select class="form-control" id="selectcity">
+                        <option>United State</option>
+                        <option>Algeria</option>    
+                       </select>
+
+                    </td>
+                    <td>
+                        <p>Company Registry</p>
+                        <p>Currency</p>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="form-control3"/>
+                
+                        <input type="text" class="form-control" id="form-control2"/>    
+                    </td> 
+                                 
+                </tr>
+                <tr>
+                    <td>
+                        <p>Phone</p>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="form-control2" placeholder="+"/>
+                    </td> 
+                    <td>
+                        <p>Parent company</p>
+                    </td>
+                    <td>
+                        <select class="form-control" id="selectcompany">
+                            <option>My Company (San Francisco)</option>
+                            <option>My Company (Chicago)</option>  
+                        </select>
+                    </td>      
+                </tr>
+                <tr>
+                    <td>
+                        <p>Email</p>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="form-control2" />
+                    </td>
+                 
+                </tr>
+                <tr>
+                    <td>
+                            <p>Web Site</p>
+                    </td>
+                    <td>
+                            <input type="text" class="form-control" id="form-control2" />
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+      </div>
+
+      <div class="saveanddiscars">
+      <button type="button" class="savecompany">Save</button>
+      <button type="button" class="btn btn-default">Discard</button>
+     </div>
+          
+    </div>
+</body>
+</html>
+

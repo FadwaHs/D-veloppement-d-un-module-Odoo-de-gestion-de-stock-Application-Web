@@ -2,10 +2,10 @@
 .section-title
 {
     float: left;
-    color: #2a3f5a;
+    color: black;
     font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 5px;
+    font-weight: bold;
+    margin-bottom: 10px;
     margin-top: 20px;
 }
 
@@ -26,13 +26,7 @@
 /*
 head2 begin
 */
-.head2
-{
 
-    margin-bottom: 10px;
-     padding-right: 97px;
-
-}
 .head-principal
 {
     position: fixed;
@@ -48,52 +42,7 @@ head2 begin
       padding-left: 0px !important;
 
 }
-.button-group2
-{
-    float: right;
-    display: block;
-}
-/*Dropdown Button */
-.dropbtn {
-  background-color: #ffff;
-  color: black;
-  padding: 7px;
-  font-size: 13px;
-  border: none;
-  cursor: pointer;
-  border: #BDBDBD 1px solid;
-  border-radius: 3px;
-  margin-right: 5px;
-}
-
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
-
+.
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
 /*
@@ -107,20 +56,10 @@ head2 end
 
 .main
 {
-    margin-top: 100px;
+    margin-top: 120px;
    
 }
-@media (max-width:428px)
-{
-.button-group2
-{
-    width: 100%;
-}
-.head2
-{
-     padding-right: 0px;
-}
-}
+
 @media (max-width:650px)
 {
 .button-group
@@ -147,16 +86,10 @@ head2 end
  padding-left: 10px;
  width: 100%;
 }
-.button-group2
-{
-    float: left;
-    display: block;
-    width: 100%;
-    padding-left: 10px;
-}
+
 .main
 {
-    margin-top: 150px;
+    margin-top: 180px;
 }
 }
 
@@ -167,10 +100,7 @@ head2 end
        width: 100%;
        padding-right: 20px;
    }
-   .button-group
-   {
-    text-align: center;
-   }
+   
 }
 @media (max-width:950px)
 {
@@ -204,36 +134,8 @@ head2 end
 }
 
 /*-------------------------------------------------------------------------------------*/
-.btn-creatrules
-{
-    background-color:#007bff;
-    padding: 8px;
-    margin-right: 10px;
-    font-size: 15px;
-    border: none;
-    color: white;
-    border-radius: 4px;
-    
-}
-button#exportbtnrules
-{
-    margin-left: 10px;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
-}
-#btnkanbanviewrules
-{
-    margin-left: 30px;
-    cursor: pointer;
-    margin-right:5px;
-}
-#btnlistviewrules
-{
-    cursor: pointer;
 
-      
-}
-
-table#recorderingtable
+table#warehousestable
 {
     background-color: white;
     color: #0a8ea4;
@@ -250,30 +152,11 @@ table td
 {
   cursor: pointer;
 }
-
-div#divlistviewrules
-{
-    margin-top: 100px;
-   
-}
-div#divkanbanviewrules
-{
-    display: none;
-    margin-top: 120px;
-}
-div#kanbanrules
+button#exportbtn
 {
     margin-left: 10px;
-    width: 265px;
-    background-color: white;
-    height: 80px;
-    border:#d2d2ff 2px solid;
-    padding-right:0px !important;
-    padding-left: 0px !important;
-    margin-bottom: 7px;
-    border-radius: 3px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
-    display: block;
-    float: left;
-    cursor: pointer;
 }
+
+
+

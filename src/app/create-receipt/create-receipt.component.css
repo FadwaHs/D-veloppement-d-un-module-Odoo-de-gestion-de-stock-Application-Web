@@ -2,11 +2,8 @@
 .section-title
 {
     float: left;
-    color: #2a3f5a;
-    font-size: 20px;
-    font-weight: 500;
     margin-bottom: 5px;
-    margin-top: 25px;
+    margin-top: 10px; 
 }
 .section-title2
 {
@@ -137,28 +134,18 @@ head2 end
     float: left;
     
 }
-.button1
+button.save
 {
     background-color:#007bff;
+    padding: 8px;
+    margin-right: 10px;
+    font-size: 15px;
+    border: none;
     color: white;
-    padding: 7px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border: #BDBDBD 1px solid;
-    border-radius: 3px;
-    margin-right: 5px;
+    border-radius: 4px;
 }
-.button2
+.btn-default
 {
-    color:black;
-    background-color: white;
-    padding: 7px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border: #BDBDBD 1px solid;
-    border-radius: 3px;
     margin-right: 5px;
 }
 .button2:hover{
@@ -186,8 +173,8 @@ head2 end
     padding-top: 3px;
     padding-bottom: 3px;
     padding-left: 15px;
-
     width: 100%;
+    background-color:#d2d2ff;
 }
 
 .button-group2
@@ -226,13 +213,16 @@ head2 end
     display: block;
     margin: 10px 20px;
     background-color: white;
-    border: 1px solid #eeeeee;
-    -webkit-box-shadow: 0 0 6px 4px #DCDCDC;
-   -moz-box-shadow: 0 0 6px 4px #DCDCDC;
-    box-shadow: 0 0 6px 4px #DCDCDC;
-    border-radius: 4px;
     width: 1041px;
     margin-bottom: 50px;
+    margin-top: 70px;
+    border-radius:5px;
+    font-size:13px;
+    font-weight:bold;
+    border: solid 1px #888888;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    
     
 }
 .main
@@ -250,12 +240,12 @@ head2 end
 .inside-header span
 {
     margin-left: 9px;
-    font-size: 15px;
+    font-size: 16px;
 }
 .header
 {
     border-bottom: 1px solid #dcdcdc;
-    height: 40px;
+    height: 45px;
 }
 .inside1
 {
@@ -327,7 +317,8 @@ td
     display: inline;
     color: #007bff;
     padding: 10px 15px;
-    font-size: 17px;
+    font-size: 14px;
+    font-weight: bold;
 }
 .active
 {
@@ -413,3 +404,8 @@ td
 textarea:focus, input:focus{
     outline: none;
 }
+.glyphicon-resize-vertical
+{
+    color: #007bff;
+}
+

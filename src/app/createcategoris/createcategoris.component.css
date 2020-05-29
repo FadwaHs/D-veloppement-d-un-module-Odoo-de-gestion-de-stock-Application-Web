@@ -1,0 +1,68 @@
+#form-control1{
+    height:50px;
+    width: 700px;
+    background-color:#d2d2ff;
+   
+}
+body{
+    background-color: #f3f5f7;
+}
+div.navbarrules
+{
+   padding-left: 20px;
+   width:100%;
+   background-color: white;
+   
+}
+button.btn
+{   
+    margin-top: 10px; 
+}
+button.btn-default
+{
+    margin-left: 10px;
+}
+button.savecategory
+{
+    background-color:#007bff;
+    padding: 8px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+}
+.div-1-2
+{
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+.div-2{
+    margin-left:10px;
+    margin-right:10px;
+    margin-top:50px;
+    margin-bottom:20px;
+    padding-left:50px;
+    padding-top: 25px;
+    border-radius:5px;
+    font-size:13px;
+    font-weight:bold;
+    height: 350px;
+    background-color: white;
+    border: solid 1px #888888;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+select#select{
+    width:400px;
+    height:30px;
+    font-size:10px;
+    background-color:#d2d2ff;
+}
+p#logi
+{
+    color:#007bff;
+    font-size:18px;
+    font-weight: bold;
+}

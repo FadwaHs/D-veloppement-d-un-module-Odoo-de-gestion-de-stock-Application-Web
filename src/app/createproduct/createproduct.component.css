@@ -1,0 +1,255 @@
+body{
+    background-color: #f3f5f7;
+}
+div.navbar
+{
+   padding-left: 20px;
+   width:100%;
+   background-color: white;
+   
+}
+button.btn
+{   
+    margin-top: 10px; 
+}
+button#upQt
+{
+    margin-right: 10px;
+}
+button.btn-default
+{
+    margin-left: 10px;
+}
+button.saveproducts
+{
+    background-color:#007bff;
+    padding: 8px;
+    margin-right: 10px;
+    font-size: 15px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+}
+
+.div-1-2
+{
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+.div-1-1
+{
+    float: right;
+    padding-top: 43px;
+    padding-right:20px;
+}
+
+.div-2{
+    
+    margin-left:80px;
+    margin-top:50px;
+    margin-bottom:20px;
+    padding-left:50px;
+    padding-right:35px;
+    padding-top: 7px;
+    border-radius:5px;
+    font-size:13px;
+    font-weight:bold;
+    width:960px;
+    background-color: white;
+    border: solid 1px #888888;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+#form-control1{
+    height:50px;
+    width: 700px;
+    background-color:#d2d2ff;
+   
+}
+#form-control2{
+    height:25px;
+    width:350px;
+   
+}
+#menucolor1
+{
+    color:#007bff; 
+}
+#menucolor2
+{
+    color:#007bff; 
+}
+
+select#select{
+    width:400px;
+    height:25px;
+    font-size:10px;
+    background-color:#d2d2ff;
+}
+select#selectlocation
+{
+    width:350px;
+    height:25px;
+    font-size:10px;   
+}
+
+#ulsize
+{
+    width:800px;
+}
+#form-control1::placeholder
+{
+    font-size:25px;
+}
+p#internalnote
+{
+    color:#007bff;
+    font-size:18px;
+    font-weight: bold; 
+   
+}
+p#operations
+{
+    color:#007bff;
+    font-size:18px;
+    font-weight: bold; 
+}
+p#traceability
+{
+    color:#007bff;
+    font-size:18px;
+    font-weight: bold; 
+}
+textarea
+{  
+    width:350px;
+    height:60px;
+}
+textarea#DeliRecei
+{
+    width:800px;
+    height:40px;
+}
+
+div#divright
+{
+    float: right;
+    padding-right: 10px;
+    margin: 10px;
+
+}
+div.productimg
+{
+    float: right;
+    margin-right: 30px;
+    background-color:white;
+    border: solid 0.5px #888888;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height:90px;
+
+}
+div#buttontop
+{
+    width:800px;
+    height: 50px;
+    text-align: center;
+
+}
+.glyphicon-refresh
+{
+    color: #007bff;
+    font-size: 13px;
+   
+ 
+}
+.glyphicon-transfer
+{
+    color: #007bff;
+    font-size:13px;
+
+  
+}
+.glyphicon-object-align-right
+{
+    color: #007bff;
+    font-size: 13px;
+    
+}
+button#btntop
+{
+  background-color: white;
+  border: 1px solid;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 15px;
+}
+button#btntopUOH
+{
+  background-color: white;
+  border: 1px solid;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 15px;
+  margin-left: 35px;
+}
+button#btntop:hover {
+    background-color:#f1f1f1;
+  }
+
+div#inventoryinfo
+{
+    display: none;
+    padding-right:15px;
+}
+div.divoperation
+{
+    background-color:#f3f5f7;
+    width:420px;
+    height: 220px;
+    padding-left:9px;
+    padding-top:5px;
+    border-radius:5px;
+    border: solid 1px  #007bff;
+    
+}
+div.divtraveability
+{
+    float: right;
+   margin-left: 25px;
+    background-color:#f3f5f7;
+    width:420px;
+    height: 220px;
+    padding-left:9px;
+    padding-top:5px;
+    border-radius:5px;
+    border: solid 1px  #007bff;
+   
+}
+div.divLocations{
+
+    background-color:#f3f5f7;
+    width:420px;
+    height: 220px;
+    padding-left:9px;
+    padding-top:5px;
+    border-radius:5px;
+    border: solid 1px  #007bff;
+}
+ div.divLogistics
+ {
+    float: right;
+    margin-left: 25px;
+    background-color:#f3f5f7;
+    width:420px;
+    height: 220px;
+    padding-left:9px;
+    padding-top:5px;
+    border-radius:5px;
+    border: solid 1px  #007bff;
+ }
+
+
+
+

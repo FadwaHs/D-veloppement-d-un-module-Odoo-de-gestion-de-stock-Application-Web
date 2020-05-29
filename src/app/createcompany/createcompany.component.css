@@ -1,0 +1,97 @@
+
+#form-control1{
+    height:50px;
+    width: 700px;
+    background-color:#d2d2ff;
+    margin-bottom: 7px;
+    margin-top: 7px;
+   
+}
+#form-control1::placeholder
+{
+    font-size:25px;
+}
+#form-control2{
+    height:24px;
+    width:250px;
+    margin-right: 50px;
+    margin-bottom: 7px;
+   
+   
+}
+#form-control3{
+    height:24px;
+    width:250px;
+    margin-right: 50px;
+    margin-bottom: 17px;
+  
+   
+}
+
+select#selectcity
+{
+    width:250px;
+    height:30px;
+    font-size:10px;
+    background-color:#d2d2ff;
+    margin-bottom: 7px;
+    margin-top: 7px;
+    
+}
+select#selectcompany
+{
+    width:250px;
+    height:30px;
+    font-size:10px;
+    background-color:#d2d2ff;
+}
+  
+p{
+    margin-right: 50px;
+    font-weight: bold;
+    font-size:13px;
+    
+}
+button.savecompany
+{
+    background-color:#007bff;
+    padding: 8px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+  
+}
+div.saveanddiscars
+{
+    border-top:solid black 1px;
+    margin-top:20px;
+    text-align: right;
+    
+}
+div.title
+{
+    margin-bottom: 20px;
+    border-bottom:solid black 1px;
+    font-weight: bold;
+
+}
+button#close
+{
+    float: right;
+}
+h2{
+    font-weight:bold;
+}
+.glyphicon-remove
+{
+    color: #007bff;
+}
+#menucolor
+{
+    color: #007bff;
+    font-weight: bold;
+}
