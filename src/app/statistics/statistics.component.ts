@@ -60,8 +60,4 @@ export class StatisticsComponent implements OnInit {
 }
 
   
-  Function2(id:string) {
-    document.getElementById(id).classList.toggle("show");
-  }
-  
 }

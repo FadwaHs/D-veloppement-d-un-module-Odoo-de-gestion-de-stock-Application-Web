@@ -12,7 +12,7 @@
 
     <div class="navbar">
 
-    <button type="button" class="btn">Back To Products</button>
+    <button type="button" class="btn" (click)="backToProduct()">Back To Products</button>
     <button type="button" class="btn btn-default">Discard</button>
     <div class="div-1-1">
         <button type="button"id="upQt" class="btn">Update Quantity</button>
@@ -39,8 +39,13 @@
           
         <p>Product name</p>
         <input class="form-control" id="form-control1" type="text" name ="name" placeholder="Product Name" />
-        <div class="productimg">    
-            <img src="assets/add.png" class="img-rounded" width="100" height="80"> 
+        <div class="productimg">  
+          <div class="div-add-photo" id="div-add-photo">
+            <i class="glyphicon glyphicon-pencil" (click)="functionAddFile()"></i>
+            <input type="file" id="file-input" >
+           </div>  
+            <img src="assets/add.png" class="img-rounded" width="100" height="80"
+            (mouseover)="mousseOverPhoto()" (mouseout)="mousseOutPhoto()"> 
           </div>
 
           <div class="checkbox">

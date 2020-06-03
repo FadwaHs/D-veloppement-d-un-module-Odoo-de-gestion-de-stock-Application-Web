@@ -38,20 +38,20 @@
           <ul  class="sous-menu" id="menu2">
             <li>
             <a mat-list-item class="itemNav" [routerLink]="['allTransfers']" routerLinkActive="active">
-              <i class="glyphicon glyphicon-th-list nav-icon1"></i>
+              <i class="glyphicon glyphicon-transfer nav-icon1"></i>
               <span class="item2">All Transfers</span>
             </a> 
-            </li>
-            <li>
-              <a mat-list-item class="itemNav" [routerLink]="['scrap']" routerLinkActive="active">
-                <i class="glyphicon glyphicon-trash nav-icon1"></i>
-                <span class="item2">Scrap</span>
-              </a>
             </li>
             <li>
               <a mat-list-item class="itemNav" [routerLink]="['inventory-adj']" routerLinkActive="active">
                 <i class="glyphicon glyphicon-list-alt nav-icon1"></i>
                 <span class="item2">Inventory Adjustments</span>
+              </a>
+            </li>
+            <li>
+              <a mat-list-item class="itemNav" [routerLink]="['scrap']" routerLinkActive="active">
+                <i class="glyphicon glyphicon-trash nav-icon1"></i>
+                <span class="item2">Scrap</span>
               </a>
             </li>
           </ul>
@@ -122,7 +122,7 @@
                     </a>
                   </li>
                   <li>
-                    <a mat-list-item class="itemNav" [routerLink]="['stock-moves']" routerLinkActive="active">
+                    <a mat-list-item class="itemNav" [routerLink]="['products-move']" routerLinkActive="active">
                         <i class="glyphicon glyphicon-th nav-icon1"></i>
                         <span class="item2">Product Moves</span>
                       </a>
@@ -146,7 +146,7 @@
             </ul>
             <!--configuration-->
           <a mat-list-item  class="itemNav">
-            <i class="glyphicon  glyphicon-asterisk nav-icon1" ></i>
+            <i class="glyphicon glyphicon-wrench nav-icon1" ></i>
             <span class="item1">CONFIGURATION</span>
             <div style="width: 100%;">
             <i class="glyphicon glyphicon-chevron-down nav-icon2" (click)="myFunction('menu7')"></i>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router,ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-createproduct',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateproductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _activatedroute:ActivatedRoute,private _route:Router) { }
 
   ngOnInit(): void {
   }
@@ -35,6 +36,21 @@ export class CreateproductComponent implements OnInit {
     document.getElementById(id2).classList.remove("active");
 
   }
-
+  functionAddFile()
+  {
+    document.getElementById("file-input").click()
+  }
+  mousseOverPhoto()
+  {
+    document.getElementById("div-add-photo").style.display="block";
+  }
+  mousseOutPhoto()
+  {
+    document.getElementById("div-add-photo").style.display="none";
+  }
+  backToProduct()
+  {
+    this._route.navigate(['./product']);
+  }
 
 }

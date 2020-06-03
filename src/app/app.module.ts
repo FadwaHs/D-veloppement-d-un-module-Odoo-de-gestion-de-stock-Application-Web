@@ -34,6 +34,11 @@ import { OperationtypesComponent } from './operationtypes/operationtypes.compone
 import { ProductscategorieComponent } from './productscategorie/productscategorie.component';
 import { CreatoperationsComponent } from './creatoperations/creatoperations.component';
 import { CreatecategorisComponent } from './createcategoris/createcategoris.component';
+import { ProductMoveComponent } from './product-move/product-move.component';
+import { CreateContactPopUpComponent } from './create-receipt/create-contact-pop-up/create-contact-pop-up.component';
+import { CreateTransfersComponent } from './create-transfers/create-transfers.component';
+import { CreateInventoryAdjustmentsComponent } from './create-inventory-adjustments/create-inventory-adjustments.component';
+
 
 @NgModule({
   declarations: [
@@ -58,7 +63,11 @@ import { CreatecategorisComponent } from './createcategoris/createcategoris.comp
     OperationtypesComponent,
     ProductscategorieComponent,
     CreatoperationsComponent,
-    CreatecategorisComponent
+    CreatecategorisComponent,
+    ProductMoveComponent,
+    CreateContactPopUpComponent,
+    CreateTransfersComponent,
+    CreateInventoryAdjustmentsComponent
   ],
   imports: [
     BrowserModule,

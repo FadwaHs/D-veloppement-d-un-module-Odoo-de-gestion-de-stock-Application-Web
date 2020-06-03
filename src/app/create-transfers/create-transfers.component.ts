@@ -1,25 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router,ParamMap } from '@angular/router';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig} from '@angular/material/dialog';
-import { CreateContactPopUpComponent } from './create-contact-pop-up/create-contact-pop-up.component';
-
-
-
 
 @Component({
-  selector: 'app-create-receipt',
-  templateUrl: './create-receipt.component.html',
-  styleUrls: ['./create-receipt.component.css']
+  selector: 'app-create-transfers',
+  templateUrl: './create-transfers.component.html',
+  styleUrls: ['./create-transfers.component.css']
 })
+export class CreateTransfersComponent implements OnInit {
 
-export class CreateReceiptComponent implements OnInit {
 
   date : Date = new Date();
-  
-  typeOperation:string;
-  fromOperation:string;
-  nameOperation:string;
-
   settings=
   {
     bigBanner:true,
@@ -28,69 +18,11 @@ export class CreateReceiptComponent implements OnInit {
     defaultOpen:false,
     closeOnSelect:false
   }
-  constructor(private _activatedroute:ActivatedRoute,private _route:Router,public dialog: MatDialog) {
+  constructor(private _activatedroute:ActivatedRoute,private _route:Router) {
    
   }
 
   ngOnInit(): void {
-    this._activatedroute.paramMap.subscribe(
-      params=>{
-        this.typeOperation=params.get('type');
-        this.fromOperation=params.get('from');
-        this.nameOperation=params.get('name');
-            }
-    );
-   
-    this.FunctionSetSelectValueDefault();
-    
-  }
-  FunctionSetSelectValueDefault()
-  {
-    var selectFromItem=this.nameOperation+": "+this.fromOperation;
-    var x = document.getElementById("select-menu");
-    var test,y=false;
-    for (var i = 0; i < (x as HTMLSelectElement).length; i++)
-     {
-       var value=((x as HTMLSelectElement).options[i].text);
-       
-       test=(value.localeCompare(selectFromItem)); 
-        if(test==0)
-        {
-        (x as HTMLSelectElement).value=(x as HTMLSelectElement).options[i].value;
-         y=true;
-        }
-      
-     }
-     if(y==false)
-     {
-      (x as HTMLSelectElement).value="Default";
-     }
-     
-  }
-  functionSelectChange()
-  {
-    var elem1=document.getElementById('receive-from');
-    var x = document.getElementById("select-menu");
-    
-    var y=(x as HTMLSelectElement).selectedIndex;
-    var selectedItem=x[y].value;
-    var nameOp = selectedItem.slice(0,selectedItem.indexOf(":"));
-    var from = selectedItem.slice(selectedItem.indexOf(":")+1,selectedItem.indexOf("-"));
-    this.nameOperation=nameOp;
-    this.fromOperation=from;
-    var type2=selectedItem.slice(selectedItem.indexOf("-")+1,selectedItem.length);
-    this.typeOperation=type2;
-    this._route.navigate(['./create-receipt/'+nameOp+'/'+type2+'/'+from]);
-    
-    if(type2.localeCompare("Delivery Orders")==0)
-    {
-      elem1.innerHTML="Delivery To";
-    }
-    else
-    {
-      elem1.innerHTML="Receive From";
-    }
-    
   }
 
   FunctionMenuInsideClick(idl1:string,idl2:string,idl3:string,idD1:string,idD2:string,idD3:string)
@@ -105,13 +37,10 @@ export class CreateReceiptComponent implements OnInit {
       x2.style.display = "none";
       x3.style.display = "none";
   }
-
   FunctionSousMenu(id:string)
   {
     document.getElementById(id).classList.toggle("show");
   }
-
-
   AddCellule1(id:string)
   {
     var element1=document.getElementById(id);
@@ -124,7 +53,6 @@ export class CreateReceiptComponent implements OnInit {
     {
        
        var td=document.createElement('td');
-       
        td=(row as HTMLTableRowElement).insertCell(1);
        td.innerHTML="Description";
        td.setAttribute("style","font-size: 15px;font-weight: 500; padding: 10px 5px;");
@@ -147,25 +75,14 @@ export class CreateReceiptComponent implements OnInit {
     else
     {
       if((element2 as HTMLInputElement).checked==false)
-      x2.style.width="70%";
+      x2.style.width="50%";
       (row as HTMLTableRowElement).deleteCell(1);
       for(var i=1;i<numRow;i++)
        {
-        
         table.rows[i].deleteCell(1);
        }
-      
     }
-
-  
   }
-
-
-  FunctionShowOptions(menu:string)
-  {
-    document.getElementById(menu).classList.toggle("show");
-  }
-
 
   functionAddRow()
   {
@@ -175,6 +92,7 @@ export class CreateReceiptComponent implements OnInit {
     var element1=document.getElementById("new-cellule1");
     var element2=document.getElementById("new-cellule2");
     var td=document.createElement('td');
+    var place_holder=Array('Demand','Reserved','Done');
     td=row.insertCell(0);
       td.setAttribute("style","padding-bottom:3px;");
       var div=document.createElement('DIV');
@@ -185,24 +103,26 @@ export class CreateReceiptComponent implements OnInit {
       div.setAttribute("style","border: 1px solid #ccc; border-radius: 3px;background-color:#D2D2FF;");
       div.appendChild(input);
     td.appendChild(div);
+    for(var i=0;i<3;i++){
     var td2=document.createElement('td');
-    td2=row.insertCell(1);
+    td2=row.insertCell(i+1);
     td2.setAttribute("style","padding-bottom:3px;");
        var div2=document.createElement('DIV');
        var input2=document.createElement('input');
        input2.setAttribute("type",'text');
-       input2.setAttribute("value","0.00");
+       input2.setAttribute("placeholder",place_holder[i]);
        input2.setAttribute("style","border:none;padding: 3px 4px; width:100%;");
        div2.setAttribute("style","border: 1px solid #ccc; border-radius: 3px;background-color:#D2D2FF;");
        div2.appendChild(input2);
     td2.appendChild(div2);
+    }
     var td3=document.createElement('td');
-    td3=row.insertCell(2);
+    td3=row.insertCell(4);
     td3.setAttribute("style","padding-bottom:3px;");
          var icon2=document.createElement('i');
          icon2.classList.add("glyphicon");
          icon2.classList.add("glyphicon-trash");
-         icon2.setAttribute("style","padding: 5px 5px;padding-left:18px;");
+         icon2.setAttribute("style","padding: 5px 5px;width:100%;text-align:center;");
          icon2.setAttribute('onclick', 'var table=document.getElementById("table-menu-1");table.deleteRow(this.parentNode.parentNode.parentNode.rowIndex); ');
          var div3=document.createElement('DIV');
          div3.setAttribute("style","border: 1px solid #ccc; border-radius: 3px;");
@@ -247,10 +167,6 @@ export class CreateReceiptComponent implements OnInit {
   
     
   }
- 
-    
-
-
 
   AddCellule2(id:string)
   {
@@ -268,7 +184,7 @@ export class CreateReceiptComponent implements OnInit {
        td=(row as HTMLTableRowElement).insertCell(2);
        else
        td=(row as HTMLTableRowElement).insertCell(1);
-       td.innerHTML="Expeted Date";
+       td.innerHTML="Expected Date";
        td.setAttribute("style","font-size: 15px;font-weight: 500; padding: 10px 5px;");
        x2.style.width="25%";
        var td2=document.createElement('td');
@@ -296,7 +212,7 @@ export class CreateReceiptComponent implements OnInit {
       (row as HTMLTableRowElement).deleteCell(2);
         else{
       (row as HTMLTableRowElement).deleteCell(1);
-      x2.style.width="70%";
+      x2.style.width="50%";
       }
       
       for(var i=1;i<numRow;i++)
@@ -308,13 +224,9 @@ export class CreateReceiptComponent implements OnInit {
        }
     }
   }
-  createContact()
+  FunctionShowOptions(menu:string)
   {
-    const dialogConf=new MatDialogConfig();
-    dialogConf.disableClose=true;
-    dialogConf.autoFocus=true;
-    dialogConf.width="70%";
-    this.dialog.open(CreateContactPopUpComponent,dialogConf);
+    document.getElementById(menu).classList.toggle("show");
   }
   functionBack()
   {
@@ -342,6 +254,7 @@ export class CreateReceiptComponent implements OnInit {
   }
   functionCancel()
   {
-    this._route.navigate(['./receipt/'+this.nameOperation+'/'+this.typeOperation+'/'+this.fromOperation]);
+    this._route.navigate(['allTransfers']);
   }
+
 }

@@ -27,8 +27,8 @@ export class OverviewComponent implements OnInit {
       x.style.display = "block";
     }
   }
-  FunctionClickedInButtonReceipts()
+  FunctionClickedInButtonReceipts(name:string,type:string,from:string)
   {
-    this._route.navigate(['receipt']);
+    this._route.navigate(['receipt',name,type,from]);
   }
 }

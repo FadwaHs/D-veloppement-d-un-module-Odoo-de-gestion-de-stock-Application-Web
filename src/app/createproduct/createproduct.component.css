@@ -138,6 +138,19 @@ div#divright
     margin: 10px;
 
 }
+ .div-add-photo
+{
+    background-color: rgba(0, 123, 255,0.2);
+    padding: 3px;
+    position: absolute;
+    z-index: 4;
+    width: 100px;
+    display: none;
+}
+.div-add-photo input
+{
+    display: none;
+}
 div.productimg
 {
     float: right;
@@ -145,7 +158,8 @@ div.productimg
     background-color:white;
     border: solid 0.5px #888888;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height:90px;
+    height: 90px;
+    width: 100px;
 
 }
 div#buttontop

@@ -8,17 +8,28 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ReceiptsComponent implements OnInit {
 
+  typeOperation:string;
+  fromOperation:string;
+  nameOperation:string;
+
   constructor(private _activatedroute: ActivatedRoute, private _route: Router) {
    }
 
   ngOnInit(): void {
+    this._activatedroute.paramMap.subscribe(
+      params=>{
+        this.typeOperation=params.get('type');
+        this.fromOperation=params.get('from');
+        this.nameOperation=params.get('name');
+            }
+    );
   }
-  Function2(id: string) {
+  FunctionOpenSousMenu(id: string) {
     document.getElementById(id).classList.toggle("show");
   }
   FunctionClickedInButtonReceipts(link:string)
   {
-    this._route.navigate([link]);
+    this._route.navigate([link,this.nameOperation,this.typeOperation,this.fromOperation]);
   }
 
   FunctionMoveFromTableToCards(id1: string, id2: string, id3: string, id4: string) {

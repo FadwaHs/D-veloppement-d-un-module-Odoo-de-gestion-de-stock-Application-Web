@@ -1,0 +1,233 @@
+.header-dialog
+{
+    border-bottom: 1px solid #eee;
+    padding: 24px;
+}
+.header-dialog-title
+{
+    font-size: 20px;
+    font-weight: 500;
+}
+.header-dialog-icon
+{
+    float:right;
+}
+/*-------------------------------------------------------------------*/
+.body-dialog
+{
+    /* background-color: salmon; */
+    padding: 24px;
+    overflow: auto;
+}
+
+.section1-left 
+{
+
+  width: 70%;
+  display: inline-block;
+}
+.section1-left .left-input1
+{
+    display: block;
+    width: 100%;
+    height: 36px;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    background-color: 	rgba(0, 123, 255,0.2);
+}
+.section1-left label
+{
+    font-weight: 500;
+    margin-right: 20px;
+}
+.section1-left label input
+{
+    margin-right: 10px;
+}
+.section1-left .left-input2-div
+{
+    display: block;
+    width: 100%;
+    height: 28px;
+    
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+.section1-left .left-input2-div .left-input2
+{
+    border: none;
+    width: 97%;
+    padding: 3px;
+}
+.section1-left .left-input2-div .left-input2-icon
+{
+    font-size: 10px;
+}
+.section1-right
+{
+  width: 30%;
+  float: right;
+  padding-left: 150px;
+}
+.section1-right .div-add-photo
+{
+    background-color: rgba(0, 123, 255,0.2);
+    padding: 3px;
+    position: absolute;
+    z-index: 4;
+    width: 100px;
+    display: none;
+}
+.section1-right .div-add-photo input
+{
+    display: none;
+}
+.photo-input
+{
+    height: 100px;
+    width: 100px;
+    border: 0.5px solid #ccc;
+    
+}
+.photo-input img
+{
+    height: 100px;
+    width: 100px;
+    text-align: center;
+}
+/*-------------------------------------------*/
+.body-dialog-section2
+{
+   margin-top: 50px;
+   padding: 0px 20px;
+}
+.body-dialog-section2 .body-dialog-section2-1 .table1
+{
+   width: 100%;
+}
+
+.table1 .row1 .cel1,
+.table1 .row1 .cel3,
+.table1 .row2 .cel1,
+.table1 .row2 .cel3,
+.table1 .row3 .cel3,
+.table1 .row3 .cel1,
+.table1 .row4 .cel1,
+.table1 .row4 .cel3,
+.table1 .row5 .cel1,
+.table1 .row5 .cel3,
+.table1 .row6 .cel3
+{
+  border-right: 1px solid #ccc;
+  width: 15%;
+  font-weight: 500;
+}
+.table1 .row1 .cel2,
+.table1 .row1 .cel4,
+.table1 .row2 .cel2,
+.table1 .row2 .cel4,
+.table1 .row3 .cel2,
+.table1 .row3 .cel4,
+.table1 .row4 .cel2,
+.table1 .row4 .cel4,
+.table1 .row5 .cel2,
+.table1 .row5 .cel4,
+.table1 .row6 .cel4
+{
+  padding-bottom: 5px;
+  width: 35%;
+  padding-left:7px;
+}
+.row1 .cel2 input,
+.table1 .row1 .cel4 input,
+.table1 .row2 .cel2 input,
+.table1 .row2 .cel4 input,
+.table1 .row3 .cel4 input,
+.table1 .row4 .cel2 input,
+.table1 .row4 .cel4 input,
+.table1 .row5 .cel2 input,
+.table1 .row5 .cel4 input,
+.table1 .row6 .cel4 input
+{
+    width: 90%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 3px;
+}
+.body-dialog-section2 .body-dialog-section2-1 .table1 .row3 .cel2 input.input1,
+.body-dialog-section2 .body-dialog-section2-1 .table1 .row3 .cel2 input.input2
+{
+    width: 35%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 3px;
+    margin-right: 5px;
+    
+}
+.body-dialog-section2 .body-dialog-section2-1 .table1 .row3 .cel2 input.input3
+{
+    width: 17%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 3px;
+}
+/**--------------------------------------------------------------*/
+.footer-dialog
+{
+    border-top: 1px solid #eee;
+    padding: 24px;
+}
+.footer-dialog button 
+{
+    color: white;
+    background-color:#007bff;
+    border: none;
+    padding: 3px 6px;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 3px;
+}
+.footer-dialog .button1
+{
+    margin-right: 7px;
+}
+
+
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 100%;
+    z-index: 1;
+  }
+  
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+.dropdown-content a:hover {background-color:	rgba(0, 123, 255,0.2);}
+   /* .dropdown:hover .dropdown-content {display: block;}  */
+
+.show
+{
+    display: block;
+}

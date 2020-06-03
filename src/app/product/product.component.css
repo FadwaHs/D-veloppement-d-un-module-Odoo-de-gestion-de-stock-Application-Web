@@ -28,10 +28,7 @@ head2 begin
 */
 .head2
 {
-
     margin-bottom: 10px;
-     padding-right: 97px;
-
 }
 .head-principal
 {
@@ -52,8 +49,10 @@ head2 begin
 {
     float: right;
     display: block;
-    margin-right: 0px;
-    
+}
+.none
+{
+    display: none !important;
 }
 /*Dropdown Button */
 .dropbtn {
@@ -270,7 +269,7 @@ div#kanbanproduct
 #btnkanbanview
 {
     cursor: pointer;
-    margin-left: 18px;
+    margin-left: 12px;
     margin-right:5px;
 }
 
@@ -282,6 +281,5 @@ div#kanbanproduct
         margin-right: 2px;
     }
 }
-
 
 

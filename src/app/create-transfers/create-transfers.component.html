@@ -4,9 +4,9 @@
     <div class="head-principal">
        <div class="row head">
     
-        <div class="section-title">
-            <button type="button" class="btn" (click)="functionBack()">Back To Inventory Overview</button>
-        </div>
+         <div class="section-title">
+            <span>Transfers/New</span>
+         </div>
           
        </div>
        <div class="row head2">
@@ -27,16 +27,7 @@
     </div>
        <!-- End of head-->
        <div class="main">
-         <div class="title">
-            <h1 class="section-title2">{{fromOperation}}</h1>
-         </div>
          <div class="principal">
-           <div class="header">
-              <div class="inside-header">
-               <i class="glyphicon glyphicon-resize-vertical"></i>
-               <span>Operations</span>
-            </div>
-           </div>
            <!-------Information Haut------->
            <div class="inside1">
               <div class="inside1">
@@ -44,13 +35,15 @@
                     <!---First Row-->
                     <tr>
                        <!--First cellule-->
-                     <td class="label-tab" id="receive-from">Receive From</td>
+                     <td class="label-tab">Contact</td>
                      <td class="input-tab-td dropdown">
                         <div class="input-tab">
                            <input type="text">
                            <i (click)="FunctionShowOptions('myDropdown1')" class="glyphicon glyphicon-triangle-bottom" > </i>
                               <div id="myDropdown1" class="dropdown-content1">
-                                 <a (click)="createContact()">Create and Edit..</a>
+                                 <a>Contact1</a>
+                                 <a>Contact2</a>
+                                 <a>Contact3</a>
                               </div>  
                         </div>
                       </td> 
@@ -75,7 +68,7 @@
                         <td class="label-tab">Operation Type</td>
                         <td class="input-tab-td" id="operation-type">
                            <div class="input-tab" >
-                              <select id="select-menu" (change)="functionSelectChange()">
+                              <select id="select-menu">
                                  <option disabled selected value value="Default"> ---- </option>
                                  <option value="Delivery Mai:YourCompany-Delivery Orders">Delivery Mai: Your Company</option>
                                  <option value="Receipts Houda:YourCompany-Receipts">Receipts Houda: Your Company</option>
@@ -116,8 +109,13 @@
                   <tr class="table-header" id="table-header">
                      <!--cellule-->
                      <td class="product-cellule" id="product-cellule">Product</td>
+                      <!--cellule-->
+                      <td class="other-cellule">Demand</td>
+                      <!--cellule-->
+                      <td class="other-cellule">Reserved</td>
                      <!--cellule-->
-                     <td class="status-cellule" id="done-cellule">Done</td>
+                     <td class="other-cellule" id="done-cellule">Done</td>
+                    
                      <!--cellule-->
                      <td class="dropdown" id="menu-cellule"><i (click)="FunctionSousMenu('myDropdown')"class="dropbtn glyphicon glyphicon-option-vertical"></i>
                         <div id="myDropdown" class="dropdown-content">
@@ -135,6 +133,17 @@
               <div class="div2" id='d2'>
                <span class="Informations-title" >Other Information</span>
                <table class="table-menu2">
+                  <tr>
+                     <td class="cellule-left">Shipping Policy</td>
+                     <td class="cellule-right">
+                       <div class="input-tab-select">
+                         <select>
+                            <option selected>As soon as possible</option>
+                            <option>When all products are ready</option>
+                         </select>
+                       </div>
+                     </td>
+                  </tr>
                   <tr>
                      <td class="cellule-left">Priority</td>
                      <td class="cellule-right">
@@ -156,12 +165,6 @@
                            <a (click)="functionSelectOption('responsable3')">responsable3</a>
                         </div> 
                      </div>
-                   </td>
-                </tr>
-                <tr>
-                   <td class="cellule-left">Procurement Group Company</td>
-                   <td class="cellule-right">
-                     <span>My Company</span>  
                    </td>
                 </tr>
                </table>

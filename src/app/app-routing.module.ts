@@ -21,6 +21,10 @@ import {OperationtypesComponent} from './operationtypes/operationtypes.component
 import {ProductscategorieComponent} from './productscategorie/productscategorie.component';
 import {CreatoperationsComponent} from './creatoperations/creatoperations.component';
 import {CreatecategorisComponent} from './createcategoris/createcategoris.component';
+import { ProductMoveComponent } from './product-move/product-move.component';
+import { CreateTransfersComponent } from './create-transfers/create-transfers.component';
+import { CreateInventoryAdjustmentsComponent } from './create-inventory-adjustments/create-inventory-adjustments.component';
+
 
 
 
@@ -74,11 +78,11 @@ const routes: Routes = [
     component:ProcurementExceptionsComponent
   },
   {
-    path:'receipt',
+    path:'receipt/:name/:type/:from',
     component:ReceiptsComponent
   },
   {
-    path:'create-receipt',
+    path:'create-receipt/:name/:type/:from',
     component:CreateReceiptComponent
   },
   {
@@ -112,8 +116,19 @@ const routes: Routes = [
   {
     path: 'createcategoris',
     component: CreatecategorisComponent
+  },
+  {
+    path: 'products-move',
+    component: ProductMoveComponent
+  },
+  {
+    path:'create-transfer',
+    component:CreateTransfersComponent
+  },
+  {
+    path:'create-Inv-adj',
+    component:CreateInventoryAdjustmentsComponent
   }
-  
 ];
 
 @NgModule({

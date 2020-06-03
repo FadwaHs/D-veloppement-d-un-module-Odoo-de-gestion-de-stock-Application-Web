@@ -6,7 +6,7 @@
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 5px;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .input-group .input-group-btn .btn i{
@@ -28,10 +28,7 @@ head2 begin
 */
 .head2
 {
-
     margin-bottom: 10px;
-     padding-right: 97px;
-
 }
 .head-principal
 {
@@ -52,6 +49,10 @@ head2 begin
 {
     float: right;
     display: block;
+}
+.none
+{
+    display: none !important;
 }
 /*Dropdown Button */
 .dropbtn {
@@ -105,16 +106,22 @@ head2 end
     margin-left: 15px !important;    
 }
 
+
+div#divkanbanview
+{
+    display: none;
+}
 .main
 {
     margin-top: 100px;
-   
 }
 @media (max-width:428px)
 {
 .button-group2
 {
     width: 100%;
+    
+   
 }
 .head2
 {
@@ -133,12 +140,7 @@ head2 end
     margin-top: 5px;
     margin-bottom: 5px;
     width: 330px;
-}
-
-.input-group
-{
-    padding-left: 10px;
-    width: 370px;
+  
 }
 
 .section-title
@@ -156,7 +158,8 @@ head2 end
 }
 .main
 {
-    margin-top: 150px;
+   margin-top: 180px;
+
 }
 }
 
@@ -178,7 +181,7 @@ head2 end
     {
         
         margin-right: 0px !important;
-        margin-left: 0px !important;     
+        margin-left: 0px !important;    
         
     }
     .col-xs-4
@@ -202,5 +205,193 @@ head2 end
       padding-left: 20px;
     }
 }
+.button-create
+{
+    background-color:#007bff;
+    padding: 8px;
+    margin-right: 10px;
+    font-size: 15px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    
+}
+button#exportbtn
+{
+    margin-left: 10px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+#btnCompView
+{
+    cursor: pointer;
+    margin-left: 12px;
+    margin-right:5px;
+}
+
 
 /*-------------------------------------------------------------------------------------*/
+/*style of table*/
+
+.table-transfers
+{
+    background-color: white;
+    overflow: auto;
+    width: 1105px;
+}
+
+.table-transfers thead
+{
+    background-color: #eee;
+}
+.table-transfers tr
+{
+    border-bottom: 1px solid #eee;
+}
+.table-transfers thead th,.table-transfers tbody td
+{
+    padding: 8px 8px;
+}
+.input-cel
+{
+    width: 3%;
+}
+.icon-cel
+{
+  cursor: pointer;
+}
+.table-header-body
+{
+    width: 95%;
+}
+
+.dropdown {
+    position: relative;
+    
+  }
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 2px;
+}
+.dropdown-content div
+{
+    font-weight: 400;
+    padding: 8px 16px;
+}
+.dropdown-content div:hover
+{
+    background-color: #eee;
+}
+.dropdown-content div input
+{
+  margin-right: 5px;
+}
+.show
+{
+    display: block;
+}
+
+/*end style of table */
+
+.cards
+{
+    display: none;
+}
+
+.col-md-4
+{
+    display: inline-block;
+    height: 80px;
+    width: 340px;
+    margin: 5px;
+    border:#d2d2ff 2px solid;
+    border-radius: 3px;
+    background-color: white;
+    -webkit-box-shadow: 0 0 6px 4px #DCDCDC;
+   -moz-box-shadow: 0 0 6px 4px #DCDCDC;
+    box-shadow: 0 0 6px 4px #DCDCDC;
+    border-radius: 4px;
+    padding: 10px 8px !important;
+}
+.col-md-4 .left
+{
+    
+     display: inline-block;
+     width: 50%;
+     
+    
+}
+.col-md-4 .right
+{
+    
+     display: inline-block;
+     width: 50%;
+     
+     
+    
+}
+.col-md-4 .left .text1
+{
+  
+     display: inline-block;
+     width: 100%;
+     margin-bottom: 20px;
+     
+}
+.col-md-4 .left .text2
+{
+     display: inline-block;
+     width: 100%;
+     text-align:start;
+     
+}
+.col-md-4 .left .text2 i
+{
+    color: #ccc;
+    padding-left: 3px;
+    padding-top: 3px;
+    font-size: 15px;
+}
+.col-md-4 .right .text1
+{
+   
+     display: inline-block;
+     width: 100%;
+     margin-bottom: 20px;
+     text-align: end;
+    
+}
+.col-md-4 .right .text1 button
+{
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 2px;
+}
+.col-md-4 .right .text2
+{
+    
+   
+     display: inline-block;
+     width: 100%;
+     text-align: end;
+     
+    
+}
+@media (max-width:735px)
+{
+    .inside
+    {
+       text-align: center;
+      
+    }
+    .col-md-4 
+    {
+        text-align: start;
+    }
+}

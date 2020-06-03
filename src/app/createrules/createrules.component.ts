@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CreatecompanyComponent } from '../createcompany/createcompany.component';
 
 @Component({
@@ -9,7 +10,7 @@ import { CreatecompanyComponent } from '../createcompany/createcompany.component
 })
 export class CreaterulesComponent implements OnInit {
 
-  constructor( private Dialog : MatDialog) { }
+  constructor( private Dialog : MatDialog,private _activatedroute:ActivatedRoute,private _route:Router) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +21,9 @@ export class CreaterulesComponent implements OnInit {
     dialogconfig.disableClose = true;
     this.Dialog.open(CreatecompanyComponent, dialogconfig);
   }
-
+  functionBackReorderingRules()
+  {
+    this._route.navigate(['reo-rules']);
+  }
 }
 

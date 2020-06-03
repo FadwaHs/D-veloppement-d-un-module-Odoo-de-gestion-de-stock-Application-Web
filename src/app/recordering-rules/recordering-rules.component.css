@@ -13,6 +13,7 @@
     color: #007bff;
 }
 
+
 .input-group
 {
     float: right;
@@ -28,10 +29,7 @@ head2 begin
 */
 .head2
 {
-
-    margin-bottom: 10px;
-     padding-right: 97px;
-
+  margin-bottom: 10px;
 }
 .head-principal
 {
@@ -96,6 +94,10 @@ head2 begin
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+.none
+{
+    display: none;
+}
 /*
 head2 end
 */
@@ -222,7 +224,7 @@ button#exportbtnrules
 }
 #btnkanbanviewrules
 {
-    margin-left: 30px;
+    margin-left: 12px;
     cursor: pointer;
     margin-right:5px;
 }

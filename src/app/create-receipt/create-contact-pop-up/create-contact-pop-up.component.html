@@ -1,0 +1,104 @@
+<div class="header-dialog">
+    <span class="header-dialog-title">Create:Contact</span>
+    <i (click)="close()"class="glyphicon glyphicon-remove header-dialog-icon"></i>
+</div>
+<div class="body-dialog">
+    <div class="body-dialog-section1">
+          <div class="section1-left">
+             <label><input type="radio" id="radio1" (click)="functionRadioButton1()" checked>Individual</label> 
+             <label><input type="radio" id="radio2" (click)="functionRadioButton2()">Company</label> 
+             <input class="left-input1" type="text" placeholder="Name">
+             <div class="left-input2-div dropdown" id="input-company">
+               <input class="left-input2" type="text" placeholder="Company" id="input-name-company">
+               <i (click)="functionShowCompanies('mydropdown1')" class="left-input2-icon glyphicon glyphicon-triangle-bottom"></i>
+               <div id="mydropdown1" class="dropdown-content">
+                <a class="option-dropdown" (click)="functionChooseOption('Company1')">Company1</a>
+                <a class="option-dropdown" (click)="functionChooseOption('Company2')" >Company2</a>
+                <a class="option-dropdown" (click)="functionChooseOption('Company3')" >Company3</a>
+               </div> 
+            </div>
+          </div>
+          <div class="section1-right">
+             <div class="photo-input">
+                <div class="div-add-photo" id="div-add-photo">
+                    <i class="glyphicon glyphicon-pencil" (click)="functionAddFile()"></i>
+                    <input type="file" id="file-input" >
+                </div>
+                 <img   src={{urlImage}} (mouseover)="mousseOverPhoto()" (mouseout)="mousseOutPhoto()">
+                
+             </div>
+         </div>
+    </div>
+    <div class="body-dialog-section2">
+        <div class="body-dialog-section2-1">
+            <table class="table1" >
+                <tr class="row1">
+                    <td class="cel1">Company Adress</td>
+                    <td class="cel2">
+                        <input type="text" placeholder="Street">
+                    </td>
+                    <td class="cel3">Job Position</td>
+                    <td class="cel4">
+                        <input type="text" placeholder="e.g Sales Director">
+                    </td>
+                </tr>
+                <tr class="row2">
+                    <td class="cel1"></td>
+                    <td class="cel2">
+                        <input type="text" placeholder="Street2">
+                    </td>
+                    <td class="cel3">Phone</td>
+                    <td class="cel4">
+                        <input type="text" >
+                    </td>
+                </tr>
+                <tr class="row3">
+                    <td class="cel1"></td>
+                    <td class="cel2">
+                        <input class="input1" type="text" placeholder="City">
+                        <input class="input2"  type="text" placeholder="State">
+                        <input class="input3" type="text" placeholder="ZIP">
+                    </td>
+                    <td class="cel3">Mobile</td>
+                    <td class="cel4">
+                        <input type="text" >
+                    </td>
+                </tr>
+                <tr class="row4">
+                    <td class="cel1"></td>
+                    <td class="cel2">
+                        <input type="text" placeholder="Country">
+                    </td>
+                    <td class="cel3">Email</td>
+                    <td class="cel4">
+                        <input type="text" >
+                    </td>
+                </tr>
+                <tr class="row5">
+                    <td class="cel1">Tax ID</td>
+                    <td class="cel2">
+                        <input type="text" placeholder="e.g BET567HNKOOUJHN8">
+                    </td>
+                    <td class="cel3">Website Link</td>
+                    <td class="cel4">
+                        <input type="text" placeholder="e.g https://www.aaa.com" >
+                    </td>
+                </tr>
+                <tr class="row6">
+                    <td class="cel1"></td>
+                    <td class="cel2">
+                        
+                    </td>
+                    <td class="cel3">Title</td>
+                    <td class="cel4">
+                        <input type="text" placeholder="e.g Mister" >
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="footer-dialog">
+    <button class="button1">Save</button>
+    <button class="button2">Discard</button>
+</div>

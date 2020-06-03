@@ -5,7 +5,7 @@
     <div class="row head">
     
         <div class="section-title">
-           <span>OverView / Receipts</span>
+           <span>OverView / {{nameOperation}}</span>
         </div>
            <div class="input-group">
                <input type="text" class="form-control" placeholder="Search" name="search">
@@ -18,7 +18,7 @@
        <div class="row head2">
            <div class="button-group2">
             <div class="dropdown none" id="dropdown-list1" >
-              <button (click)="Function2('myDropdown4')" class="dropbtn">
+              <button (click)="FunctionOpenSousMenu('myDropdown4')" class="dropbtn">
                    Print
                    <i class="glyphicon glyphicon-triangle-bottom icon"></i>
               </button>
@@ -29,7 +29,7 @@
               </div>
           </div>
             <div class="dropdown none" id="dropdown-list2">
-              <button (click)="Function2('myDropdown5')" class="dropbtn">
+              <button (click)="FunctionOpenSousMenu('myDropdown5')" class="dropbtn">
                   Action
                   <i class="glyphicon glyphicon-triangle-bottom icon"></i>
               </button>
@@ -40,7 +40,7 @@
               </div>
           </div>
             <div class="dropdown">
-                <button (click)="Function2('myDropdown1')" class="dropbtn">
+                <button (click)="FunctionOpenSousMenu('myDropdown1')" class="dropbtn">
                     <i class="glyphicon glyphicon-filter"></i>
                     Filters
                     <i class="glyphicon glyphicon-triangle-bottom icon"></i>
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="dropdown">
-                <button (click)="Function2('myDropdown2')" class="dropbtn">
+                <button (click)="FunctionOpenSousMenu('myDropdown2')" class="dropbtn">
                     <i class="glyphicon glyphicon-tasks"></i>
                     Group By
                     <i class="glyphicon glyphicon-triangle-bottom icon"></i>
@@ -64,7 +64,7 @@
                 </div>
             </div>
             <div class="dropdown">
-                <button (click)="Function2('myDropdown3')" class="dropbtn">
+                <button (click)="FunctionOpenSousMenu('myDropdown3')" class="dropbtn">
                     <i class="glyphicon glyphicon-star"></i>
                     Favorites
                     <i class="glyphicon glyphicon-triangle-bottom icon"></i>
@@ -95,7 +95,7 @@
     </div>
        <!-- End of head-->
        <div class="main">
-         <span class="section-title2">Your Company</span>
+         <span class="section-title2">{{fromOperation}}</span>
          <div id="table">
          <table id ="tablereceipts" class="table table-hover">
            <tr class="table-header">

@@ -2,16 +2,11 @@
 .section-title
 {
     float: left;
-    margin-bottom: 5px;
-    margin-top: 10px; 
-}
-.section-title2
-{
-    
     color: #2a3f5a;
     font-size: 20px;
     font-weight: 500;
-    padding-top: 10px;
+    margin-bottom: 5px;
+    margin-top: 25px;
 }
 
 /* End style de head*/
@@ -369,7 +364,7 @@ tr
 
     padding: 3px 4px;
 
-    background-color: rgba(0, 123, 255,0.2);;
+    background-color: rgba(0, 123, 255,0.2);
 
 }
 
@@ -377,10 +372,10 @@ tr
 
 {
 
-    font-size: 10px;
-
-    margin-left: 10px;
-
+    font-size: 8px;
+    float: right;
+    margin-top: 8px;
+    margin-right: 5px;
 } 
 
 #operation-type div
@@ -543,17 +538,39 @@ tr
    margin-right: 5px;
 
 }
+.table-menu2 .cellule-right .input-tab-select
+{
+
+    display: inline;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding: 5px;
+   margin-right: 5px;
+   background-color:  rgba(0, 123, 255,0.2);
+}
 
 .table-menu2 .cellule-right .input-tab input
 
 {
 
     width: 300px;
-
     border: none;
     font-weight: 400;
 }
 
+.table-menu2 .cellule-right .input-tab-select select
+{
+
+    width: 300px;
+    border: none;
+    font-weight: 400;
+    background-color: transparent;
+}
+.table-menu2 .cellule-right .input-tab-select select:focus
+{
+  background-color: transparent;
+  outline-width: 0;
+}
 .table-menu2 .cellule-right .input-tab i
 
 {
@@ -696,17 +713,17 @@ textarea:focus, input:focus{
 
 {
 
-    width: 70%;
+    width: 50%;
 
 }
 
 
 
-.div1 .table-menu1 .table-header .status-cellule
+.div1 .table-menu1 .table-header .other-cellule
 
 {
 
-    width: 25%;
+    width: 15%;
 
 }
 

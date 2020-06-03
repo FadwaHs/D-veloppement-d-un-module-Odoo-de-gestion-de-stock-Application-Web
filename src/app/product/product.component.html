@@ -17,6 +17,28 @@
      </div>
      <div class="row head2">
          <div class="button-group2">
+          <div class="dropdown none" id="dropdown-list1" >
+            <button (click)="Function2('myDropdown4')" class="dropbtn">
+                 Print
+                 <i class="glyphicon glyphicon-triangle-bottom icon"></i>
+            </button>
+            <div id="myDropdown4" class="dropdown-content">
+              <a href="#">Archived</a>
+              <a href="#">Add Custom Filter</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div>
+          <div class="dropdown none" id="dropdown-list2">
+            <button (click)="Function2('myDropdown5')" class="dropbtn">
+                Action
+                <i class="glyphicon glyphicon-triangle-bottom icon"></i>
+            </button>
+            <div id="myDropdown5" class="dropdown-content">
+              <a href="#">Archived</a>
+              <a href="#">Add Custom Filter</a>
+              <a href="#">Link 3</a>
+            </div>
+        </div>
           <div class="dropdown">
               <button (click)="Function2('myDropdown1')" class="dropbtn">
                   <i class="glyphicon glyphicon-filter"></i>
@@ -57,9 +79,7 @@
               </button>
               <button  id="btnlistview" class="btn btn-default active" (click)="Activer('btnlistview','btnkanbanview')" (click)="Openview('divlistview','divkanbanview')">
                 <i class="glyphicon glyphicon-th-list"></i> 
-            </button>
-
-                         
+            </button>                     
          </div>
             <button class="button-create" (click)="ClickedInButtonCreateProducts()">Create</button>
             <button  class="btn btn-default">Import</button>
@@ -75,7 +95,7 @@
         <thead>
           <tr>
             <th>
-              
+              <label><input type="checkbox" id="checkbox-principal" (click)="FunctionCheckBox('checkbox','checkbox-principal')"></label>
             </th>
             <th>Internal References</th>
             <th>Name</th>
@@ -90,7 +110,7 @@
         <tbody>
           <tr>
             <td>
-              <label><input type="checkbox" value=""></label></td>
+              <label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
             <td>John</td>
             <td>Doe</td>
             <td>john@example.com</td>
@@ -99,7 +119,7 @@
             <td>john@example.com</td>
           </tr>
           <tr>
-              <td><label><input type="checkbox" value=""></label></td>
+              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
             <td>Mary</td>
             <td>Moe</td>
             <td>mary@example.com</td>
@@ -108,7 +128,7 @@
             <td>john@example.com</td>
           </tr>
           <tr>
-              <td><label><input type="checkbox" value=""></label></td>
+              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
             <td>July</td>
             <td>Dooley</td>
             <td>july@example.com</td>
@@ -117,7 +137,7 @@
             <td>john@example.com</td>
           </tr>
           <tr>
-              <td><label><input type="checkbox" value=""></label></td>
+              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
             <td>John</td>
             <td>Doe</td>
             <td>john@example.com</td>
@@ -126,7 +146,7 @@
             <td>john@example.com</td>
           </tr>
           <tr>
-              <td><label><input type="checkbox" value=""></label></td>
+              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
             <td>Mary</td>
             <td>Moe</td>
             <td>mary@example.com</td>
@@ -135,7 +155,7 @@
             <td>john@example.com</td>
           </tr>
           <tr>
-              <td><label><input type="checkbox" value=""></label></td>
+              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
             <td>July</td>
             <td>Dooley</td>
             <td>july@example.com</td>
@@ -144,7 +164,7 @@
             <td>john@example.com</td>
           </tr>
           <tr>
-              <td><label><input type="checkbox" value=""></label></td>
+              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
             <td>John</td>
             <td>Doe</td>
             <td>john@example.com</td>
@@ -153,7 +173,7 @@
             <td>john@example.com</td>
           </tr>
           <tr>
-              <td><label><input type="checkbox" value=""></label></td>
+              <td><label><input type="checkbox"class="checkbox" (click)="FunctionCheckBox2()"></label></td>
             <td>Mary</td>
             <td>Moe</td>
             <td>mary@example.com</td>
@@ -162,7 +182,7 @@
             <td>john@example.com</td>
           </tr>
           <tr>
-              <td><label><input type="checkbox" value=""></label></td>
+              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
             <td>July</td>
             <td>Dooley</td>
             <td>july@example.com</td>
@@ -171,7 +191,7 @@
             <td>john@example.com</td>
           </tr>
           <tr>
-              <td><label><input type="checkbox" value=""></label></td>
+              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
             <td>John</td>
             <td>Doe</td>
             <td>john@example.com</td>
@@ -180,7 +200,7 @@
             <td>john@example.com</td>
           </tr>
           <tr>
-              <td><label><input type="checkbox" value=""></label></td>
+              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
             <td>Mary</td>
             <td>Moe</td>
             <td>mary@example.com</td>
@@ -189,7 +209,7 @@
             <td>john@example.com</td>
           </tr>
           <tr>
-              <td><label><input type="checkbox" value=""></label></td>
+              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
             <td>July</td>
             <td>Dooley</td>
             <td>july@example.com</td>
@@ -198,7 +218,7 @@
             <td>john@example.com</td>
           </tr>
           <tr>
-              <td><label><input type="checkbox" value=""></label></td>
+              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
             <td>John</td>
             <td>Doe</td>
             <td>john@example.com</td>
