@@ -1,7 +1,10 @@
 .header-dialog
 {
-    border-bottom: 1px solid #eee;
-    padding: 24px;
+    margin-bottom: 20px;
+    border-bottom:solid black 1px;
+    padding-top: 10px;
+    padding-bottom: 24px;
+
 }
 .header-dialog-title
 {
@@ -11,6 +14,7 @@
 .header-dialog-icon
 {
     float:right;
+    cursor: pointer;
 }
 /*-------------------------------------------------------------------*/
 .body-dialog
@@ -76,7 +80,7 @@
     background-color: rgba(0, 123, 255,0.2);
     padding: 3px;
     position: absolute;
-    z-index: 4;
+    z-index: 4; 
     width: 100px;
     display: none;
 }
@@ -174,27 +178,6 @@
     padding: 3px;
 }
 /**--------------------------------------------------------------*/
-.footer-dialog
-{
-    border-top: 1px solid #eee;
-    padding: 24px;
-}
-.footer-dialog button 
-{
-    color: white;
-    background-color:#007bff;
-    border: none;
-    padding: 3px 6px;
-    font-weight: 500;
-    font-size: 16px;
-    border-radius: 3px;
-}
-.footer-dialog .button1
-{
-    margin-right: 7px;
-}
-
-
 
 .dropbtn {
     background-color: #4CAF50;
@@ -230,4 +213,24 @@
 .show
 {
     display: block;
+}
+div.saveanddiscars
+{
+    border-top:solid black 1px;
+    margin-top:20px;
+    text-align: right;
+    
+}
+button.savestatus
+{
+    background-color:#007bff;
+    padding: 8px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+  
 }

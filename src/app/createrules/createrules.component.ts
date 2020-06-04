@@ -3,7 +3,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CreatecompanyComponent } from '../createcompany/createcompany.component';
 
-@Component({
+@Component({ 
   selector: 'app-createrules',
   templateUrl: './createrules.component.html',
   styleUrls: ['./createrules.component.css']

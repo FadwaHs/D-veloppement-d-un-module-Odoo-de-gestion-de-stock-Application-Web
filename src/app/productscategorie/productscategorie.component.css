@@ -45,7 +45,7 @@ head2 begin
 .
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
-/*
+/* 
 head2 end
 */
 .row
@@ -168,6 +168,10 @@ table td
 {
   cursor: pointer;
   text-align: left;
+}
+#iconchek
+{
+    width: 40px;
 }
 
 

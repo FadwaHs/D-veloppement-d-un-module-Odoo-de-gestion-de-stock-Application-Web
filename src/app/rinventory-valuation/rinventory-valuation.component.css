@@ -1,4 +1,3 @@
-/* Begin style de head*/
 .section-title
 {
     float: left;
@@ -6,9 +5,8 @@
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 5px;
-    margin-top: 25px;
+    margin-top: 20px;
 }
-
 .input-group .input-group-btn .btn i{
     color: #007bff;
 }
@@ -30,7 +28,8 @@ head2 begin
 {
 
     margin-bottom: 10px;
-     padding-right: 97px;
+     padding-right: 0px;
+     
 
 }
 .head-principal
@@ -52,6 +51,14 @@ head2 begin
 {
     float: right;
     display: block;
+}
+.icon
+{
+    font-size: 12px;
+}
+.none
+{
+    display: none !important;
 }
 /*Dropdown Button */
 .dropbtn {
@@ -77,7 +84,7 @@ head2 begin
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: #ffffff;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -107,7 +114,7 @@ head2 end
 
 .main
 {
-    margin-top: 100px;
+    margin-top: 120px;
    
 }
 @media (max-width:428px)
@@ -123,10 +130,11 @@ head2 end
 }
 @media (max-width:650px)
 {
-.button-group
+.head2
 {
-    text-align: center;
+    padding-right: 0px;
 }
+
 .input-group
 {
     float: left;
@@ -153,10 +161,16 @@ head2 end
     display: block;
     width: 100%;
     padding-left: 10px;
+    
 }
+
 .main
 {
-    margin-top: 150px;
+    margin-top: 200px;
+}
+
+table{
+   width: 1200px;
 }
 }
 
@@ -165,11 +179,10 @@ head2 end
    .head-principal
    {
        width: 100%;
-       padding-right: 20px;
+       padding-right: 0px;
    }
-   .button-group
-   {
-    text-align: center;
+   .head{
+    padding-right: 20px;
    }
 }
 @media (max-width:950px)
@@ -181,26 +194,113 @@ head2 end
         margin-left: 0px !important;     
         
     }
-    .col-xs-4
-    {
-        margin-left: 0px !important;
-        width: 300px;
-        height: 200px; 
-    }
+   
    
 }
 @media (max-width:977px)
 {
-   .head-principal
+   .head
    {
-       padding-right: 20px;
+       padding-right: 50px;
    }
 }
 @media only screen and (max-width: 1200px) {
     .head-principal{
-      padding-right: 50px;
+  
       padding-left: 20px;
+      padding-right: 40px;
+    }
+    .head
+    {
+        padding-right: 20px;
     }
 }
+/*------------------------------------------------------------------------*/
+#btn1list
+{
+  
+    cursor: pointer;
+  
+}
+#btn2kanban
+{
+    cursor: pointer;
+    margin-left: 18px;
+    margin-right:5px;
+}
 
-/*-------------------------------------------------------------------------------------*/
+@media (max-width:428px)
+{
+    #btn1list
+    {
+        margin-left: 0px;
+        margin-right: 2px;
+    }
+}
+.button-measures
+{
+    background-color:#007bff;
+    padding: 8px;
+    font-size: 15px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    
+}
+#chekedQT
+{
+    font-weight: bold;
+}
+div#canvasdiv
+{  
+    
+    background-color: white;
+    height: 700px;
+}
+button#btnchart
+{
+    cursor: pointer;
+    margin-left: 10px;
+}
+div#divboundery
+{
+    display: none;
+    background-color: white;
+    height: 700px;
+}
+div#divtable
+{ 
+    display: none; 
+    margin-top: 130px;
+    padding-top: 10px;
+    
+   
+}
+button#exportbtn
+{
+    display: none;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+table#tableQuantity
+{
+    background-color: white;
+    color: #0a8ea4;
+   
+}
+thead{
+    background-color: #eeeeee;
+    color: #000;
+    cursor: pointer;
+  
+}
+table td
+{
+  cursor: pointer;
+
+}
+table tr{
+    box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.2);
+}

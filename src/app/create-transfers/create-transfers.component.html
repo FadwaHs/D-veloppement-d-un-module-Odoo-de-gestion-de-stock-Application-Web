@@ -5,7 +5,7 @@
        <div class="row head">
     
          <div class="section-title">
-            <span>Transfers/New</span>
+            <span>Transfers / New</span>
          </div>
           
        </div>
@@ -17,7 +17,7 @@
        </div>
        <div class="row head3">
          <div class="button-group2">
-          <button class="save">Validate</button>
+          <button class="save">Scrap</button>
           <button class="btn btn-default" (click)="functionCancel()" >Cancel</button>
          </div>
          <div class="comp-right">
@@ -68,7 +68,7 @@
                         <td class="label-tab">Operation Type</td>
                         <td class="input-tab-td" id="operation-type">
                            <div class="input-tab" >
-                              <select id="select-menu">
+                              <select id="select-menu" class="form-control" >
                                  <option disabled selected value value="Default"> ---- </option>
                                  <option value="Delivery Mai:YourCompany-Delivery Orders">Delivery Mai: Your Company</option>
                                  <option value="Receipts Houda:YourCompany-Receipts">Receipts Houda: Your Company</option>
@@ -123,7 +123,7 @@
                               Description</div>
                            <div><input type="checkbox"  id="new-cellule2" (click)="AddCellule2('new-cellule2')">
                               Date</div>
-                         </div>
+                         </div> 
                      </td>
                   </tr>
                </table>
@@ -136,12 +136,12 @@
                   <tr>
                      <td class="cellule-left">Shipping Policy</td>
                      <td class="cellule-right">
-                       <div class="input-tab-select">
-                         <select>
+                      
+                         <select  id="select-th" class="form-control">
                             <option selected>As soon as possible</option>
                             <option>When all products are ready</option>
                          </select>
-                       </div>
+                       
                      </td>
                   </tr>
                   <tr>

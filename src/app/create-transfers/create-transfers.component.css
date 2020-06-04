@@ -6,7 +6,7 @@
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 5px;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 /* End style de head*/
@@ -206,7 +206,7 @@ button.save
 .principal
 {
     display: block;
-    margin: 10px 20px;
+    margin-left: 25px;
     background-color: white;
     width: 1041px;
     margin-bottom: 50px;
@@ -358,13 +358,13 @@ tr
 
 {
 
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    background-color:#d2d2ff;
     width: 230px;
-
+    height:30px;
     border: none;
-
-    padding: 3px 4px;
-
-    background-color: rgba(0, 123, 255,0.2);
+    font-size:10px;
 
 }
 
@@ -538,15 +538,18 @@ tr
    margin-right: 5px;
 
 }
-.table-menu2 .cellule-right .input-tab-select
+#select-th
 {
-
-    display: inline;
     border-radius: 3px;
     border: 1px solid #ccc;
     padding: 5px;
-   margin-right: 5px;
-   background-color:  rgba(0, 123, 255,0.2);
+    margin-right: 5px;
+    background-color:#d2d2ff;
+    width: 330px;
+    height:30px;
+    border: none;
+    font-size:10px;
+  
 }
 
 .table-menu2 .cellule-right .input-tab input
@@ -806,7 +809,7 @@ textarea:focus, input:focus{
 {
 
      color: #007bff;
-
+     cursor: pointer;
      padding: 5px;
 
 }

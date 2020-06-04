@@ -45,7 +45,7 @@ export class StatisticsComponent implements OnInit {
       datasets: [
         {
           label: "Population (millions)",
-          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+          backgroundColor: ["#3e95cd", "#8e5ea2","#dc3545"],
           data: [2478,5267,734]
         }
       ]

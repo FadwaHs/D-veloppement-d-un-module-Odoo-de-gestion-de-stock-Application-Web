@@ -119,7 +119,7 @@ head2 end
 }
 .col-xs-4
 {
-    margin-left: 7px;
+    margin-left: 15px;
     width: 340px;
     background-color: white;
     height: 170px;
@@ -365,4 +365,18 @@ head2 end
       padding-right: 50px;
       padding-left: 20px;
     }
+}
+
+.glyphicon-option-vertical
+{
+    cursor: pointer;
+}
+.item-sous-menu
+{
+    cursor: pointer;
+}
+.item-sous-menu:hover
+{
+   background-color:#007bff;
+   color: white;
 }

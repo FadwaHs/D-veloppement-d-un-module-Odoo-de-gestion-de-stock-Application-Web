@@ -6,11 +6,17 @@ import { ActivatedRoute, Router,ParamMap } from '@angular/router';
   templateUrl: './createproduct.component.html',
   styleUrls: ['./createproduct.component.css']
 })
+
+
+
 export class CreateproductComponent implements OnInit {
+  
+  urlImage:string;
 
   constructor(private _activatedroute:ActivatedRoute,private _route:Router) { }
 
   ngOnInit(): void {
+    this.urlImage="assets/add.png";
   }
 
   Openmenu(id1: string , id2: string)

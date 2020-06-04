@@ -6,9 +6,8 @@
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 5px;
-    margin-top: 25px;
+    margin-top: 20px;
 }
-
 .input-group .input-group-btn .btn i{
     color: #007bff;
 }
@@ -30,7 +29,8 @@ head2 begin
 {
 
     margin-bottom: 10px;
-     padding-right: 97px;
+     padding-right: 0px;
+     
 
 }
 .head-principal
@@ -52,6 +52,14 @@ head2 begin
 {
     float: right;
     display: block;
+}
+.icon
+{
+    font-size: 12px;
+}
+.none
+{
+    display: none !important;
 }
 /*Dropdown Button */
 .dropbtn {
@@ -77,7 +85,7 @@ head2 begin
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: #ffffff;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -123,10 +131,11 @@ head2 end
 }
 @media (max-width:650px)
 {
-.button-group
+.head2
 {
-    text-align: center;
+    padding-right: 0px;
 }
+
 .input-group
 {
     float: left;
@@ -153,10 +162,17 @@ head2 end
     display: block;
     width: 100%;
     padding-left: 10px;
+    
 }
+
 .main
 {
-    margin-top: 150px;
+    margin-top: 200px;
+
+}
+
+table{
+   width: 1200px;
 }
 }
 
@@ -165,11 +181,10 @@ head2 end
    .head-principal
    {
        width: 100%;
-       padding-right: 20px;
+       padding-right: 0px;
    }
-   .button-group
-   {
-    text-align: center;
+   .head{
+    padding-right: 20px;
    }
 }
 @media (max-width:950px)
@@ -181,26 +196,318 @@ head2 end
         margin-left: 0px !important;     
         
     }
-    .col-xs-4
-    {
-        margin-left: 0px !important;
-        width: 300px;
-        height: 200px; 
-    }
+   
    
 }
 @media (max-width:977px)
 {
-   .head-principal
+   .head
    {
-       padding-right: 20px;
+       padding-right: 50px;
    }
 }
 @media only screen and (max-width: 1200px) {
     .head-principal{
-      padding-right: 50px;
+  
       padding-left: 20px;
+      padding-right: 40px;
+    }
+    .head
+    {
+        padding-right: 20px;
     }
 }
+/*------------------------------------------------------------------------*/
+#btn1list 
+{
+  
+    cursor: pointer;
+  
+}
+#btnlist
+{
+    cursor: pointer;
+    margin-left: 18px;
+    margin-right:5px;
+}
 
-/*-------------------------------------------------------------------------------------*/
+@media (max-width:428px)
+{
+    #btn1list
+    {
+        margin-left: 0px;
+        margin-right: 2px;
+    }
+}
+.button-measures
+{
+    background-color:#007bff;
+    padding: 8px;
+    font-size: 15px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    
+}
+button#exportbtn
+{
+    display: none;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+button#btnchart
+{
+    cursor: pointer;
+    margin-left: 10px;
+}
+#chekedQT
+{
+    font-weight: bold;
+}
+
+.col-md-2
+{
+    
+    height: 900px; 
+    width: 100%;
+    
+    background-color: white;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    padding: 7px;
+  
+   
+}
+div#Chartline
+{  
+    
+    background-color: white;
+    height: 700px;
+}
+#Chartline
+{
+    display: none;
+}
+#tablestokemoves
+{
+    display: none;
+    
+}
+#kanbanstokemoves
+{
+    display: none;
+    margin-top: 160px;
+    width: 1300px;
+}
+div.divstokemovesA
+{
+    margin-left: 15px;
+    width: 280px;
+    background-color: white;
+    height: 80px;
+    border:#ffbb78 1px solid;
+    padding-right:0px !important;
+    padding-left: 0px !important;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+p.availabletext
+{
+    color: white;
+    height: 35px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #ffbb78;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 18px;
+    margin-bottom: 15px;
+  
+}
+div.divstokemovesWA
+{
+    margin-left: 15px;
+    width: 280px;
+    background-color: white;
+    height: 80px;
+    border:#ff7f0e 1px solid;
+    padding-right:0px !important;
+    padding-left: 0px !important;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+p.Wavailabletext
+{
+    color: white;
+    height: 35px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #ff7f0e;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19); 
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 18px;
+    margin-bottom: 15px;
+  
+}
+div.divstokemovesD
+{
+    margin-left: 15px;
+    width: 280px;
+    background-color: white;
+    height: 80px;
+    border:#1f77b4 1px solid; 
+    padding-right:0px !important;
+    padding-left: 0px !important;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+p.Davailabletext
+{
+    color: white;
+    height: 35px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #1f77b4;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 16px;
+    font-weight: bold;
+    margin-left:17px;
+    margin-bottom: 15px;
+  
+}
+div.divstokemovesN
+{
+    margin-left: 15px;
+    width: 280px;
+    background-color: white;
+    height: 80px;
+    border:#aec7e8 1px solid;
+    padding-right:0px !important;
+    padding-left: 0px !important;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+p.Navailabletext
+{
+    color: white;
+    height: 35px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #aec7e8;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 17px;
+    margin-bottom: 15px;
+  
+}
+
+
+.glyphicon-plus
+{
+    font-size: 12px;
+    margin-left: 100px;   
+    cursor: pointer;
+}
+#Av
+{
+  
+   margin-left: 180px;
+    
+}
+#done
+{
+    margin-left: 210px; 
+}
+
+div.divstatus
+{
+    display: block;
+    float: left;
+    margin: 10px;
+}
+.display
+{
+    display: none;
+   
+}
+.showdivstatus
+{
+    display:block;
+     margin-left: 15px;
+    margin-bottom: 15px;
+    width: 280px;
+    background-color: white;
+    height: 100px;
+    border:#007bff 1px solid;
+    padding:8px;
+    border-radius: 3px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19); 
+    cursor: pointer;  
+
+}
+
+#titleinput
+{
+    background-color:#d2d2ff;
+    height: 27px;
+    
+}
+button.Addstatus
+{
+    background-color:#007bff;
+    padding: 8px;
+    margin-top: 13px;
+    margin-right: 8px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+}
+button.Editstatus
+{
+    background-color:#007bff;
+    padding: 8px;
+    margin-top: 13px;
+    margin-right: 8px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+}
+table#tablesbystatus
+{
+    background-color: white;
+    color: #0a8ea4;
+   
+}
+thead{
+    background-color: #eeeeee;
+    color: #000;
+    cursor: pointer;
+    height: 30px;
+  
+}
+table td
+{
+  cursor: pointer;
+
+}
+table tr{
+    box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.2);
+}
+th{
+    padding-left:8px;
+}
+
+

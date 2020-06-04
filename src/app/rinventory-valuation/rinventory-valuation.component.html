@@ -4,7 +4,7 @@
     <div class="row head"> 
     
         <div class="section-title">
-           <span>Reports/Rinventory Valuation</span>
+           <span>Update Quantity</span>
         </div>
            <div class="input-group">
                <input type="text" class="form-control" placeholder="Search" name="search">
@@ -50,16 +50,90 @@
                   <a href="#">Save Current Search</a>
                 </div>
             </div>
-             
-              </div>
+
+            <button  id="btn2kanban" class="btn btn-default" (click)="Active('btn2kanban','btnChar3','btnChart')"
+            (click)="OpenCharts('divtable','canvasdiv','divboundery')" (click)="showExport('divtable','canvasdiv','divboundery')" >
+                <i class="glyphicon glyphicon-th-list"></i>
+              </button>  
+            </div>
+            <div class="btn-group">
+                <button type="button" class="button-measures" (click)="Function2('myDropdown4')">Measures
+                  <span class="caret"></span>
+                </button>
+                
+                <div id="myDropdown4" class="dropdown-content">
+                    <a href="" id="chekedQT">Quantity</a>
+                    <a href="">Reserved Quantity</a>
+                    <a href="">count</a>
+                  </div>  
+            </div>
+            <button  id="btnchart" class="btn btn-default" (click)="Active('btnchart','btnChar3','btn2kanban')" (click)="OpenCharts('divboundery','canvasdiv','divtable')"
+            (click)="showExport('divtable','canvasdiv','divboundery')"   >
+                <i class="fa fa-area-chart"></i>
+            </button>
+            <button  id="btnChar3" class="btn btn-default active" (click)="Active('btnchar3','btnChart','btn2kanban')" (click)="OpenCharts('canvasdiv','divboundery','divtable')" 
+            (click)="showExport('divtable','canvasdiv','divboundery')"  >
+              <i class="fa fa-bar-chart"></i>
+            </button>
+            <button id="exportbtn" class="btn btn-default ">
+                <span class="glyphicon glyphicon-download-alt"></span>
+            </button>
           </div>
           </div>
        <!-- End of head-->
        <div class="main">
 
-          <div style="width: 75%">
+          <div id="canvasdiv" style="width: 100%">
               <canvas id="canvas"></canvas>
             </div>
+
+            <div id="divboundery" class="wrapper col-2">
+              <canvas id="chart-2"></canvas>
+            </div>
+            <div id="divtable">
+               
+                <table id="tableQuantity" class="table table-hover">
+                    <thead> 
+                      <tr>
+                        <th>Product</th>
+                        <th>Location</th>
+                        <th>On Hand Quanity</th>   
+                      </tr>
+                    </thead>
+            
+                    <tbody>
+                      <tr > 
+                                             
+                        <td> Product </td>
+                        <td>wh/LOcation</td>
+                        <td>300</td>
+                       
+                      </tr>   
+                      <tr>
+                        
+                          <td> Product Id</td>
+                          <td>wh/LOcation</td>
+                          <td>300</td>
+                         
+                        </tr>
+                        <tr>
+                           
+                            <td>Product Id</td>
+                            <td>wh/LOcation</td>
+                            <td>300</td>
+                           
+                          </tr>
+                          <tr>
+                            
+                              <td>Product Id</td>
+                              <td>wh/LOcation</td>
+                              <td>300</td>
+                             
+                            </tr>                       
+                    </tbody>
+                </table>
+            </div>
+
 
        </div>
 </div>

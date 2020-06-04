@@ -45,7 +45,7 @@ button.saveproducts
 
 .div-2{
     
-    margin-left:80px;
+    margin-left:70px;
     margin-top:50px;
     margin-bottom:20px;
     padding-left:50px;
@@ -150,17 +150,34 @@ div#divright
 .div-add-photo input
 {
     display: none;
-}
-div.productimg
+} 
+ .div-add-photo
 {
-    float: right;
-    margin-right: 30px;
-    background-color:white;
-    border: solid 0.5px #888888;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height: 90px;
+    background-color: rgba(0, 123, 255,0.2);
+    padding: 3px;
+    position: absolute;
+    z-index: 4; 
     width: 100px;
-
+    display: none;
+}
+.div-add-photo input
+{
+    display: none;
+}
+.photo-input
+{
+    height: 100px;
+    width: 100px;
+    border: 0.5px solid #ccc;
+    float: right;
+    margin-right: 20px;
+    
+}
+.photo-input img
+{
+    height: 100px;
+    width: 100px;
+    text-align: center;
 }
 div#buttontop
 {

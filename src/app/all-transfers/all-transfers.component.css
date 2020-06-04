@@ -226,6 +226,7 @@ button#exportbtn
     cursor: pointer;
     margin-left: 12px;
     margin-right:5px;
+  
 }
 
 
@@ -235,17 +236,27 @@ button#exportbtn
 .table-transfers
 {
     background-color: white;
+    color: #0a8ea4;
     overflow: auto;
     width: 1105px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.19); 
 }
 
 .table-transfers thead
 {
-    background-color: #eee;
+  
+    background-color: #eeeeee;
+    color: #000;
+    cursor: pointer;
+  
 }
 .table-transfers tr
 {
     border-bottom: 1px solid #eee;
+}
+table td
+{
+  cursor: pointer;
 }
 .table-transfers thead th,.table-transfers tbody td
 {
@@ -267,7 +278,7 @@ button#exportbtn
 .dropdown {
     position: relative;
     
-  }
+  } 
   
 .dropdown-content {
     display: none;
@@ -285,7 +296,8 @@ button#exportbtn
 }
 .dropdown-content div:hover
 {
-    background-color: #eee;
+    background-color: #007bff;
+    color: white;
 }
 .dropdown-content div input
 {
@@ -301,6 +313,7 @@ button#exportbtn
 .cards
 {
     display: none;
+ 
 }
 
 .col-md-4
@@ -308,7 +321,11 @@ button#exportbtn
     display: inline-block;
     height: 80px;
     width: 340px;
-    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-top: 20px;
+
     border:#d2d2ff 2px solid;
     border-radius: 3px;
     background-color: white;
@@ -374,7 +391,7 @@ button#exportbtn
     border-radius: 2px;
 }
 .col-md-4 .right .text2
-{
+{ 
     
    
      display: inline-block;
@@ -395,3 +412,4 @@ button#exportbtn
         text-align: start;
     }
 }
+

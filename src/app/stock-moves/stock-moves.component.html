@@ -1,61 +1,242 @@
 <div class="container-fluid">
     <!-- Begin of head-->
     <div class="head-principal">
-    <div class="row head">
-    
-        <div class="section-title">
-           <span>Reports/Stock Moves</span>
-        </div>
-           <div class="input-group">
-               <input type="text" class="form-control" placeholder="Search" name="search">
-               <div class="input-group-btn">
-                 <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-               </div>
-          </div>
-          
-       </div>
-       <div class="row head2">
-           <div class="button-group2">
-            <div class="dropdown">
-                <button (click)="Function2('myDropdown1')" class="dropbtn">
-                    <i class="glyphicon glyphicon-filter"></i>
-                    Filters
-                    <i class="glyphicon glyphicon-menu-down"></i>
-                </button>
-                <div id="myDropdown1" class="dropdown-content">
-                  <a href="#">Archived</a>
-                  <a href="#">Add Custom Filter</a>
-                  <a href="#">Link 3</a>
-                </div>
+        <div class="row head"> 
+        
+            <div class="section-title">
+               <span>Stok Moves</span>
             </div>
-            <div class="dropdown">
-                <button (click)="Function2('myDropdown2')" class="dropbtn">
-                    <i class="glyphicon glyphicon-tasks"></i>
-                    Group By
-                    <i class="glyphicon glyphicon-menu-down"></i>
-                </button>
-                <div id="myDropdown2" class="dropdown-content">
-                  <a href="#">Type of Operation</a>
-                  <a href="#">Warehouse</a>
-                  <a href="#">Add Custom Group</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <button (click)="Function2('myDropdown3')" class="dropbtn">
-                    <i class="glyphicon glyphicon-star"></i>
-                    Favorites
-                    <i class="glyphicon glyphicon-menu-down"></i>
-                </button>
-                <div id="myDropdown3" class="dropdown-content">
-                  <a href="#">Save Current Search</a>
-                </div>
-            </div>
-             
+               <div class="input-group">
+                   <input type="text" class="form-control" placeholder="Search" name="search">
+                   <div class="input-group-btn">
+                     <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                   </div>
               </div>
-          </div>
-          </div>
+              
+           </div>
+           <div class="row head2">
+               <div class="button-group2">
+                <div class="dropdown">
+                    <button (click)="Function2('myDropdown1')" class="dropbtn">
+                        <i class="glyphicon glyphicon-filter"></i>
+                        Filters
+                        <i class="glyphicon glyphicon-menu-down"></i>
+                    </button>
+                    <div id="myDropdown1" class="dropdown-content">
+                      <a href="#">Archived</a>
+                      <a href="#">Add Custom Filter</a>
+                      <a href="#">Link 3</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button (click)="Function2('myDropdown2')" class="dropbtn">
+                        <i class="glyphicon glyphicon-tasks"></i>
+                        Group By
+                        <i class="glyphicon glyphicon-menu-down"></i>
+                    </button>
+                    <div id="myDropdown2" class="dropdown-content">
+                      <a href="#">Type of Operation</a>
+                      <a href="#">Warehouse</a>
+                      <a href="#">Add Custom Group</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button (click)="Function2('myDropdown3')" class="dropbtn">
+                        <i class="glyphicon glyphicon-star"></i>
+                        Favorites
+                        <i class="glyphicon glyphicon-menu-down"></i>
+                    </button>
+                    <div id="myDropdown3" class="dropdown-content">
+                      <a href="#">Save Current Search</a>
+                    </div> 
+                </div>
+    
+                <button  id="btnlist" class="btn btn-default" 
+                (click)="Active('btnlist','btnChar3','btnkanban','btnchart')" 
+                (click)="OpenCharts('tablestokemoves','Chartline','Pie','kanbanstokemoves')">
+                    <i class="glyphicon glyphicon-th-list"></i>
+                  </button> 
+                  <button  id="btnkanban" class="btn btn-default"
+                  (click)="Active('btnkanban','btnChar3','btnchart','btnlist')" 
+                (click)="OpenCharts('kanbanstokemoves','Chartline','tablestokemoves','Pie')" >
+                      <i class="glyphicon glyphicon-th-large"></i>
+                    </button>   
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="button-measures" (click)="Function2('myDropdown4')">Measures
+                      <span class="caret"></span>
+                    </button>
+                    
+                    <div id="myDropdown4" class="dropdown-content">
+                        <a href="" id="chekedQT">Initial Demande</a>
+                        <a href="">Unit Price</a>
+                        <a href="">count</a>
+                      </div>
+                </div>
+                <button  id="btnchart" class="btn btn-default active"
+                (click)="Active('btnchart','btnChar3','btnkanban','btnlist')" 
+                (click)="OpenCharts('Pie','Chartline','tablestokemoves','kanbanstokemoves')" >
+                    <i class="fa fa-pie-chart"></i>
+                </button>
+                <button  id="btnChar3" class="btn btn-default"
+                (click)="Active('btnChart3','btnchart','btnkanban','btnlist')" 
+                (click)="OpenCharts('Chartline','Pie','tablestokemoves','kanbanstokemoves')" >
+                  <i class="fa fa-bar-chart"></i>
+                </button>
+                <button id="exportbtn" class="btn btn-default ">
+                    <span class="glyphicon glyphicon-download-alt"></span>
+                </button>
+              </div>
+              </div>
        <!-- End of head-->
        <div class="main">
+          
+            <div  id="Pie" class="col-md-2">
 
-       </div>
+              <canvas id="pie-chart"></canvas> 
+
+           </div>
+           <div id="Chartline">
+             
+               <canvas id="canvas2"></canvas>  
+
+           </div>
+           <div id="tablestokemoves">
+                <table id="tablesbystatus" class="table table-hover">
+                    <thead>
+                        <th >Date</th>
+                        <th >References</th>
+                        <th >Product</th>
+                        <th >From</th>
+                        <th >To</th>
+                        <th>Initial Demande</th>
+                        <th >status</th>
+                        <th >Company</th>
+                    </thead>
+        
+                    <tbody >
+                        <tr>
+                            <td tabindex="-1">Date</td>
+                            <td tabindex="-1">REFERENCES</td>
+                            <td  tabindex="-1">Date</td>
+                            <td tabindex="-1">FRom</td>
+                            <td tabindex="-1">To</td>
+                            <td tabindex="-1">Inital Demande</td>
+                            <td tabindex="-1">status</td>
+                            <td tabindex="-1">Company</td>
+                        </tr>
+                        <tr>
+                                <td colspan="1">Date</td>
+                                <td colspan="1">REFERENCES</td>
+                                <td  colspan="1">Date</td>
+                                <td colspan="1">FRom</td>
+                                <td colspan="1">To</td>
+                                <td colspan="1">Inital Demande</td>
+                                <td colspan="1">status</td>
+                                <td colspan="1">Company</td>
+                         </tr>  
+                         <tr>
+                                <td tabindex="-1">Date</td>
+                                <td tabindex="-1">REFERENCES</td>
+                                <td  tabindex="-1">Date</td>
+                                <td tabindex="-1">FRom</td>
+                                <td tabindex="-1">To</td>
+                                <td tabindex="-1">Inital Demande</td>
+                                <td tabindex="-1">status</td>
+                                <td tabindex="-1">Company</td>
+                            </tr>
+                            <tr>
+                                    <td colspan="1">Date</td>
+                                    <td colspan="1">REFERENCES</td>
+                                    <td  colspan="1">Date</td>
+                                    <td colspan="1">FRom</td>
+                                    <td colspan="1">To</td>
+                                    <td colspan="1">Inital Demande</td>
+                                    <td colspan="1">status</td>
+                                    <td colspan="1">Company</td>
+                             </tr>                                                
+                    </tbody>
+                </table>
+ 
+           </div>
+
+        <div id="kanbanstokemoves">
+           
+            <div class="divstatus">
+            <p class="availabletext">Available
+                <span id ="Av" class="glyphicon glyphicon-plus" (click)="ShowCreateDiv('S1999')"></span>
+            </p>
+
+            <div class="display" id="S1999">
+                <input type="text" class="form-control" id="titleinput" placeholder="title"/>
+                <button type="button" class="Addstatus" (click)="OpenPopupSm()">Add</button>
+                <button type="button" class="Editstatus">Edit</button>
+                <button type="button" class="btn btn-default">Discard</button>
+            </div>
+
+            <div class="divstokemovesA"></div>
+            <div class="divstokemovesA"></div>
+            <div class="divstokemovesA"></div>
+            <div class="divstokemovesA"></div>
+
+          </div>
+          <div class="divstatus">
+
+              <p class="Wavailabletext">Waiting Availability
+                  <span  class="glyphicon glyphicon-plus"  (click)="ShowCreateDiv('S1998')"></span>
+              </p>
+              <div class="display" id="S1998">
+                  <input type="text" class="form-control" id="titleinput" placeholder="title"/>
+                  <button type="button" class="Addstatus" (click)="OpenPopupSm()">Add</button>
+                  <button type="button" class="Editstatus">Edit</button>
+                  <button type="button" class="btn btn-default">Discard</button>
+              </div>         
+  
+              <div class="divstokemovesWA"></div>
+              <div class="divstokemovesWA"></div>
+              <div class="divstokemovesWA"></div>
+       
+  
+            </div>
+            <div class="divstatus">
+
+                <p class="Davailabletext">Done
+                    <span id ="done" class="glyphicon glyphicon-plus"  (click)="ShowCreateDiv('S1997')"></span>
+                </p> 
+                <div class="display" id="S1997">
+                    <input type="text" class="form-control" id="titleinput" placeholder="title"/>
+                    <button type="button" class="Addstatus" (click)="OpenPopupSm()">Add</button>
+                    <button type="button" class="Editstatus">Edit</button>
+                    <button type="button" class="btn btn-default">Discard</button>
+                </div>   
+                <div class="divstokemovesD"></div>
+                <div class="divstokemovesD"></div>
+                <div class="divstokemovesD"></div>
+                <div class="divstokemovesD"></div>
+                <div class="divstokemovesD"></div>               
+                <div class="divstokemovesD"></div>
+                <div class="divstokemovesD"></div>
+                <div class="divstokemovesD"></div>         
+    
+            </div>           
+            <div class="divstatus">
+
+                <p class="Navailabletext">New
+                    <span id ="done" class="glyphicon glyphicon-plus"  (click)="ShowCreateDiv('S1996')"></span>
+                </p>
+                <div class="display" id="S1996">
+                    <input type="text" class="form-control" id="titleinput" placeholder="title"/>
+                    <button type="button" class="Addstatus" (click)="OpenPopupSm()">Add</button>
+                    <button type="button" class="Editstatus">Edit</button>
+                    <button type="button" class="btn btn-default">Discard</button>
+                </div>    
+                <div class="divstokemovesN"></div>
+                <div class="divstokemovesN"></div>
+               
+         
+    
+              </div>           
+
+            
+        </div>
 </div>

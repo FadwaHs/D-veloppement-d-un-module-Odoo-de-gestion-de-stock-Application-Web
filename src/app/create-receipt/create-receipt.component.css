@@ -11,7 +11,8 @@
     color: #2a3f5a;
     font-size: 20px;
     font-weight: 500;
-    padding-top: 10px;
+    padding-top: 55px;
+ 
 }
 
 /* End style de head*/
@@ -59,7 +60,7 @@ head2 end
 
 .main
 {
-    margin-top: 150px;
+    margin-top: 60px;
      overflow: hidden;
 }
 @media (max-width:428px)
@@ -86,7 +87,7 @@ head2 end
 }
 .main
 {
-    margin-top: 150px;
+    margin-top: 100px;
    
 }
 }
@@ -190,7 +191,7 @@ button.save
     padding-bottom: 5px;
     margin-right: 10px;
 }
-.item
+.item 
 {
     width: 17px;
     height: 30px;
@@ -203,7 +204,8 @@ button.save
 /*-------------------------------------------------------------------------------------*/
 .title
 {
-    margin-bottom: 5px;
+    margin-top: 20px;
+    padding-top: 20px;
     display: block;
     margin-left: 17px;
     width: 100%;
@@ -211,11 +213,11 @@ button.save
 .principal
 {
     display: block;
-    margin: 10px 20px;
     background-color: white;
     width: 1041px;
+    margin-left: 25px;
     margin-bottom: 50px;
-    margin-top: 70px;
+    margin-top: 40px;
     border-radius:5px;
     font-size:13px;
     font-weight:bold;
@@ -290,7 +292,7 @@ button.save
 {
 
     border-right: 1px solid #dcdcdc;
-
+    padding-left: 10px;
     font-weight: 500;
 
     font-size: 15px;
@@ -299,10 +301,9 @@ button.save
 
 .inside1 tr  td .input-tab
 
-{
+{ 
 
     border-radius: 3px;
-
     border: 1px solid #ccc;
 
 
@@ -364,12 +365,11 @@ tr
 {
 
     width: 230px;
-
+    height:30px;
     border: none;
-
+    font-size:10px;
     padding: 3px 4px;
-
-    background-color: rgba(0, 123, 255,0.2);;
+    background-color:#d2d2ff;
 
 }
 
@@ -788,8 +788,8 @@ textarea:focus, input:focus{
 
 {
 
-     color: #007bff;
-
+     color: #007bff; 
+     cursor: pointer;
      padding: 5px;
 
 }
@@ -801,3 +801,13 @@ textarea:focus, input:focus{
       text-decoration: underline;
 
 }
+button#externalbtn
+{
+  
+ 
+}
+.glyphicon-share
+{
+    color: #007bff;
+}
+

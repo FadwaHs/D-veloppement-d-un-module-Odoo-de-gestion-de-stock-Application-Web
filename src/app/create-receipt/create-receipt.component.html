@@ -42,7 +42,7 @@
               <div class="inside1">
                  <table id="table-principal">
                     <!---First Row-->
-                    <tr>
+                    <tr> 
                        <!--First cellule-->
                      <td class="label-tab" id="receive-from">Receive From</td>
                      <td class="input-tab-td dropdown">
@@ -51,8 +51,16 @@
                            <i (click)="FunctionShowOptions('myDropdown1')" class="glyphicon glyphicon-triangle-bottom" > </i>
                               <div id="myDropdown1" class="dropdown-content1">
                                  <a (click)="createContact()">Create and Edit..</a>
-                              </div>  
+                              </div> 
+                  
                         </div>
+
+                       
+                      </td>
+                      <td>
+                           <button type="button" id="externalbtn" class="btn" (click)="OpenCreateContact()">
+                                 <span class="glyphicon glyphicon-share"></span> 
+                           </button> 
                       </td> 
                       <!--End first cellule-->
                        <!--Second cellule-->
@@ -75,13 +83,16 @@
                         <td class="label-tab">Operation Type</td>
                         <td class="input-tab-td" id="operation-type">
                            <div class="input-tab" >
-                              <select id="select-menu" (change)="functionSelectChange()">
+                              <select id="select-menu"  class="form-control"  (change)="functionSelectChange()">
                                  <option disabled selected value value="Default"> ---- </option>
                                  <option value="Delivery Mai:YourCompany-Delivery Orders">Delivery Mai: Your Company</option>
                                  <option value="Receipts Houda:YourCompany-Receipts">Receipts Houda: Your Company</option>
                               </select>
                            </div>
                          </td>
+                         <td>
+            
+                         </td> 
                           <!--End first cellule-->
                            <!--Second cellule-->
                            <td class="label-tab">

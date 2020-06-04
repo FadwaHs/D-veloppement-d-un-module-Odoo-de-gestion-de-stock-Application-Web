@@ -6,7 +6,7 @@
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 5px;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .input-group .input-group-btn .btn i{
@@ -99,6 +99,32 @@ head2 begin
 /*
 head2 end
 */
+#myDropdown5
+{
+    margin-left: 100px; 
+    padding: 10px;
+    
+}
+p#BO
+{
+    color: black;
+    font-weight: bold;
+}
+button#btnApply
+{
+    background-color:#007bff;
+    padding: 8px;
+    margin-right: 10px;
+    font-size: 15px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+}
+select#SelectBO
+{
+    width: 120px;
+    margin-bottom: 9px;
+}
 .row
 {  
     margin-right: 15px !important;
@@ -204,3 +230,43 @@ head2 end
 }
 
 /*-------------------------------------------------------------------------------------*/
+.button-measures
+{
+    background-color:#007bff;
+    padding: 8px;
+    font-size: 15px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    
+}
+#btnchart
+{
+    margin-left: 10px;
+    cursor: pointer;
+}
+.col-md-7
+{
+    
+    height: 900px; 
+    width: 100%;
+    
+    background-color: white;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    padding: 7px;
+  
+}
+#btnTime
+{
+    cursor: pointer;
+    margin-left: 10px;
+    background-color:#007bff;
+    padding: 8px;
+    font-size: 15px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+
+}
+

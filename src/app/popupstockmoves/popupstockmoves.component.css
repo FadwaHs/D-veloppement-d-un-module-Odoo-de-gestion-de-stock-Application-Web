@@ -1,0 +1,121 @@
+div.title
+{
+    margin-bottom: 40px;
+    border-bottom:solid black 1px;
+    font-weight: bold;
+
+}
+.header-dialog-title
+{
+    font-size: 24px;
+    font-weight:bold;
+}
+button#close
+{
+    float: right;
+}
+.inside1
+{
+    padding: 20px 10px;
+    margin-top: 40px;
+  
+}
+.inside1 p
+{
+
+    color:#007bff;
+    font-size:18px;
+    font-weight: bold; 
+}
+.inside1 tr td
+{
+    padding-bottom: 5px;
+} 
+.inside1 tr  td.label-tab
+{
+    border-right: 1px solid #dcdcdc;
+    font-weight: bold;
+    font-size: 13px;
+   
+   
+}
+
+.inside1 tr  td .input-tab
+{
+    border-radius: 3px;
+    height: 30px;
+    font-size:12px;
+    background-color:#d2d2ff;
+    margin-right: 10px;
+    width:290px;
+    border: 1px solid #ccc;
+
+}
+input
+{
+    background-color:#d2d2ff; 
+
+}
+table 
+{
+    width: 100%;
+    
+}
+tr
+{
+    width: 100%;
+}
+td
+{
+    width: 25%;
+}
+.inside1 tr  td.input-tab-td
+{
+    padding-left: 8px;
+    padding-right: 15px;
+    
+    
+} 
+ .inside1 tr td.input-tab-td .input-tab input
+{
+    width: 200px;
+    border: none;
+    padding: 3px 4px;
+}
+
+.inside1 tr  td.input-tab-td .input-tab i
+{
+    font-size: 10px;
+    margin-left: 70px;
+
+} 
+
+button.savestatus
+{
+    background-color:#007bff;
+    padding: 8px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+  
+}
+div.saveanddiscars
+{
+    border-top:solid black 1px;
+    margin-top:20px;
+    text-align: right;
+    
+}
+.glyphicon-remove
+{
+    color: #007bff;
+}
+.glyphicon-triangle-bottom
+{
+    cursor: pointer;
+}
+

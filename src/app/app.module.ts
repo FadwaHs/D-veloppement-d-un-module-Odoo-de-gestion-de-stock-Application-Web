@@ -38,6 +38,7 @@ import { ProductMoveComponent } from './product-move/product-move.component';
 import { CreateContactPopUpComponent } from './create-receipt/create-contact-pop-up/create-contact-pop-up.component';
 import { CreateTransfersComponent } from './create-transfers/create-transfers.component';
 import { CreateInventoryAdjustmentsComponent } from './create-inventory-adjustments/create-inventory-adjustments.component';
+import { PopupstockmovesComponent } from './popupstockmoves/popupstockmoves.component';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { CreateInventoryAdjustmentsComponent } from './create-inventory-adjustme
     ProductMoveComponent,
     CreateContactPopUpComponent,
     CreateTransfersComponent,
-    CreateInventoryAdjustmentsComponent
+    CreateInventoryAdjustmentsComponent,
+    PopupstockmovesComponent
   ],
   imports: [
     BrowserModule,
@@ -86,6 +88,6 @@ import { CreateInventoryAdjustmentsComponent } from './create-inventory-adjustme
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [CreatecompanyComponent] 
+  entryComponents: [CreatecompanyComponent,PopupstockmovesComponent] 
 })
 export class AppModule { }

@@ -3,10 +3,7 @@ import { ActivatedRoute, Router,ParamMap } from '@angular/router';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig} from '@angular/material/dialog';
 import { CreateContactPopUpComponent } from './create-contact-pop-up/create-contact-pop-up.component';
 
-
-
-
-@Component({
+@Component({ 
   selector: 'app-create-receipt',
   templateUrl: './create-receipt.component.html',
   styleUrls: ['./create-receipt.component.css']
@@ -247,11 +244,6 @@ export class CreateReceiptComponent implements OnInit {
   
     
   }
- 
-    
-
-
-
   AddCellule2(id:string)
   {
     var element1=document.getElementById(id);
@@ -343,5 +335,12 @@ export class CreateReceiptComponent implements OnInit {
   functionCancel()
   {
     this._route.navigate(['./receipt/'+this.nameOperation+'/'+this.typeOperation+'/'+this.fromOperation]);
+  }
+
+  OpenCreateContact()
+  {
+    const dialogconfig = new MatDialogConfig();
+    dialogconfig.disableClose = true;
+    this.dialog.open(CreateContactPopUpComponent , dialogconfig);
   }
 }
