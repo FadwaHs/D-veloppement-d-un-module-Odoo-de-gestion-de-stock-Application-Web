@@ -105,7 +105,7 @@ addAllCellul(num:number,name:string)
 
        var td=(row as HTMLTableRowElement).insertCell(caseCel);
        td.innerHTML=name;
-       td.setAttribute("style","padding:8px;");
+       td.setAttribute("style","padding:8px;font-weight:600;");
        td.className="table-header-body";
        for(var i=1;i<numRow;i++)
        {
