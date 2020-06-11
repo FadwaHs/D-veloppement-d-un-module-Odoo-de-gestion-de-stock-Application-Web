@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-recordering-rules',
@@ -8,15 +9,37 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class RecorderingRulesComponent implements OnInit {
 
-  constructor(private activatedroute: ActivatedRoute , private route: Router) { }
+  serverData: JSON;
+  employee2Data: JSON;
+  ourdata: JSON;
+  items2 = [];
+  constructor(private activatedroute: ActivatedRoute , private route: Router ,private http: HttpClient)
+   {
+
+    this.http.get('http://127.0.0.1:5002/warehouses').subscribe(data => {
+      this.employee2Data = data as JSON;
+      this.ourdata = this.employee2Data["result"]["response"];
+
+      for (let key in this.employee2Data["result"]["response"])
+      {
+        this.items2.push(this.employee2Data["result"]["response"][key]);
+      }
+
+      console.log(this.items2);
+  
+    });
+    }
+
+
 
   ngOnInit(): void {
   }
-  Function2(id:string) {
+
+  Function2(id: string) {
     document.getElementById(id).classList.toggle("show");
   }
 
-  Openview(id1 : string , id2 : string)
+  Openview(id1: string , id2: string)
   {
     var x = document.getElementById(id1);
     var y = document.getElementById(id2);

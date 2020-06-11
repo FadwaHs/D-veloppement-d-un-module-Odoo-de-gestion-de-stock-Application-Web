@@ -23,9 +23,9 @@
                  <i class="glyphicon glyphicon-triangle-bottom icon"></i>
             </button>
             <div id="myDropdown4" class="dropdown-content">
-              <a href="#">Archived</a>
-              <a href="#">Add Custom Filter</a>
-              <a href="#">Link 3</a>
+              <a href="#">Product Label (PDF)</a>
+              <a href="#">Product Barcode (PDF)</a>
+             
             </div>
           </div>
           <div class="dropdown none" id="dropdown-list2">
@@ -35,8 +35,9 @@
             </button>
             <div id="myDropdown5" class="dropdown-content">
               <a href="#">Archived</a>
-              <a href="#">Add Custom Filter</a>
-              <a href="#">Link 3</a>
+              <a href="#">Unarchive</a>
+              <a href="#">Delete</a>
+              
             </div>
         </div>
           <div class="dropdown">
@@ -46,9 +47,15 @@
                   <i class="glyphicon glyphicon-menu-down"></i>
               </button>
               <div id="myDropdown1" class="dropdown-content">
-                <a href="#">Archived</a>
-                <a href="#">Add Custom Filter</a>
-                <a href="#">Link 3</a>
+                <table>
+                  <tr> <a href="#">Services</a>
+                   <a href="#">Products</a> </tr>
+                   <tr> <a href="#">Can be Solde</a>
+                  <a href="#">Can be Purchaced</a></tr>
+                  <tr><a href="#">Available Products</a>
+                  <a href="#">Can be Solde</a>
+                  <a href="#">Add Custom Filter</a></tr>
+                </table>
               </div>
           </div>
           <div class="dropdown">
@@ -58,9 +65,11 @@
                   <i class="glyphicon glyphicon-menu-down"></i>
               </button>
               <div id="myDropdown2" class="dropdown-content">
-                <a href="#">Type of Operation</a>
-                <a href="#">Warehouse</a>
-                <a href="#">Add Custom Group</a>
+                <table>
+                 <tr> <a href="#">Product Type</a></tr>
+                 <tr> <a href="#">Product Category</a></tr>
+                 <tr> <a href="#">Add Custom Group</a></tr>
+              </table>
               </div>
           </div>
           <div class="dropdown">
@@ -94,175 +103,68 @@
       <table id="tableproducts" class="table table-hover">
         <thead>
           <tr>
-            <th>
+            <td>
               <label><input type="checkbox" id="checkbox-principal" (click)="FunctionCheckBox('checkbox','checkbox-principal')"></label>
-            </th>
+            </td>
             <th>Internal References</th>
             <th>Name</th>
             <th>Sale Price</th>
             <th>Cost</th>
-            <th>Quantity On Hands</th>
-            <th>Forecasted Quantity</th>
+            <th>Product Type</th>
+            <th>Quantity On Hand</th>
           </tr>
-        </thead>
-
+        </thead> 
         <tbody>
-          <tr>
+          <tr *ngFor = 'let item of items'>
             <td>
               <label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
+               
+                <td>{{item.ir}}</td>
+                <td>{{item.names}}</td>
+                <td>{{item.sp}}</td>
+                <td>{{item.cost}}</td>
+                <td>{{item.types}}</td>
+                <td>{{item.qt}}</td>
+        
           </tr>
-          <tr>
-              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
-            <td>Mary</td>
-            <td>Moe</td>
-            <td>mary@example.com</td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr>
-          <tr>
-              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>july@example.com</td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr>
-          <tr>
-              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr>
-          <tr>
-              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
-            <td>Mary</td>
-            <td>Moe</td>
-            <td>mary@example.com</td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr>
-          <tr>
-              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>july@example.com</td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr>
-          <tr>
-              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr>
-          <tr>
-              <td><label><input type="checkbox"class="checkbox" (click)="FunctionCheckBox2()"></label></td>
-            <td>Mary</td>
-            <td>Moe</td>
-            <td>mary@example.com</td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr>
-          <tr>
-              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>july@example.com</td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr>
-          <tr>
-              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr>
-          <tr>
-              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
-            <td>Mary</td>
-            <td>Moe</td>
-            <td>mary@example.com</td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr>
-          <tr>
-              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>july@example.com</td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr>
-          <tr>
-              <td><label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()"></label></td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr>
-          
+         
         </tbody>
       </table>
 
      </div>
 
      <div id="divkanbanview">
-      
-         <div id="kanbanproduct">
-
-         </div>
-         <div id="kanbanproduct">
-
-        </div>
-        <div id="kanbanproduct">
-
-        </div>
-        <div id="kanbanproduct">
-
-        </div>
-        <div id="kanbanproduct">
-
-       </div>
-       <div id="kanbanproduct">
-
-       </div>
-       <div id="kanbanproduct">
-
-      </div>
-      <div id="kanbanproduct">
-
-     </div>
-     <div id="kanbanproduct">
-
-     </div>
-
        
+         <div id="kanbanproduct" *ngFor = 'let item of items'>
 
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                    <div class="productimg">
+                      <img src= {{TransformImage(item.img)}} />
+
+                      </div>
+                </td>
+                <td>
+                    <div class="productsinfo">
+                        <p id="styleProductname">{{item.names}}</p>
+                        <p id="styleP">Price $ :</p>
+                        <p id="styleP">On Hand :</p>
+           
+                      </div>
+                </td>
+                <td>
+                    <div class="productsinfo">
+                        <p id="stylePhidden">p</p>
+                        <p id="styleP">{{item.sp}}</p>
+                        <p id="styleP">{{item.qt}}</p>                   
+                    </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+         </div>
      </div>
 
 

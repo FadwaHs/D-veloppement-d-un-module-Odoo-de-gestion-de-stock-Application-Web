@@ -1,20 +1,52 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router,ParamMap } from '@angular/router';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
+
 
 @Component({
-  selector: 'app-all-transfers',
+  selector: 'app-all-transfers', 
   templateUrl: './all-transfers.component.html',
   styleUrls: ['./all-transfers.component.css']
 })
 export class AllTransfersComponent implements OnInit {
 
-  constructor(private _activatedroute:ActivatedRoute,private _route:Router) { }
+  TransferData: JSON;  
+  ourdata: JSON;
+  items3 = [];
 
-  ngOnInit(): void {
-    
-  }
+  constructor(private activatedroute: ActivatedRoute , private route: Router , private http: HttpClient)
+   { 
+     this.http.get('http://127.0.0.1:5002/transfers').subscribe(data => {
+      this.TransferData = data as JSON;
+      this.ourdata = this.TransferData["result"]["response"];
 
-  Openview(id1 : string , id2 : string)
+      for (let key in this.TransferData["result"]["response"])
+       {
+        this.items3.push(this.TransferData["result"]["response"][key]);
+      }
+
+      console.log(this.items3);
+
+      var buttoncolor = document.getElementsByClassName('statusbutton');
+
+      for (var i = 0, l = buttoncolor.length; i < l; i++)
+       {
+           if(buttoncolor[i].textContent === 'done')
+           {
+               (<HTMLElement> buttoncolor[i]).style.backgroundColor = '#28a745';
+           }
+      }  
+
+
+    });
+   }
+
+  ngOnInit(): void
+   {
+       
+   }
+
+  Openview(id1: string , id2: string)
   {
     var x = document.getElementById(id1);
     var y = document.getElementById(id2);
@@ -27,9 +59,8 @@ export class AllTransfersComponent implements OnInit {
 
     }else{
       x.style.display = "block";
-  
-
     }
+  
   }
 
   Activer(id1: string ,id2: string)
@@ -45,8 +76,8 @@ export class AllTransfersComponent implements OnInit {
 
   functionGetWidthCellul(){
   var x = document.getElementsByClassName('table-header-body');
-    var n=x.length;var t=1047/n; 
-    for(var i=0;i<x.length;i++)
+  var n=x.length;var t=1047/n; 
+  for(var i=0;i<x.length;i++)
     {
       (x[i] as HTMLTableCellElement).style.width=t+"px";
     }
@@ -62,7 +93,7 @@ addAllCellul(num:number,name:string)
     var caseCel,checkCel=0,caseLis;
     for(var tmp=0;tmp<num;tmp++)
     {
-       if((element[tmp] as HTMLInputElement).checked==true)
+       if((element[tmp] as HTMLInputElement).checked == true)
        {
          checkCel++;
        }
@@ -102,7 +133,7 @@ addAllCellul(num:number,name:string)
 
   functionCreateTransfer()
   {
-    this._route.navigate(['create-transfer']);
+    this.route.navigate(['create-transfer']);
   }
   FunctionCheckBox(class1: string, id: string)
   {
@@ -114,8 +145,8 @@ addAllCellul(num:number,name:string)
        for(var i = 0; i < element.length; i++)
        {
        (element[i] as HTMLInputElement).checked = true;
-            element3.classList.remove("none");
-            element4.classList.remove("none");
+       element3.classList.remove("none");
+       element4.classList.remove("none");
        }
     }
     else
@@ -123,8 +154,8 @@ addAllCellul(num:number,name:string)
       for(var i = 0; i < element.length; i++)
       {
       (element[i] as HTMLInputElement).checked = false;
-         element3.classList.add("none");
-         element4.classList.add("none");
+      element3.classList.add("none");
+      element4.classList.add("none");
       }
     }
   }
@@ -152,4 +183,7 @@ addAllCellul(num:number,name:string)
         element3.classList.add("none");
     }
   }
+
+
+
 }

@@ -186,24 +186,25 @@ div#buttontop
     text-align: center;
 
 }
+
 .glyphicon-refresh
 {
     color: #007bff;
-    font-size: 13px;
+    font-size: 14px;
    
  
 }
 .glyphicon-transfer
 {
     color: #007bff;
-    font-size:13px;
+    font-size:14px;
 
   
 }
-.glyphicon-object-align-right
+.fa-cubes
 {
     color: #007bff;
-    font-size: 13px;
+    font-size: 15px;
     
 }
 button#btntop
@@ -215,6 +216,7 @@ button#btntop
   text-decoration: none;
   margin-top: 15px;
 }
+
 button#btntopUOH
 {
   background-color: white;
@@ -226,6 +228,9 @@ button#btntopUOH
   margin-left: 35px;
 }
 button#btntop:hover {
+    background-color:#f1f1f1;
+  }
+  button#btntopUOH:hover {
     background-color:#f1f1f1;
   }
 

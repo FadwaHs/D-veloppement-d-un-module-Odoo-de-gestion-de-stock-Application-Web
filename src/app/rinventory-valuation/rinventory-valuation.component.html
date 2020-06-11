@@ -23,9 +23,12 @@
                     <i class="glyphicon glyphicon-menu-down"></i>
                 </button>
                 <div id="myDropdown1" class="dropdown-content">
-                  <a href="#">Archived</a>
-                  <a href="#">Add Custom Filter</a>
-                  <a href="#">Link 3</a>
+                  <a href="#">Onternal Location</a>
+                  <a href="#">Transit Location</a>
+                  <a href="#">On hand</a>
+                  <a href="#">Negative Stock</a>
+                  <a href="#">Positive Stock</a>
+                  <a href="#">Reservation</a>
                 </div>
             </div>
             <div class="dropdown">
@@ -35,9 +38,9 @@
                     <i class="glyphicon glyphicon-menu-down"></i>
                 </button>
                 <div id="myDropdown2" class="dropdown-content">
-                  <a href="#">Type of Operation</a>
-                  <a href="#">Warehouse</a>
-                  <a href="#">Add Custom Group</a>
+                  <a href="#">Product</a>
+                  <a href="#">Location</a>
+                  <a href="#">Company</a>
                 </div>
             </div>
             <div class="dropdown">
@@ -75,9 +78,20 @@
             (click)="showExport('divtable','canvasdiv','divboundery')"  >
               <i class="fa fa-bar-chart"></i>
             </button>
-            <button id="exportbtn" class="btn btn-default ">
-                <span class="glyphicon glyphicon-download-alt"></span>
-            </button>
+            <table id="buttongroup2">
+            <tr>
+
+                <td><button id="exportbtn2" type="button" class="button-measures">
+                    Create
+               </button></td>
+
+              <td><button id="exportbtn" class="btn btn-default ">
+                <i class="glyphicon glyphicon-download-alt"></i>
+            </button></td>
+           
+          </tr>
+          </table>
+           
           </div>
           </div>
        <!-- End of head-->
@@ -97,39 +111,21 @@
                       <tr>
                         <th>Product</th>
                         <th>Location</th>
-                        <th>On Hand Quanity</th>   
+                        <th>On Hand Quanity</th>  
+                        <th>Reserved Quantity</th>
+                        <th>Company</th> 
                       </tr>
                     </thead>
             
                     <tbody>
-                      <tr > 
-                                             
-                        <td> Product </td>
-                        <td>wh/LOcation</td>
-                        <td>300</td>
-                       
-                      </tr>   
-                      <tr>
-                        
-                          <td> Product Id</td>
-                          <td>wh/LOcation</td>
-                          <td>300</td>
-                         
-                        </tr>
-                        <tr>
-                           
-                            <td>Product Id</td>
-                            <td>wh/LOcation</td>
-                            <td>300</td>
-                           
+                        <tr *ngFor = 'let item of items6'>
+                            <td>{{item.pid}}</td>
+                            <td>{{item.lci}}</td>
+                            <td>{{item.ivnqty}}</td> 
+                            <td>{{item.rsvqty}}</td>
+                            <td>{{item.comi}}</td>            
                           </tr>
-                          <tr>
-                            
-                              <td>Product Id</td>
-                              <td>wh/LOcation</td>
-                              <td>300</td>
-                             
-                            </tr>                       
+                                                                
                     </tbody>
                 </table>
             </div>

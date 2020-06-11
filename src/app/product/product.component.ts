@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router'; 
+import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient, HttpHeaders} from '@angular/common/http'; 
 
 @Component({
   selector: 'app-product',
@@ -8,9 +9,49 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProductComponent implements OnInit {
 
-  constructor(private activatedroute: ActivatedRoute , private route: Router) { }
+  employeeData: JSON;
+  ourdata: JSON; 
+  items = [];
+ 
+  constructor(private activatedroute: ActivatedRoute , private route: Router ,private http: HttpClient) {
+    this.http.get('http://127.0.0.1:5002/products').subscribe(data => {
+      this.employeeData = data as JSON;
+      this.ourdata = this.employeeData["result"]["response"];
+
+      for (let key in this.employeeData["result"]["response"])
+       {
+        this.items.push(this.employeeData["result"]["response"][key]);
+      }
+
+      //const obj = JSON.stringify(this.ourdata);
+
+      // for (let key in this.ourdata){
+      //   if (data.hasOwnProperty(key)) {
+      //     this.items.push(this.ourdata[key]);
+      //   }
+      // }
+      console.log(this.items);
+    });
+   } 
 
   ngOnInit(): void {
+  }
+
+  TransformImage(itemimg: string)
+  {
+
+     var img = 'data:image/png;base64,'+ itemimg;
+     var emptyimg ='assets/add.png';
+     
+     if(itemimg)
+     {
+      return img;
+     }
+     else{
+        return emptyimg;
+     }
+
+     
   }
 
   Function2(id: string) {
@@ -95,3 +136,5 @@ export class ProductComponent implements OnInit {
   }
 
 }
+
+

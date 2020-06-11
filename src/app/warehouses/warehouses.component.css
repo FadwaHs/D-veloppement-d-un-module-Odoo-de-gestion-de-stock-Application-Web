@@ -42,7 +42,7 @@ head2 begin
       padding-left: 0px !important;
 
 }
-.
+
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
 /*
@@ -56,7 +56,7 @@ head2 end
 
 .main
 {
-    margin-top: 120px;
+    margin-top: 100px;
    
 }
 

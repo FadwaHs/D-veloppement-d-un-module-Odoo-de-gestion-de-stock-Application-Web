@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialogRef} from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-popupstockmoves',
@@ -7,9 +8,11 @@ import {MatDialogRef} from '@angular/material/dialog';
   styleUrls: ['./popupstockmoves.component.css']
 })
 export class PopupstockmovesComponent implements OnInit {
+
   
   date : Date = new Date();
   private Title: string; 
+  name : string;
   settings=
   {
     bigBanner:true,
@@ -19,13 +22,23 @@ export class PopupstockmovesComponent implements OnInit {
     closeOnSelect:false
   }
 
-  constructor(public dialogref: MatDialogRef<PopupstockmovesComponent>) { }
+  constructor(public dialogref: MatDialogRef<PopupstockmovesComponent> ,private _activatedroute:ActivatedRoute,private _route:Router) { }
 
   ngOnInit(): void {
+    this._activatedroute.paramMap.subscribe
+    (
+      params => {this.name=params.get('name');}
+    );
+      
+    
   }
   OnclosePopup()
   {
     this.dialogref.close();
+    //this._route.navigate(['stock-moves']);
+
+
+
   }
 
 }

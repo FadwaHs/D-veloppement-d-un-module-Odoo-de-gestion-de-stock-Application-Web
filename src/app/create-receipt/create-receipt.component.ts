@@ -233,7 +233,7 @@ export class CreateReceiptComponent implements OnInit {
            var div2=document.createElement('DIV');
            var input2=document.createElement('input');
            input2.setAttribute("type",'text');
-           input2.setAttribute("value",'JJ/MM/YYYY, hh:mm AM');
+           input2.setAttribute("placeholder",'JJ/MM/YYYY, hh:mm AM');
            input2.setAttribute("style","border:none;padding: 3px 4px; width:100%;");
            div2.setAttribute("style","border: 1px solid #ccc; border-radius: 3px;background-color:#D2D2FF;");
            div2.appendChild(input2);
@@ -275,7 +275,7 @@ export class CreateReceiptComponent implements OnInit {
            var div2=document.createElement('DIV');
            var input2=document.createElement('input');
            input2.setAttribute("type",'text');
-           input2.setAttribute("value",'JJ/MM/YYYY, hh:mm AM');
+           input2.setAttribute("placeholder",'JJ/MM/YYYY, hh:mm AM');
            input2.setAttribute("style","border:none;padding: 3px 4px; width:100%;");
            div2.setAttribute("style","border: 1px solid #ccc; border-radius: 3px;background-color:#D2D2FF;");
            div2.appendChild(input2);

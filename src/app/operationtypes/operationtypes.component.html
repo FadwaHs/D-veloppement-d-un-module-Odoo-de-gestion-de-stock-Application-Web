@@ -20,7 +20,7 @@
                            
                        </div>      
                    </div>  
-            </div>
+            </div> 
            <!-- End of head-->
            <div class="main">
              
@@ -37,27 +37,15 @@
                 </thead>
       
                 <tbody>
-                  <tr>
-                    <td>
-                      <label><input type="checkbox" value=""></label></td>
-                    <td>receipt</td>
-                    <td>your Company sequence in</td>
-                    <td>My Company (San Francisco)</td>
-
-                  </tr>
-                  <tr>
-                      <td><label><input type="checkbox" value=""></label></td>
-                      <td>receipt</td>
-                      <td>your Company sequence in</td>
-                      <td>My Company (San Francisco)</td>
-                    
-                  </tr>
-                  <tr>
-                      <td><label><input type="checkbox" value=""></label></td>
-                      <td>receipt</td>
-                      <td>your Company sequence in</td>
-                      <td>My Company (San Francisco)</td>
-                  </tr>
+                    <tr *ngFor = 'let item of items13'>
+                        <td>
+                          <label><input type="checkbox" value=""></label></td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.sec}}</td>
+                        <td>{{item.com}}</td>
+    
+                      </tr>
+                  
                 </tbody>
               </table>      
              </div>

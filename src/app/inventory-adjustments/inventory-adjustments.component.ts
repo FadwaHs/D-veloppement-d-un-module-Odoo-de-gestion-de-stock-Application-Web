@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router,ParamMap } from '@angular/router';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-inventory-adjustments',
@@ -8,7 +9,26 @@ import { ActivatedRoute, Router,ParamMap } from '@angular/router';
 })
 export class InventoryAdjustmentsComponent implements OnInit {
 
-  constructor(private _activatedroute:ActivatedRoute,private _route:Router) { }
+  InventoryData: JSON; 
+  ourdata: JSON;
+  items4 = [];
+
+  constructor(private _activatedroute:ActivatedRoute,private _route:Router ,private http: HttpClient)
+   {
+    this.http.get('http://127.0.0.1:5002/Inventory').subscribe(data => {
+      this.InventoryData = data as JSON;
+      this.ourdata = this.InventoryData["result"]["response"];
+
+      for (let key in this.InventoryData["result"]["response"])
+       {
+        this.items4.push(this.InventoryData["result"]["response"][key]);
+      }
+
+      console.log(this.items4);
+
+
+    });
+    }
 
   ngOnInit(): void {
   }

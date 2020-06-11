@@ -2,7 +2,7 @@
 .section-title
 {
     float: left;
-    color: #2a3f5a;
+    color: #2a3f5a; 
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 5px;
@@ -78,22 +78,32 @@ head2 begin
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
+  background-color: white;
+  min-width: 180px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: black;
+  color: #818091;
+  height: 35px;
+  width: 180px;
+  font-weight: bold;
   padding: 12px 16px;
+  font-size: 13px;
   text-decoration: none;
   display: block;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
+.dropdown-content a:hover {
+    background-color: #007bff;
+    color: white;
+}
+.dropdown-content tr{
+   border-bottom: 0.1px solid #e9ecef;
+}
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
@@ -219,8 +229,13 @@ thead{
     background-color: #eeeeee;
     color: #000;
     cursor: pointer;
+   
   
 }
+table th{
+    padding-top: 3px;
+}
+
 table td
 {
   cursor: pointer;
@@ -281,5 +296,45 @@ div#kanbanproduct
         margin-right: 2px;
     }
 }
+.productimg
+{
+    height: 80px;
+    width: 85px;
+    margin-right: 20px;
+    padding-bottom: 7px;
+    padding-left: 5px;
+    
+  
+}
+.productimg img
+{
+    height: 85px;
+    width: 85px;
+    
+}
+.productsinfo
+{
+    height: 100px;
+    margin-top: 10px;
+
+}
+p#styleP
+{
+    font-weight: bold;
+    color: #818091;
+    font-size: 12px;
+    margin-right:5px;
+}
+p#stylePhidden
+{
+    color: white;
+}
+p#styleProductname
+{  
+    font-weight: bold;
+    font-size: 14px;
+    color: #007bff;
+}
+
 
 

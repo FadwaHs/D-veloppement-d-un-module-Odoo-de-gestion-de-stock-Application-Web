@@ -24,7 +24,7 @@ import {CreatecategorisComponent} from './createcategoris/createcategoris.compon
 import { ProductMoveComponent } from './product-move/product-move.component';
 import { CreateTransfersComponent } from './create-transfers/create-transfers.component';
 import { CreateInventoryAdjustmentsComponent } from './create-inventory-adjustments/create-inventory-adjustments.component';
-
+import { CreateScarpComponent } from './create-scarp/create-scarp.component';
 
 
 
@@ -71,6 +71,10 @@ const routes: Routes = [
   },
   {
     path:'stock-moves',
+    component:StockMovesComponent
+  },
+  {
+    path:'stock-moves/:name',
     component:StockMovesComponent
   },
   {
@@ -128,6 +132,9 @@ const routes: Routes = [
   {
     path:'create-Inv-adj',
     component:CreateInventoryAdjustmentsComponent
+  },{
+    path:'create-scrap',
+    component:CreateScarpComponent
   }
 ];
 

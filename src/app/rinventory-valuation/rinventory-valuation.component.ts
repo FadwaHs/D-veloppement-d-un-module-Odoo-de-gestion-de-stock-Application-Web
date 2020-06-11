@@ -1,14 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Component({
-  selector: 'app-rinventory-valuation',
+  selector: 'app-rinventory-valuation', 
   templateUrl: './rinventory-valuation.component.html',
   styleUrls: ['./rinventory-valuation.component.css']
 })
 export class RinventoryValuationComponent implements OnInit {
 
-  constructor() { } 
+	ReportData: JSON;  
+	ourdata: JSON;
+	items6 = [];
+
+  constructor( private http :HttpClient)
+   { 
+	this.http.get('http://127.0.0.1:5002/Report').subscribe(data => {
+		this.ReportData = data as JSON;
+		this.ourdata = this.ReportData["result"]["response"];
+  
+		for (let key in this.ReportData["result"]["response"])
+		 {
+		  this.items6.push(this.ReportData["result"]["response"][key]);
+		}
+  
+		console.log(this.items6);
+	  });
+
+  } 
 
   ngOnInit(): void {
  var barChartData = {
@@ -127,6 +146,7 @@ export class RinventoryValuationComponent implements OnInit {
   showExport(id1: string ,id2: string, id3: string)
   {
 	 var  btnexport =document.getElementById('exportbtn');
+	 var  btnexport2 =document.getElementById('exportbtn2');
 	 var table = document.getElementById(id1);
 	 var canvas = document.getElementById(id2);
 	 var boundary = document.getElementById(id3);
@@ -135,10 +155,12 @@ export class RinventoryValuationComponent implements OnInit {
 	 if(table.style.display === "block" && (canvas.style.display =="none" || boundary.style.display =="none") )
 	  {
 		btnexport.style.display = "block";
+		btnexport2.style.display = "block";
 		  
 	  }else if ( canvas.style.display == "block" || boundary.style.display =="block" ){
 
 	btnexport.style.display = "none";
+	btnexport2.style.display = "none";
 	  }
   }
 

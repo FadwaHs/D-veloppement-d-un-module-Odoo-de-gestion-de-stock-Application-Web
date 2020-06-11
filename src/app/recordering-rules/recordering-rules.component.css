@@ -73,24 +73,32 @@ head2 begin
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: #818091;
+    height: 35px;
+    width: 180px;
+    font-weight: bold;
+    padding: 12px 16px;
+    font-size: 13px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+      background-color: #007bff;
+      color: white;
+  }
+  
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
@@ -271,11 +279,35 @@ div#kanbanrules
     height: 80px;
     border:#d2d2ff 2px solid;
     padding-right:0px !important;
-    padding-left: 0px !important;
+    padding-left: 7px;
     margin-bottom: 7px;
     border-radius: 3px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
     display: block;
     float: left;
     cursor: pointer;
+}
+.Rulesinfo
+{
+    height: 100px;
+    margin-top: 10px;
+
+}
+
+p#styleP
+{
+    font-weight: bold;
+    color: #818091;
+    font-size: 12px;
+    margin-right:5px;
+}
+td#largetd
+{
+    width: 170px;
+}
+p#styleQt
+{  
+    font-weight: bold;
+    font-size: 12px;
+    color: #007bff;
 }

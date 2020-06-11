@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { PopupstockmovesComponent } from '../popupstockmoves/popupstockmoves.component';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
+
  
 @Component({
   selector: 'app-stock-moves',
@@ -10,10 +13,86 @@ import { PopupstockmovesComponent } from '../popupstockmoves/popupstockmoves.com
 })
 export class StockMovesComponent implements OnInit {
 
-  constructor(private Dialog : MatDialog) { }
+  StockMovesData: JSON;
+  StockMovesDoneData : JSON;
+  StockMovesWAData : JSON;
+  StockMovesAData : JSON;
+  StockMovesNewData : JSON;
+  ourdata: JSON;
+  ourdataDone: JSON;
+  ourdataWA: JSON;
+  items7 = [];
+  items8 = [];
+  items9 = [];
+  items10 = [];
+  items11 = [];
 
+  constructor(private Dialog : MatDialog ,private _activatedroute:ActivatedRoute,private _route:Router , private http :HttpClient)
+   { 
+
+    this.http.get('http://127.0.0.1:5002/StockMoves').subscribe(data => {
+      this.StockMovesData = data as JSON;
+      this.ourdata = this.StockMovesData["result"]["response"];
+    
+      for (let key in this.StockMovesData["result"]["response"])
+       {
+        this.items7.push(this.StockMovesData["result"]["response"][key]);
+      }
+    
+      console.log(this.items7);
+      });
+
+      // tslint:disable-next-line: align
+      this.http.get('http://127.0.0.1:5002/StockMovesDone').subscribe(data => {
+      this.StockMovesDoneData = data as JSON;
+      this.ourdataDone = this.StockMovesDoneData["result"]["response"];
+    
+      for (let key in this.StockMovesDoneData["result"]["response"])
+       {
+        this.items8.push(this.StockMovesDoneData["result"]["response"][key]);
+      }
+
+      console.log(this.items8);
+      });
+
+      // tslint:disable-next-line: align
+      this.http.get('http://127.0.0.1:5002/StockMovesWA').subscribe(data => {
+      this.StockMovesWAData = data as JSON;
+      this.ourdataWA= this.StockMovesWAData["result"]["response"];
+    
+      for (let key in this.StockMovesWAData["result"]["response"])
+       {
+        this.items9.push(this.StockMovesWAData["result"]["response"][key]);
+      }
+      console.log(this.items9);
+      });
+
+    this.http.get('http://127.0.0.1:5002/StockMovesA').subscribe(data => {
+        this.StockMovesAData = data as JSON;
+        this.ourdataWA= this.StockMovesAData["result"]["response"];
+      
+        for (let key in this.StockMovesAData["result"]["response"])
+         {
+          this.items10.push(this.StockMovesAData["result"]["response"][key]);
+        }
+        console.log(this.items10);
+        });
+
+    this.http.get('http://127.0.0.1:5002/StockMovesNew').subscribe(data => {
+          this.StockMovesNewData = data as JSON;
+          this.ourdataWA= this.StockMovesNewData["result"]["response"];
+        
+          for (let key in this.StockMovesNewData["result"]["response"])
+           {
+            this.items11.push(this.StockMovesNewData["result"]["response"][key]);
+          }
+          console.log(this.items11);
+          });
+   }
+
+
+   /////////////////////////////////////// StatistiqueChart//////////////////////
   pieChart=[];
-
   ngOnInit(): void {
 
     this.pieChart = new Chart(document.getElementById('pie-chart'), {
@@ -128,15 +207,14 @@ export class StockMovesComponent implements OnInit {
   ShowCreateDiv(id: string)
   {
     document.getElementById(id).classList.toggle("showdivstatus");
-   
   }
 
-  OpenPopupSm()
+  OpenPopupSm(name: string)
   {
     const dialogconfig = new MatDialogConfig();
     dialogconfig.disableClose = true;
     this.Dialog.open(PopupstockmovesComponent, dialogconfig);
-    
+    // this._route.navigate(['stock-moves',name]);  
   }
 
 }

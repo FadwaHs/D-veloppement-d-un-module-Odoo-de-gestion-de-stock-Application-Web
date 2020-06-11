@@ -23,8 +23,8 @@
                  <i class="glyphicon glyphicon-triangle-bottom icon"></i>
             </button>
             <div id="myDropdown4" class="dropdown-content">
-              <a href="#">Archived</a>
-              <a href="#">Add Custom Filter</a>
+              <a href="#">Inventory Adjustments</a>
+       
             </div>
           </div>
           <div class="dropdown none" id="dropdown-list2">
@@ -33,9 +33,8 @@
                 <i class="glyphicon glyphicon-triangle-bottom icon"></i>
             </button>
             <div id="myDropdown5" class="dropdown-content">
-              <a href="#">Archived</a>
-              <a href="#">Add Custom Filter</a>
-              <a href="#">Link 3</a>
+              <a href="#">Delete</a>
+            
             </div>
         </div>
           <div class="dropdown">
@@ -45,10 +44,34 @@
                   <i class="glyphicon glyphicon-menu-down"></i>
               </button>
               <div id="myDropdown1" class="dropdown-content">
-                <a href="#">Archived</a>
-                <a href="#">Add Custom Filter</a>
-                <a href="#">Link 3</a>
+                  <table>
+                      <tr> <a href="#">Draft</a>
+                       <a href="#">In progress</a> 
+                       <a href="#">Validated</a>
+                     </tr>
+                      <tr>
+                        <td><p>Inventory Date</p></td>
+                        <td id="icontd"><i class="glyphicon glyphicon-play" (click)="functionShowSousMenu('datemenu')"></i></td>
+                      </tr>
+                      <tr> <a href="#">Add Custom Filter</a></tr>
+                    </table>
+                    <!-- <div id="datemenu" class="dropdown-content">
+                        <table>
+                          <tr>
+                            <a>2020</a>
+                            <a>2019</a>
+                            <a>2018</a>
+                          </tr>
+                          <tr>
+                            <a>June</a>
+                           <a>May</a>
+                           <a>April</a>
+                         </tr>
+                         <tr> <a href="#">Add Custom Date</a></tr>
+                        </table>
+                     </div> -->
               </div>
+
           </div>
           <div class="dropdown">
               <button (click)="functionShowSousMenu('myDropdown2')" class="dropbtn">
@@ -57,9 +80,10 @@
                   <i class="glyphicon glyphicon-menu-down"></i>
               </button>
               <div id="myDropdown2" class="dropdown-content">
-                <a href="#">Type of Operation</a>
-                <a href="#">Warehouse</a>
-                <a href="#">Add Custom Group</a>
+                  <table>
+                      <tr> <a href="#">Status</a></tr>
+                      <tr> <a href="#">Add Custom Group</a></tr>
+                   </table>
               </div>
           </div>
           <div class="dropdown">
@@ -106,6 +130,9 @@
               <th class="table-header-body">
                 Status
               </th>
+              <th class="table-header-body">
+                  Company 
+                </th>
                <th class="icon-cel dropdown">
                 <i class="glyphicon glyphicon-option-vertical" (click)="functionShowSousMenu('dropdownmenutable')"></i>
                 <div id="dropdownmenutable" class="dropdown-content">
@@ -116,51 +143,35 @@
               </th>
               </tr> 
             </thead>
+
             <tbody>
-              <tr>
+              <tr *ngFor = 'let item of items4'>
                 <td class="input-cel">
                   <input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()">
                 </td>
-                <td>
-                  WH/IN/00001
-                </td>
-                <td>
-                  Date
-                </td>
-                <td>
-                 Status
-                </td>
-                <td></td>
-              </tr>
-              <tr>
-                <td class="input-cel">
-                  <input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()">
-                </td>
-                <td>
-                  WH/IN/00001
-                </td>
-                <td>
-                  Date
-                </td>
-                <td>
-                 Status
-                </td>
-                <td></td>
+                <td>{{item.iv}}</td>
+                <td>{{item.date}}</td>
+                <td>{{item.status}}</td>
+                <td>{{item.ci}}</td>
+                  
+                  <td></td>
               </tr>
             </tbody>
           </table>
         </div>
+
+
         <div id="divCompView" class="cards">
           <div class="inside row">
-              <div class="col-md-4">
+              <div class="col-md-4" *ngFor = 'let item of items4'>
                 <div class="top">
-                 <span class="title-col">WH/IN/0002</span>
-                 <span class="button-col"><button>Ready</button></span> 
+                 <span class="title-col">{{item.iv}}</span>
+                 <span class="button-col"><button>{{item.status}}</button></span> 
                 </div>
                 <div class="bottom">
                   <span class="time-col">
                     <i class="glyphicon glyphicon-time"></i>
-                    05/12/2020 17:33:40
+                    {{item.date}} 
                     </span>
                  </div>
               </div>

@@ -20,9 +20,9 @@
                        </div>      
                    </div>  
             </div>
-           <!-- End of head-->
+           <!-- End of head--> 
            <div class="main">
-             
+              
               <table id="warehousestable" class="table table-hover">
                 <thead>
                   <tr>
@@ -33,34 +33,17 @@
                     <th>Adresse</th>
                     <th>Company</th>
                   </tr>
-                </thead>
-      
+                </thead>    
                 <tbody>
-                  <tr>
+                  <tr *ngFor = 'let item of items12'>
                     <td>
                       <label><input type="checkbox" value=""></label></td>
-                    <td>Your Company</td>
-                    <td>My Company (San Francisco)</td>
-                    <td>My Company (San Francisco)</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.par}}</td>
+                    <td>{{item.com}}</td>
 
-                  </tr>
-                  <tr>
-                      <td><label><input type="checkbox" value=""></label></td>
-                    <td>Your Company</td>
-                    <td>My Company (San Francisco)</td>
-                    <td>My Company (San Francisco)</td>
-                    
-                  </tr>
-                  <tr>
-                      <td><label><input type="checkbox" value=""></label></td>
-                    <td>Your Company</td>
-                    <td>My Company (San Francisco)</td>
-                    <td>My Company (San Francisco)</td>
                   </tr>
                 </tbody>
               </table>      
-             </div>
-
-            
- 
+             </div> 
       </div>

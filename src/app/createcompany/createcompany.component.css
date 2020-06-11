@@ -95,3 +95,9 @@ h2{
     color: #007bff;
     font-weight: bold;
 }
+.header-dialog-title
+{
+    font-size: 22px;
+    font-weight:bold;
+    margin-bottom: 16px;
+}

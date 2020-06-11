@@ -20,7 +20,7 @@ export class OverviewComponent implements OnInit {
   }
   myFunctionClickedSousMenu(id:string) {
     
-    var x = document.getElementById(id);
+    var x = document.getElementById(id); 
     if (x.style.display === "block") {
       x.style.display = "none";
     } else {

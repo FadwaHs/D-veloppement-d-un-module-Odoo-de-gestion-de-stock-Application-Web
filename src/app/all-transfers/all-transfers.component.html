@@ -4,7 +4,7 @@
   <div class="row head">
   
       <div class="section-title">
-         <span>Transfers</span>
+         <span>Transfers</span> 
       </div>
 
       <div class="input-group">
@@ -23,8 +23,8 @@
                  <i class="glyphicon glyphicon-triangle-bottom icon"></i>
             </button>
             <div id="myDropdown4" class="dropdown-content">
-              <a href="#">Archived</a>
-              <a href="#">Add Custom Filter</a>
+                <a href="#">Picking Operation (PDF)</a>
+                <a href="#">Delivery slip(PDF)</a>
             </div>
           </div>
           <div class="dropdown none" id="dropdown-list2">
@@ -33,9 +33,8 @@
                 <i class="glyphicon glyphicon-triangle-bottom icon"></i>
             </button>
             <div id="myDropdown5" class="dropdown-content">
-              <a href="#">Archived</a>
-              <a href="#">Add Custom Filter</a>
-              <a href="#">Link 3</a>
+              <a href="#">Export</a>
+              <a href="#">Delete</a>
             </div>
         </div>
           <div class="dropdown">
@@ -45,9 +44,15 @@
                   <i class="glyphicon glyphicon-menu-down"></i>
               </button>
               <div id="myDropdown1" class="dropdown-content">
-                <a href="#">Archived</a>
-                <a href="#">Add Custom Filter</a>
-                <a href="#">Link 3</a>
+                  <table>
+                      <tr> <a href="#">Draft</a>
+                       <a href="#">Done</a> 
+                       <a href="#">Waiting</a>
+                      <a href="#">Cancelled</a>
+                      <a href="#">Ready</a></tr>
+                      <tr><a href="#">Backorders</a>
+                      <a href="#">Add Custom Filter</a></tr>
+                    </table>
               </div>
           </div>
           <div class="dropdown">
@@ -57,9 +62,11 @@
                   <i class="glyphicon glyphicon-menu-down"></i>
               </button>
               <div id="myDropdown2" class="dropdown-content">
-                <a href="#">Type of Operation</a>
-                <a href="#">Warehouse</a>
-                <a href="#">Add Custom Group</a>
+                  <table>
+                      <tr> <a href="#">Operation Type</a></tr>
+                      <tr> <a href="#">Status</a></tr>
+                      <tr> <a href="#">Add Custom Group</a></tr>
+                   </table>
               </div>
           </div>
           <div class="dropdown">
@@ -132,68 +139,32 @@
               </tr> 
             </thead>
             <tbody>
-              <tr>
+              <tr  *ngFor = 'let item of items3'>
                 <td class="input-cel">
                   <input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()">
                 </td>
-                <td>
-                  WH/IN/00001
-                </td>
+                <td>{{item.name}}</td>
+                
                 <td></td>
               </tr>
-              <tr>
-                <td class="input-cel">
-                  <input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()">
-                </td>
-                <td>
-                  WH/IN/00001
-                </td>
-                <td></td>
-              </tr>
+             
             </tbody>
           </table>
         </div>
-        <div id="divCompView" class="cards">
+
+        <div id="divCompView" class="cards"> 
           <div class="inside row">
-              <div class="col-md-4">
+              <div class="col-md-4" *ngFor = 'let item of items3'>
                 <div class="left">
-                 <span class="text1">WH/IN/0002</span>
+                 <span class="text1">{{item.name}}</span>
                  <span class="text2"><i class="glyphicon glyphicon-time"></i></span>
                 </div>
                 <div class="right">
-                  <span class="text1"><button>Ready</button></span>
-                  <span class="text2">05/05/2020</span>
+                  <span class="text1"><button  type="button" class="statusbutton">{{item.status}}</button></span>
+                  <span class="text2">{{item.date}}</span>
                  </div>
               </div>
-              <div class="col-md-4">
-                <div class="left">
-                 <span class="text1">WH/IN/0002</span>
-                 <span class="text2"><i class="glyphicon glyphicon-time"></i></span>
-                </div>
-                <div class="right">
-                  <span class="text1"><button>Ready</button></span>
-                  <span class="text2">05/05/2020</span>
-                 </div>
-              </div>
-              <div class="col-md-4">
-                <div class="left">
-                 <span class="text1">WH/IN/0002</span>
-                 <span class="text2"><i class="glyphicon glyphicon-time"></i></span>
-                </div>
-                <div class="right">
-                  <span class="text1"><button>Ready</button></span>
-                  <span class="text2">05/05/2020</span>
-                 </div>
-              </div>
-              <div class="col-md-4">
-                <div class="left">
-                 <span class="text1">WH/IN/0002</span>
-                 <span class="text2"><i class="glyphicon glyphicon-time"></i></span>
-                </div>
-                <div class="right">
-                  <span class="text1"><button>Ready</button></span>
-                  <span class="text2">05/05/2020</span>
-                 </div>
+              
               </div>
             </div>
      </div>

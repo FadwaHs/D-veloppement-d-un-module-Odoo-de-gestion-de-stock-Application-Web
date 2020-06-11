@@ -76,24 +76,34 @@ head2 begin
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: #818091;
+    height: 35px;
+    width: 199px;
+    font-weight: bold;
+    padding: 12px 16px;
+    font-size: 13px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+      background-color: #007bff;
+      color: white;
+  }
+  .dropdown-content tr{
+     border-bottom: 0.1px solid #e9ecef;
+  }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
@@ -244,9 +254,10 @@ button#exportbtn
 
 .table-transfers thead
 {
-  
+   
     background-color: #eeeeee;
     color: #000;
+    font-weight: bold;
     cursor: pointer;
   
 }
@@ -365,6 +376,7 @@ table td
      display: inline-block;
      width: 100%;
      text-align:start;
+    
      
 }
 .col-md-4 .left .text2 i
@@ -383,7 +395,7 @@ table td
      text-align: end;
     
 }
-.col-md-4 .right .text1 button
+ button.statusbutton
 {
     color: white;
     background-color: #007bff;
@@ -391,9 +403,10 @@ table td
     border-radius: 2px;
 }
 .col-md-4 .right .text2
-{ 
-    
-   
+{   
+    color: #66add6; 
+    font-weight: bold;
+    font-size: 12px;
      display: inline-block;
      width: 100%;
      text-align: end;
