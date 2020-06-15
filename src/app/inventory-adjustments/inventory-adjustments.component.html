@@ -17,16 +17,6 @@
      </div>
      <div class="row head2">
          <div class="button-group2">
-          <div class="dropdown none" id="dropdown-list1" >
-            <button (click)="functionShowSousMenu('myDropdown4')" class="dropbtn">
-                 Print
-                 <i class="glyphicon glyphicon-triangle-bottom icon"></i>
-            </button>
-            <div id="myDropdown4" class="dropdown-content">
-              <a href="#">Inventory Adjustments</a>
-       
-            </div>
-          </div>
           <div class="dropdown none" id="dropdown-list2">
             <button (click)="functionShowSousMenu('myDropdown5')" class="dropbtn">
                 Action
@@ -45,31 +35,10 @@
               </button>
               <div id="myDropdown1" class="dropdown-content">
                   <table>
-                      <tr> <a href="#">Draft</a>
-                       <a href="#">In progress</a> 
-                       <a href="#">Validated</a>
+                      <tr> <a (click)="filtreFunction('draft')">Draft</a>
+                       <a (click)="filtreFunction('done')">Done</a>
                      </tr>
-                      <tr>
-                        <td><p>Inventory Date</p></td>
-                        <td id="icontd"><i class="glyphicon glyphicon-play" (click)="functionShowSousMenu('datemenu')"></i></td>
-                      </tr>
-                      <tr> <a href="#">Add Custom Filter</a></tr>
                     </table>
-                    <!-- <div id="datemenu" class="dropdown-content">
-                        <table>
-                          <tr>
-                            <a>2020</a>
-                            <a>2019</a>
-                            <a>2018</a>
-                          </tr>
-                          <tr>
-                            <a>June</a>
-                           <a>May</a>
-                           <a>April</a>
-                         </tr>
-                         <tr> <a href="#">Add Custom Date</a></tr>
-                        </table>
-                     </div> -->
               </div>
 
           </div>
@@ -81,8 +50,7 @@
               </button>
               <div id="myDropdown2" class="dropdown-content">
                   <table>
-                      <tr> <a href="#">Status</a></tr>
-                      <tr> <a href="#">Add Custom Group</a></tr>
+                      <tr> <a (click)="functionGroupByStatus()">Status</a></tr>
                    </table>
               </div>
           </div>
@@ -119,7 +87,7 @@
             <thead >
               <tr id="table-header">
                <th class="input-cel">
-                <input type="checkbox" id="checkbox-principal" (click)="FunctionCheckBox('checkbox','checkbox-principal')">
+                <input type="checkbox" id="checkbox-principal" (click)="FunctionCheckBox('checkbox1','checkbox-principal')">
                </th>
                <th class="table-header-body">
                  Reference
@@ -144,10 +112,10 @@
               </tr> 
             </thead>
 
-            <tbody>
-              <tr *ngFor = 'let item of items4'>
+            <tbody >
+              <tr *ngFor = 'let item of tableau1'>
                 <td class="input-cel">
-                  <input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()">
+                  <input type="checkbox" class="checkbox1" (click)="FunctionCheckBox2('checkbox1')">
                 </td>
                 <td>{{item.iv}}</td>
                 <td>{{item.date}}</td>
@@ -160,10 +128,16 @@
           </table>
         </div>
 
+        <div class="create-new" id="create-new">
+          <img class="create-new-img" src="assets/file.jpg">
+          <span class="create-new-title">Create a new transfer</span>
+          <span class="create-new-text">Transfers allow you to move products from one location to another.</span>
+        </div>
+
 
         <div id="divCompView" class="cards">
           <div class="inside row">
-              <div class="col-md-4" *ngFor = 'let item of items4'>
+              <div class="col-md-4" *ngFor = 'let item of tableau1'>
                 <div class="top">
                  <span class="title-col">{{item.iv}}</span>
                  <span class="button-col"><button>{{item.status}}</button></span> 
@@ -174,10 +148,58 @@
                     {{item.date}} 
                     </span>
                  </div>
-              </div>
-              
-       
-            </div>
+              </div>          
+          </div>
      </div>
-     <!--End Maiiiiiiiiiiiiiiiiinn-->
+
+     <div id="div-group1">
+      <table class="table-group1 table-hover" id="div-table">
+        <thead >
+          <tr class="table-header-group1">
+           <th class="input-cel">
+            <input type="checkbox" id="checkbox-principal2" (click)="FunctionCheckBox('checkbox2','checkbox-principal2')">
+           </th>
+           <th class="content" >
+             Reference
+           </th>
+           <th class="content" >
+            Inventory Date
+          </th>
+          <th class="content">
+            Status
+          </th>
+          <th class="content">
+              Company 
+            </th>
+           <th class="content">
+             Product
+          </th>
+          </tr> 
+        </thead>
+      </table>
+      <div>
+        <div *ngFor="let item2 of tableau_status;let i= index;">
+          <div class="row-status" (click)="functionShowtable(item2.status,i)">{{item2.status}} ({{item2.quatity}})
+            <i class="glyphicon glyphicon-triangle-bottom icon" id={{item2.status}}{{i}} >
+            </i></div>
+        <div id={{item2.status}} style="display:none;">
+         <table class="table-group1">
+        <tbody class="table-body-group1">
+          <tr *ngFor = 'let item of tableau2'>
+            <td class="input-cel"  *ngIf="(item.status == item2.status)">
+              <input type="checkbox" class="checkbox2" (click)="FunctionCheckBox2('checkbox2')">
+            </td>
+            <td class="content" *ngIf="(item.status == item2.status)">{{item.iv}}</td>
+            <td class="content" *ngIf="(item.status == item2.status)">{{item.date}}</td>
+            <td  class="content" *ngIf="(item.status == item2.status)">{{item.status}}</td>
+            <td  class="content" *ngIf="(item.status == item2.status)">{{item.ci}}</td>
+            <td class="content" *ngIf="(item.status == item2.status)">{{item.pid}}</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    </div>
+</div>
+<!--End Maiiiiiiiiiiiiiiiiinn-->
 </div>

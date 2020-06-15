@@ -45,13 +45,12 @@
               </button>
               <div id="myDropdown1" class="dropdown-content">
                   <table>
-                      <tr> <a href="#">Draft</a>
-                       <a href="#">Done</a> 
-                       <a href="#">Waiting</a>
-                      <a href="#">Cancelled</a>
-                      <a href="#">Ready</a></tr>
-                      <tr><a href="#">Backorders</a>
-                      <a href="#">Add Custom Filter</a></tr>
+                      <tr> 
+                       <a (click)="filtreFunction('draft')">Draft</a>
+                       <a (click)="filtreFunction('done')">Done</a> 
+                       <a (click)="filtreFunction('waiting')">Waiting</a>
+                      <a (click)="filtreFunction('ready')">Ready</a></tr>
+                      <tr>
                     </table>
               </div>
           </div>
@@ -63,9 +62,8 @@
               </button>
               <div id="myDropdown2" class="dropdown-content">
                   <table>
-                      <tr> <a href="#">Operation Type</a></tr>
-                      <tr> <a href="#">Status</a></tr>
-                      <tr> <a href="#">Add Custom Group</a></tr>
+                      <tr> <a (click)="functionGroupByOperType()">Operation Type</a></tr>
+                      <tr> <a (click)="functionGroupByStatus()">Status</a></tr>
                    </table>
               </div>
           </div>
@@ -102,46 +100,54 @@
             <thead >
               <tr id="table-header">
                <th class="input-cel">
-                <input type="checkbox" id="checkbox-principal" (click)="FunctionCheckBox('checkbox','checkbox-principal')">
+                <input type="checkbox" id="checkbox-principal" (click)="FunctionCheckBox('checkbox-principal','checkbox')">
                </th>
                <th class="table-header-body">
                  Reference
                </th>
                <th class="icon-cel dropdown">
-                <i class="glyphicon glyphicon-option-vertical" (click)="functionShowSousMenu('dropdownmenutable')"></i>
+                <i class="glyphicon glyphicon-option-vertical"
+                 (click)="functionShowSousMenu('dropdownmenutable')"></i>
                 <div id="dropdownmenutable" class="dropdown-content">
                   <div>
-                    <input type="checkbox" class="check-menu" (click)="addAllCellul(0,'Contact')">Contact
+                    <input type="checkbox" class="check-menu" (click)="addAllCellul(0,'Contact','div-table','check-menu','table-header')">Contact
                   </div>
                   <div>
-                    <input type="checkbox" class="check-menu"  (click)="addAllCellul(1,'Responsable')">Responsable
+                    <input type="checkbox" class="check-menu"  
+                    (click)="addAllCellul(1,'Responsable','div-table','check-menu','table-header')">Responsable
                   </div>
                   <div>
-                    <input type="checkbox" class="check-menu" (click)="addAllCellul(2,'Scheduled Date')">Scheduled Date
+                    <input type="checkbox" class="check-menu"
+                     (click)="addAllCellul(2,'Scheduled Date','div-table','check-menu','table-header')">Scheduled Date
                   </div>
                   <div>
-                    <input type="checkbox" class="check-menu" (click)="addAllCellul(3,'Source Document')">Source Document
+                    <input type="checkbox" class="check-menu" 
+                    (click)="addAllCellul(3,'Source Document','div-table','check-menu','table-header')">Source Document
                   </div>
                   <div>
-                    <input type="checkbox" class="check-menu" (click)="addAllCellul(4,'Back Order of')">Back Order of
+                    <input type="checkbox" class="check-menu" 
+                    (click)="addAllCellul(4,'Back Order of','div-table','check-menu','table-header')">Back Order of
                   </div>
                   <div>
-                    <input type="checkbox" class="check-menu" (click)="addAllCellul(5,'Status')">Status
+                    <input type="checkbox" class="check-menu" 
+                    (click)="addAllCellul(5,'Status','div-table','check-menu','table-header')">Status
                   </div>
                   <div>
-                    <input type="checkbox" class="check-menu" (click)="addAllCellul(6,'Priority')">Priority
+                    <input type="checkbox" class="check-menu" 
+                    (click)="addAllCellul(6,'Priority','div-table','check-menu','table-header')">Priority
                   </div>
                   <div>
-                    <input type="checkbox" class="check-menu" (click)="addAllCellul(7,'Operation Type')">Operation Type
+                    <input type="checkbox" class="check-menu" 
+                    (click)="addAllCellul(7,'Operation Type','div-table','check-menu','table-header')">Operation Type
                   </div>
                 </div>
               </th>
               </tr> 
             </thead>
             <tbody>
-              <tr  *ngFor = 'let item of items3'>
+              <tr  *ngFor = 'let item of tableau1'>
                 <td class="input-cel">
-                  <input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()">
+                  <input type="checkbox" class="checkbox" (click)="FunctionCheckBox2('checkbox')">
                 </td>
                 <td>{{item.name}}</td>
                 
@@ -151,22 +157,92 @@
             </tbody>
           </table>
         </div>
+        <div class="create-new" id="create-new">
+          <img class="create-new-img" src="assets/file.jpg">
+          <span class="create-new-title">Create a new transfer</span>
+          <span class="create-new-text">Transfers allow you to move products from one location to another.</span>
+        </div>
 
         <div id="divCompView" class="cards"> 
           <div class="inside row">
-              <div class="col-md-4" *ngFor = 'let item of items3'>
+              <div class="col-md-4" *ngFor = 'let item of tableau1'>
                 <div class="left">
                  <span class="text1">{{item.name}}</span>
                  <span class="text2"><i class="glyphicon glyphicon-time"></i></span>
                 </div>
                 <div class="right">
-                  <span class="text1"><button  type="button" class="statusbutton">{{item.status}}</button></span>
+                  <span class="text1"><button  type="button"  [ngClass]="(item.status)+'button'"
+                    >{{item.status}}</button></span>
                   <span class="text2">{{item.date}}</span>
                  </div>
               </div>
-              
               </div>
             </div>
+            <div id="div-group1">
+              <table id ="table-group1" class="table table-hover">
+                <tr class="table-header-group1">
+                 <td class="input-cel"><input type="checkbox" id="checkbox-principal3" (click)="FunctionCheckBox('checkbox-principal3','checkbox3')"></td>
+                 <td class="cellule-content">Reference</td>
+                 <td class="cellule-content">Contact</td>
+                 <td class="cellule-content">Date</td>
+                 <td class="cellule-content">Status</td>
+                 <td class="cellule-content">Operation Type</td>
+                </tr>
+              </table>
+                <div *ngFor="let item2 of tabStatus;let i= index;">
+                  <div class="row-status" (click)="functionShowtable(item2.status,i)">{{item2.status}} ({{item2.count}})
+                    <i class="glyphicon glyphicon-triangle-bottom icon" id={{item2.status}}{{i}} >
+                    </i></div>
+                  <div id={{item2.status}}>
+                  <table class="table table-hover">
+                    <tbody class="table-body-group1" >
+                     <tr *ngFor="let item of tableau2" [ngClass]="(item.status)+'row'"> 
+                     <td class="input-cel" *ngIf="(item.status == item2.status)"><input type="checkbox" class="checkbox3" (click)="FunctionCheckBox2('checkbox3')"></td>
+                     <td class="cellule-content" *ngIf="(item.status == item2.status)">{{item.name}}</td>
+                     <td class="cellule-content" *ngIf="(item.status == item2.status)">{{item.partner}}</td>
+                     <td class="cellule-content" *ngIf="(item.status == item2.status)">{{item.date}}</td>
+                     <td class="cellule-content" *ngIf="(item.status == item2.status)">{{item.status}}</td>
+                     <td class="cellule-content" *ngIf="(item.status == item2.status)">{{item.opertaiontype}}</td>
+                     </tr>   
+                    </tbody>
+                  </table>
+                </div>
+                </div>
+             </div>
+            <!-------->
+            <div id="div-group2">
+              <table id ="table-group2" class="table table-hover">
+                <tr class="table-header-group2">
+                 <td class="input-cel"><input type="checkbox" id="checkbox-principal4" (click)="FunctionCheckBox('checkbox-principal4','checkbox4')"></td>
+                 <td class="cellule-content">Reference</td>
+                 <td class="cellule-content">Contact</td>
+                 <td class="cellule-content">Date</td>
+                 <td class="cellule-content">Status</td>
+                 <td class="cellule-content">Operation Type</td>
+                </tr>
+              </table>
+                <div *ngFor="let item2 of tableau_oper;let i= index;">
+                  <div class="row-status" (click)="functionShowtable(item2.typeId,i)">{{item2.typeId}} ({{item2.quantity}})
+                    <i class="glyphicon glyphicon-triangle-bottom icon" id={{item2.typeId}}{{i}} >
+                    </i></div>
+                  <div id={{item2.typeId}} style="display:none;">
+                  <table class="table table-hover">
+                    <tbody class="table-body-group2" >
+                     <tr *ngFor="let item of tableau2" [ngClass]="(item.status)+'row'"> 
+                     <td class="input-cel" *ngIf="(item.opertaiontype == item2.typeId)"><input type="checkbox" class="checkbox4" (click)="FunctionCheckBox2('checkbox4')"></td>
+                     <td class="cellule-content" *ngIf="(item.opertaiontype == item2.typeId)">{{item.name}}</td>
+                     <td class="cellule-content" *ngIf="(item.opertaiontype == item2.typeId)">{{item.partner}}</td>
+                     <td class="cellule-content" *ngIf="(item.opertaiontype == item2.typeId)">{{item.date}}</td>
+                     <td class="cellule-content" *ngIf="(item.opertaiontype == item2.typeId)">{{item.status}}</td>
+                     <td class="cellule-content" *ngIf="(item.opertaiontype == item2.typeId)">{{item.opertaiontype}}</td>
+                     </tr>   
+                    </tbody>
+                  </table>
+                </div>
+                </div>
+            
+             </div>
+             <!--------------------------->
      </div>
      <!--End Maiiiiiiiiiiiiiiiiinn-->
 </div>

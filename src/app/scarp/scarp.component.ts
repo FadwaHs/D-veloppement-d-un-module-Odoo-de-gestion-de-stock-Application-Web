@@ -11,35 +11,27 @@ export class ScarpComponent implements OnInit {
 
   ScrapData: JSON;  
   ourdata: JSON;
-  items5 = [];
+  items5 = [];tableau_pro = [];
 
   constructor(private _activatedroute:ActivatedRoute,private _route:Router, private http :HttpClient)
    {
     this.http.get('http://127.0.0.1:5002/Scrap').subscribe(data => {
       this.ScrapData = data as JSON;
-      this.ourdata = this.ScrapData["result"]["response"];
+      this.ourdata = this.ScrapData["result"]["response1"];
 
-      for (let key in this.ScrapData["result"]["response"])
-       {
-        this.items5.push(this.ScrapData["result"]["response"][key]);
+      for (let key in this.ScrapData["result"]["response1"])
+      {
+        this.items5.push(this.ScrapData["result"]["response1"][key]);
+      }
+      for (let key in this.ScrapData["result"]["reponse2"])
+      {
+        this.tableau_pro.push(this.ScrapData["result"]["reponse2"][key]);
       }
 
-      console.log(this.items5);
-
-      var buttoncolor = document.getElementsByClassName('statusbutton');
-
-      for (var i = 0, l = buttoncolor.length; i < l; i++)
-       {
-           if(buttoncolor[i].textContent === 'done')
-           {
-               (<HTMLElement> buttoncolor[i]).style.backgroundColor = '#28a745';
-           }
-      }  
-
-
-    });
+      console.log(this.tableau_pro);
+    }); 
     }
-
+   
   ngOnInit(): void {
   }
   Openview(id1 : string , id2 : string)
@@ -55,9 +47,8 @@ export class ScarpComponent implements OnInit {
 
     }else{
       x.style.display = "block";
-  
-
     }
+    document.getElementById('div-group1').style.display="none";
   }
   Activer(id1: string ,id2: string)
   { 
@@ -76,13 +67,11 @@ export class ScarpComponent implements OnInit {
   {
     var element = document.getElementsByClassName(class1);
     var element2 = document.getElementById(id);
-    var element3 = document.getElementById('dropdown-list1');
     var element4 = document.getElementById('dropdown-list2');
     if ((element2 as HTMLInputElement).checked == true){
        for(var i = 0; i < element.length; i++)
        {
        (element[i] as HTMLInputElement).checked = true;
-            element3.classList.remove("none");
             element4.classList.remove("none");
        }
     }
@@ -91,15 +80,13 @@ export class ScarpComponent implements OnInit {
       for(var i = 0; i < element.length; i++)
       {
       (element[i] as HTMLInputElement).checked = false;
-         element3.classList.add("none");
          element4.classList.add("none");
       }
     }
   } 
-  FunctionCheckBox2()
+  FunctionCheckBox2(classCheck:string)
   {
-  var element = document.getElementsByClassName('checkbox');
-  var element2= document.getElementById('dropdown-list1');
+  var element = document.getElementsByClassName(classCheck);
   var element3= document.getElementById('dropdown-list2');
   var x=0;
   for(var i = 0; i < element.length; i++)
@@ -111,13 +98,31 @@ export class ScarpComponent implements OnInit {
   }
   if(x!= 0)
   {
-     element2.classList.remove("none");
      element3.classList.remove("none");
   }
   else
   {
-      element2.classList.add("none");
       element3.classList.add("none");
   }
   }
+  functuinGroupByProduct()
+  {
+    document.getElementById('divCompView').style.display="none";
+    document.getElementById('divlistview').style.display="none";
+    document.getElementById('div-group1').style.display="block";
+  }
+  functionShowtable(status:string,i:string)
+{
+  if(document.getElementById(status+i).className=="glyphicon glyphicon-triangle-bottom icon")
+    {
+     
+      document.getElementById(status).style.display="block";
+      document.getElementById(status+i).className="glyphicon glyphicon-triangle-top icon";
+    }
+    else {
+
+      document.getElementById(status).style.display="none";
+      document.getElementById(status+i).className="glyphicon glyphicon-triangle-bottom icon";
+    }
+}
 }

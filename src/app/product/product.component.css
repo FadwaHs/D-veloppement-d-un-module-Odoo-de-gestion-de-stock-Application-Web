@@ -116,7 +116,7 @@ head2 end
     margin-left: 15px !important;    
 }
 
-div#divlistview
+div#divlistview,#div-group1,#div-group2
 {
     margin-top: 100px;
    
@@ -335,6 +335,116 @@ p#styleProductname
     font-size: 14px;
     color: #007bff;
 }
+/*--------------------------------------------------------*/
+.table,.table-body-group1
+{
+    margin-bottom: 0px !important;
+    width: 100%;
+}
+#div-group1,#div-group2
+{
+    overflow: auto;
+    background-color: white;
+    width: 1100px;
+    display: none;
+}
+.table-header-group1,.table-header-group2
+{
+    background-color: #eeeeee;  
+}
+.table-header-group1 td.cellule-content,.table-header-group2 td.cellule-content
+{
+    color: black;
+    font-weight: 590;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 3px;
+    width: 13%;
+}
+.input-cel
+{
+    padding-left: 6px;
+    width: 3%;
+}
+.table-body-group1 tr td.cellule-content
+{
+ 
+    padding-top: 8px;
+    width: 13%;
+ 
+    padding-bottom: 8px;
+    padding-left: 3px;
+}
+#table-group1,#table-group2
+{
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.19);
+}
 
+.row-status
+{
+    width: 100%;
+    font-size: 15px;
+    padding: 8px;
+    background-color: #eeeeee;  
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.19);
+    font-weight: 500;
 
+}
+.row-status i{
+     
+    font-size: 8px;
+    margin-left: 5px;
+}
+#draft,#done,#waiting,#ready
+{
+    display: none;
+}
+@media (max-width:428px)
+{
+    table
+    {
+        width: 1200px;
+    }
+}
+@media (max-width:650px)
+{
 
+table{
+   width: 1200px;
+}
+}
+
+@media (max-width:960px)
+{
+    table{
+        width: 1000px;
+     }
+}
+
+@media (max-width:1200px)
+{
+    table{
+        width: 1100px;
+     }
+}
+
+/*-----------------------------------------------------------------------*/
+.create-new
+{
+    text-align: center;
+    display: none;
+    padding-top: 150px;
+}
+.create-new-img
+{
+  margin-bottom: 20px;
+  width: 100px;
+}
+.create-new-title
+{
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 20px;
+}
+/*--------------------------------------------------------*/

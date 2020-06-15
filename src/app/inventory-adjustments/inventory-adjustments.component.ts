@@ -12,19 +12,33 @@ export class InventoryAdjustmentsComponent implements OnInit {
   InventoryData: JSON; 
   ourdata: JSON;
   items4 = [];
+  tableau1 = []; tableau2 = [];tableau_status = [];
 
   constructor(private _activatedroute:ActivatedRoute,private _route:Router ,private http: HttpClient)
    {
     this.http.get('http://127.0.0.1:5002/Inventory').subscribe(data => {
       this.InventoryData = data as JSON;
-      this.ourdata = this.InventoryData["result"]["response"];
+      this.ourdata = this.InventoryData["result"]["response1"];
 
-      for (let key in this.InventoryData["result"]["response"])
-       {
-        this.items4.push(this.InventoryData["result"]["response"][key]);
+      for (let key in this.InventoryData["result"]["response1"])
+      {
+        this.items4.push(this.InventoryData["result"]["response1"][key]);
+      }
+      this.InventoryData = data as JSON;
+      this.ourdata = this.InventoryData["result"]["response2"];
+
+
+      for (let key in this.InventoryData["result"]["response2"])
+      {
+        this.tableau_status.push(this.InventoryData["result"]["response2"][key]);
       }
 
-      console.log(this.items4);
+      for(var i=0;i<this.items4.length;i++)
+      {
+        this.tableau1.push(this.items4[i]);
+        this.tableau2.push(this.items4[i]);
+      }
+      console.log(this.tableau_status);
 
 
     });
@@ -45,9 +59,8 @@ export class InventoryAdjustmentsComponent implements OnInit {
 
     }else{
       x.style.display = "block";
-  
-
     }
+    document.getElementById('div-group1').style.display="none";
   }
   Activer(id1: string ,id2: string)
   { 
@@ -62,13 +75,11 @@ export class InventoryAdjustmentsComponent implements OnInit {
   {
     var element = document.getElementsByClassName(class1);
     var element2 = document.getElementById(id);
-    var element3 = document.getElementById('dropdown-list1');
     var element4 = document.getElementById('dropdown-list2');
     if ((element2 as HTMLInputElement).checked == true){
        for(var i = 0; i < element.length; i++)
        {
        (element[i] as HTMLInputElement).checked = true;
-            element3.classList.remove("none");
             element4.classList.remove("none");
        }
     }
@@ -77,7 +88,6 @@ export class InventoryAdjustmentsComponent implements OnInit {
       for(var i = 0; i < element.length; i++)
       {
       (element[i] as HTMLInputElement).checked = false;
-         element3.classList.add("none");
          element4.classList.add("none");
       }
     }
@@ -115,7 +125,7 @@ addAllCellul(num:number,name:string)
       var td2=document.createElement('td');
       td2=table.rows[i].insertCell(num);
       td2.setAttribute("style","padding:8px;");
-      td2.innerHTML=name;
+      td2.innerHTML=this.tableau1[i-1].pid;
      }
   }
   else
@@ -127,10 +137,9 @@ addAllCellul(num:number,name:string)
   }
   this.functionGetWidthCellul();
 }
-FunctionCheckBox2()
+FunctionCheckBox2(menu:string)
 {
-  var element = document.getElementsByClassName('checkbox');
-  var element2= document.getElementById('dropdown-list1');
+  var element = document.getElementsByClassName(menu);
   var element3= document.getElementById('dropdown-list2');
   var x=0;
   for(var i = 0; i < element.length; i++)
@@ -142,15 +151,71 @@ FunctionCheckBox2()
   }
   if(x!= 0)
   {
-     element2.classList.remove("none");
      element3.classList.remove("none");
   }
   else
   {
-      element2.classList.add("none");
       element3.classList.add("none");
   }
 }
 
+functionGroupByStatus()
+{
+  document.getElementById('divlistview').style.display="none";
+  document.getElementById('divCompView').style.display="none";
+  document.getElementById('div-group1').style.display="block";
+}
+functionShowtable(status:string,i:string)
+{
+  if(document.getElementById(status+i).className=="glyphicon glyphicon-triangle-bottom icon")
+    {
+     
+      document.getElementById(status).style.display="block";
+      document.getElementById(status+i).className="glyphicon glyphicon-triangle-top icon";
+    }
+    else {
 
+      document.getElementById(status).style.display="none";
+      document.getElementById(status+i).className="glyphicon glyphicon-triangle-bottom icon";
+    }
+}
+filtreFunction(status:string)
+  {
+    document.getElementById('div-group1').style.display="none";
+    this.tableau1=[];
+    for(var i=0;i<this.tableau2.length;i++)
+    {
+      if(this.tableau2[i].status==status)
+       this.tableau1.push(this.tableau2[i])
+    }  
+   
+    if(this.tableau1.length==0)
+    {
+     document.getElementById('create-new').style.display="block";
+     document.getElementById('divlistview').style.display="none";
+    }
+    else
+    {
+      document.getElementById('create-new').style.display="none";
+      if(document.getElementById('divCompView').style.display=="none")
+          document.getElementById('divlistview').style.display="block";
+   
+    }
+    var element=document.getElementById('check-menu');
+    var table=<HTMLTableElement> document.getElementById('div-table');
+    var numRow=table.rows.length;
+  
+    (element as HTMLInputElement).checked =false;
+    
+    var numCel=table.rows[0].cells.length;
+    if(numCel==7){
+      for(var i=0;i<numRow;i++)
+      {
+       table.rows[i].deleteCell(3);
+      }
+      
+     }
+     this.functionGetWidthCellul();
+
+  }
 }

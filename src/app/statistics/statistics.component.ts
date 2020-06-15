@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
+
 @Component({
   selector: 'app-statistics',
   templateUrl: './statistics.component.html',
@@ -7,11 +9,68 @@ import { Chart } from 'chart.js';
 })
 export class StatisticsComponent implements OnInit {
 
-  constructor() { }
-   lineChart=[];
-   donutChart=[];
-  ngOnInit(): void {
+  StaticsData: JSON;  
+  ourdata1: JSON;
+  productlength:number;
+  transferslength:number;
+  scraplength:number;
+  receiptlength=0;
+  deliverylength=0;
+  items3 = [];items4 = [];
+  lineChart=[];
+  donutChart=[];
+  
+  constructor(private http2 :HttpClient) {
+   
+     
+   }
+  
+
+   ngOnInit(): void {
+    this.http2.get('http://127.0.0.1:5002/statistics').subscribe(data => {
+      this.StaticsData = data as JSON;
+      this.ourdata1 = this.StaticsData["result"];
+      this.productlength = this.StaticsData["result"]["productLength"];
+      this.transferslength = this.StaticsData["result"]["transferslength"];
+      this.scraplength = this.StaticsData["result"]["scarplength"];
+
+      for (let key in this.StaticsData["result"]["pickingtab"])
+      {
+        this.items3.push(this.StaticsData["result"]["pickingtab"][key]);
+      }
+
+      for(var i=0;i<this.items3.length;i++)
+      {
+          if(this.items3[i].type=="incoming")
+          {
+            this.receiptlength++;
+  
+          }
+          else if(this.items3[i].type=="outgoing")
+          {
+            this.deliverylength++;
+          }
+      }
+      // var d = new Date();
+      // console.log(d.getFullYear());
+      this.functionDonutChart(this.receiptlength,this.deliverylength,this.scraplength)
+  
+
     
+    });
+
+    this.http2.get('http://127.0.0.1:5002/OperationsParMois').subscribe(data => {
+      this.StaticsData = data as JSON;
+      this.ourdata1 = this.StaticsData["result"];
+      for (let key in this.StaticsData["result"]["response1"])
+      {
+        this.items4.push(this.StaticsData["result"]["response1"][key]);
+      }
+
+      console.log(this.items4);
+    
+    });
+
   this.lineChart=new Chart(document.getElementById("line-chart"), {
     type: 'line',
     data: {
@@ -32,32 +91,36 @@ export class StatisticsComponent implements OnInit {
     options: {
       title: {
         display: true,
-        text: 'World population per region (in millions)'
+        text: '############'
       }
     }
   });
+    
 
 
-  this.donutChart=new Chart(document.getElementById("doughnut-chart"), {
-    type: 'doughnut',
-    data: {
-      labels: ["Receipts", "Delivery Orders", "Scrap"],
-      datasets: [
-        {
-          label: "Population (millions)",
-          backgroundColor: ["#3e95cd", "#8e5ea2","#dc3545"],
-          data: [2478,5267,734]
-        }
-      ]
-    },
-    options: {
-      title: {
-        display: true,
-        text: 'Predicted world population (millions) in 2050'
-      }
-    }
-});
+
 }
-
+  functionDonutChart(data1:number,data2:number,data3:number)
+  {
+    this.donutChart=new Chart(document.getElementById("doughnut-chart"), {
+      type: 'doughnut',
+      data: {
+        labels: ["Receipts", "Delivery Orders", "Scrap"],
+        datasets: [
+          {
+            label: "Population (millions)",
+            backgroundColor: ["#3e95cd", "#8e5ea2","#dc3545"],
+            data: [data1,data2,data3]
+          }
+        ]
+      },
+      options: {
+        title: {
+          display: true,
+          text: '####################'
+        }
+      }
+  });
+  }
   
 }

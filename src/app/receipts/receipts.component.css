@@ -63,44 +63,55 @@ head2 begin
 }
 /*Dropdown Button */
 .dropbtn {
-  background-color: #ffff;
-  color: black;
-  padding: 7px;
-  font-size: 13px;
-  border: none;
-  cursor: pointer;
-  border: #BDBDBD 1px solid;
-  border-radius: 3px;
-  margin-right: 5px;
-}
-
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #ffffff;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
+    background-color: #ffff;
+    color: black;
+    padding: 7px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    border: #BDBDBD 1px solid;
+    border-radius: 3px;
+    margin-right: 5px;
+  }
+  
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: #818091;
+      height: 35px;
+      width: 199px;
+      font-weight: bold;
+      padding: 12px 16px;
+      font-size: 13px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {
+        background-color: #007bff;
+        color: white;
+    }
+    .dropdown-content tr{
+       border-bottom: 0.1px solid #e9ecef;
+    }
+  
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
@@ -115,7 +126,7 @@ head2 end
 
 .main
 {
-    margin-top: 120px;
+    margin-top: 100px;
    
 }
 @media (max-width:428px)
@@ -167,7 +178,7 @@ head2 end
 
 .main
 {
-    margin-top: 180px;
+    margin-top: 170px;
 }
 
 table{
@@ -255,10 +266,11 @@ button#exportbtn
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
 }
 /*-------------------------------------------------------------------------------------*/
-.table
+#table
 {
     overflow: auto;
     background-color: white;
+    width: 1100px;
 }
 .table-header
 {
@@ -407,7 +419,7 @@ table{
 .col-md-4 .right .text1 button
 {
     color: white;
-    background-color: #007bff;
+    
     border: none;
     border-radius: 2px;
 }
@@ -432,4 +444,131 @@ table{
     {
         text-align: start;
     }
+}
+/*----------------------------------------------------------------*/
+.draftbutton
+{
+    background-color: #dc3545;
+}
+.waitingbutton
+{
+  background-color: #00a65a;
+}
+.readybutton
+{
+  background-color: #007bff;
+}
+.donebutton
+{
+  background-color: #f39c12;
+}
+.cancelledbutton
+{
+  background-color: #00c0ef;
+}
+.donerow td
+{
+  color: black;
+}
+/*-----------------------------------------------------------------------*/
+.create-new
+{
+    text-align: center;
+    display: none;
+    padding-top: 150px;
+}
+.create-new-img
+{
+  margin-bottom: 20px;
+  width: 100px;
+}
+.create-new-title
+{
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 20px;
+}
+/*--------------------------------------------------------*/
+.table
+{
+    margin-bottom: 0px !important;
+}
+#table-group1
+{
+    overflow: auto;
+    background-color: white;
+    width: 1100px;
+    display: none;
+}
+.table-header-group1
+{
+    background-color: #eeeeee;  
+}
+.table-header-group1 td.cellule-content
+{
+    color: black;
+    font-weight: 590;
+    width: 16%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 3px;
+}
+.table-body-group1 td.cellule-content
+{
+    width: 16%;
+    color:red;
+}
+#tablereceipts-group1
+{
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.19);
+}
+.table-header-group1 td input
+{
+   margin-left: 7px;
+} 
+
+
+.row-status
+{
+    width: 100%;
+    font-size: 15px;
+    padding: 8px;
+    background-color: #eeeeee;  
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.19);
+    font-weight: 500;
+
+}
+.row-status i{
+     
+    font-size: 8px;
+    margin-left: 5px;
+}
+@media (max-width:428px)
+{
+    table
+    {
+        width: 1200px;
+    }
+}
+@media (max-width:650px)
+{
+
+table{
+   width: 1200px;
+}
+}
+
+@media (max-width:960px)
+{
+    table{
+        width: 1000px;
+     }
+}
+
+@media (max-width:1200px)
+{
+    table{
+        width: 1100px;
+     }
 }

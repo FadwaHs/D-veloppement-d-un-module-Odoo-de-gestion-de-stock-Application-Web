@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient, HttpHeaders} from '@angular/common/http'; 
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-product',
@@ -11,26 +12,36 @@ export class ProductComponent implements OnInit {
 
   employeeData: JSON;
   ourdata: JSON; 
-  items = [];
+  items = [];tableau_type = [];tableau_cat = [];tableau1 = [];tableau2 = [];tableau3=[];
  
   constructor(private activatedroute: ActivatedRoute , private route: Router ,private http: HttpClient) {
     this.http.get('http://127.0.0.1:5002/products').subscribe(data => {
       this.employeeData = data as JSON;
-      this.ourdata = this.employeeData["result"]["response"];
+      this.ourdata = this.employeeData["result"]["listProduct"];
 
-      for (let key in this.employeeData["result"]["response"])
-       {
-        this.items.push(this.employeeData["result"]["response"][key]);
+      for (let key in this.employeeData["result"]["listProduct"])
+      {
+        this.items.push(this.employeeData["result"]["listProduct"][key]);
       }
 
-      //const obj = JSON.stringify(this.ourdata);
+      for (let key in this.employeeData["result"]["productsCat"])
+      {
+        this.tableau_cat.push(this.employeeData["result"]["productsCat"][key]);
+      }
 
-      // for (let key in this.ourdata){
-      //   if (data.hasOwnProperty(key)) {
-      //     this.items.push(this.ourdata[key]);
-      //   }
-      // }
-      console.log(this.items);
+      for (let key in this.employeeData["result"]["productsType"])
+      {
+        this.tableau_type.push(this.employeeData["result"]["productsType"][key]);
+      }
+      for(var i=0;i<this.items.length;i++)
+      {
+         this.tableau1.push(this.items[i])
+      }
+      for(var i=0;i<this.items.length;i++)
+      {
+         this.tableau2.push(this.items[i])
+      }
+      
     });
    } 
 
@@ -71,9 +82,9 @@ export class ProductComponent implements OnInit {
 
     }else{
       x.style.display = "block";
-  
-
     }
+    document.getElementById('div-group2').style.display="none";
+    document.getElementById('div-group1').style.display="none";
   }
 
   Activer(id1: string ,id2: string)
@@ -110,9 +121,9 @@ export class ProductComponent implements OnInit {
       }
     }
   }
-  FunctionCheckBox2()
+  FunctionCheckBox2(classCheck:string)
   {
-    var element = document.getElementsByClassName('checkbox');
+    var element = document.getElementsByClassName(classCheck);
     var element2= document.getElementById('dropdown-list1');
     var element3= document.getElementById('dropdown-list2');
     var x=0;
@@ -134,7 +145,63 @@ export class ProductComponent implements OnInit {
         element3.classList.add("none");
     }
   }
-
+  functionShowtable(status:string,i:string)
+  {
+    if(document.getElementById(status+i).className=="glyphicon glyphicon-triangle-bottom icon")
+    {
+      
+      for(var j=0;j<this.tableau2.length;j++)
+      {
+      if(this.tableau2[j].category==status || this.tableau2[j].types==status )
+       this.tableau3.push(this.tableau2[j]);
+      }
+      document.getElementById(status+i).className="glyphicon glyphicon-triangle-top icon";
+    
+    }
+    else {
+      this.tableau3=[];
+      document.getElementById(status+i).className="glyphicon glyphicon-triangle-bottom icon";
+    }
+  }
+  functionfiltre(argu:string)
+  {
+    this.tableau1=[];
+    for(var i=0;i<this.tableau2.length;i++)
+    {
+      if(this.tableau2[i].types==argu)
+       this.tableau1.push(this.tableau2[i]);
+    }
+    console.log(this.tableau2);console.log(argu);
+    if(this.tableau1.length==0)
+    {
+      
+      document.getElementById('divlistview').style.display="none";
+    }
+    else
+    {
+     
+      document.getElementById('div-group1').style.display="none" ;
+      document.getElementById('div-group2').style.display="none" ;
+      if(document.getElementById('divkanbanview').style.display=="none")
+          document.getElementById('divlistview').style.display="block";
+   
+    }
+  }
+  functionGroupByType()
+  {
+    document.getElementById('divlistview').style.display="none";
+    document.getElementById('divkanbanview').style.display="none";
+    document.getElementById('div-group1').style.display="none";
+    document.getElementById('div-group2').style.display="block";
+  }
+  functionGroupByCate()
+  {
+    document.getElementById('divlistview').style.display="none";
+    document.getElementById('divkanbanview').style.display="none";
+    document.getElementById('div-group2').style.display="none";
+    document.getElementById('div-group1').style.display="block";
+    
+  }
 }
 
 

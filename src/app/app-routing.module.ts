@@ -25,17 +25,18 @@ import { ProductMoveComponent } from './product-move/product-move.component';
 import { CreateTransfersComponent } from './create-transfers/create-transfers.component';
 import { CreateInventoryAdjustmentsComponent } from './create-inventory-adjustments/create-inventory-adjustments.component';
 import { CreateScarpComponent } from './create-scarp/create-scarp.component';
+import { OvreviewDashboardComponent } from './ovreview-dashboard/ovreview-dashboard.component';
 
 
 
 const routes: Routes = [
   {
     path:'',
-    component:OverviewComponent
+    component:OvreviewDashboardComponent
   },
   { 
         path: 'overview',
-        component:OverviewComponent
+        component:OvreviewDashboardComponent
   },
   {
         path:'statistics',

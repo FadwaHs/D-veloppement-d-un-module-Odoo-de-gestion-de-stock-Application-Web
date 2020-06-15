@@ -297,7 +297,7 @@ table td
     background-color: #fff;
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 4;
     right: 2px;
 }
 .dropdown-content div
@@ -395,10 +395,9 @@ table td
      text-align: end;
     
 }
- button.statusbutton
+.col-md-4 .right .text1 button
 {
     color: white;
-    background-color: #007bff;
     border: none;
     border-radius: 2px;
 }
@@ -426,3 +425,164 @@ table td
     }
 }
 
+.draftbutton
+{
+    background-color: #dc3545;
+}
+.waitingbutton
+{
+  background-color: #00a65a;
+}
+.readybutton
+{
+  background-color: #007bff;
+}
+.donebutton
+{
+  background-color: #f39c12;
+}
+.cancelledbutton
+{
+  background-color: #00c0ef;
+}
+.donerow td
+{
+  color: black;
+}
+/*----------------------------------------------------------------*/
+/*-----------------------------------------------------------------------*/
+.create-new
+{
+    text-align: center;
+    display: none;
+    padding-top: 150px;
+}
+.create-new-img
+{
+  margin-bottom: 20px;
+  width: 100px;
+}
+.create-new-title
+{
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 20px;
+}
+/*--------------------------------------------------------*/
+.table
+{
+    margin-bottom: 0px !important;
+}
+#div-group1,#div-group2
+{
+    overflow: auto;
+    background-color: white;
+    width: 1100px;
+    display: none;
+}
+.table-header-group1,.table-header-group2
+{
+    background-color: #eeeeee;  
+}
+.table-header-group1 td.cellule-content,
+.table-header-group2 td.cellule-content
+{
+    color: black;
+    font-weight: 590;
+    width: 16%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 3px;
+}
+.table-body-group1 td.cellule-content,
+.table-body-group2 td.cellule-content
+{
+    width: 16%;
+    color:red;
+}
+#table-group1,#table-group2
+{
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.19);
+}
+.table-header-group1 td input,.table-header-group2 td input
+{
+   margin-left: 7px;
+   
+} 
+.table-group1 .table-header-group1 .input-cel,
+.table-group1 .table-body-group1 .input-cel,
+.table-group2 .table-header-group2 .input-cel,
+.table-group2 .table-body-group2 .input-cel
+{
+    width: 5%;
+}
+
+.row-status
+{
+    width: 100%;
+    font-size: 15px;
+    padding: 8px;
+    background-color: #eeeeee;  
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.19);
+    font-weight: 500;
+
+}
+.row-status i{
+     
+    font-size: 8px;
+    margin-left: 5px;
+}
+#draft,#done,#waiting,#ready
+{
+    display: none;
+}
+@media (max-width:428px)
+{
+    table
+    {
+        width: 1200px;
+    }
+}
+@media (max-width:650px)
+{
+
+table{
+   width: 1200px;
+}
+}
+
+@media (max-width:960px)
+{
+    table{
+        width: 1000px;
+     }
+}
+
+@media (max-width:1200px)
+{
+    table{
+        width: 1100px;
+     }
+}
+
+/*-----------------------------------------------------------------------*/
+.create-new
+{
+    text-align: center;
+    display: none;
+    padding-top: 150px;
+}
+.create-new-img
+{
+  margin-bottom: 20px;
+  width: 100px;
+}
+.create-new-title
+{
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 20px;
+}
+/*--------------------------------------------------------*/

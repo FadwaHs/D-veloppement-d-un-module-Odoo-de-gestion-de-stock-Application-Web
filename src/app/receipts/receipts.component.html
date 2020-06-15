@@ -8,7 +8,7 @@
            <span>OverView / {{nameOperation}}</span>
         </div>
            <div class="input-group">
-               <input type="text" class="form-control" placeholder="Search" name="search">
+               <input type="text" class="form-control" placeholder="Search" name="search" >
                <div class="input-group-btn">
                  <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                </div>
@@ -17,26 +17,14 @@
        </div>
        <div class="row head2">
            <div class="button-group2">
-            <div class="dropdown none" id="dropdown-list1" >
-              <button (click)="FunctionOpenSousMenu('myDropdown4')" class="dropbtn">
-                   Print
-                   <i class="glyphicon glyphicon-triangle-bottom icon"></i>
-              </button>
-              <div id="myDropdown4" class="dropdown-content">
-                <a href="#">Archived</a>
-                <a href="#">Add Custom Filter</a>
-                <a href="#">Link 3</a>
-              </div>
-          </div>
             <div class="dropdown none" id="dropdown-list2">
               <button (click)="FunctionOpenSousMenu('myDropdown5')" class="dropbtn">
                   Action
                   <i class="glyphicon glyphicon-triangle-bottom icon"></i>
               </button>
               <div id="myDropdown5" class="dropdown-content">
-                <a href="#">Archived</a>
-                <a href="#">Add Custom Filter</a>
-                <a href="#">Link 3</a>
+                <a href="#">Export</a>
+                <a href="#">Delete</a>
               </div>
           </div>
             <div class="dropdown">
@@ -46,9 +34,14 @@
                     <i class="glyphicon glyphicon-triangle-bottom icon"></i>
                 </button>
                 <div id="myDropdown1" class="dropdown-content">
-                  <a href="#">Archived</a>
-                  <a href="#">Add Custom Filter</a>
-                  <a href="#">Link 3</a>
+                  <table>
+                    <tr> 
+                     <a (click)="filtreFunction('draft')">Draft</a>
+                     <a (click)="filtreFunction('done')">Done</a> 
+                     <a (click)="filtreFunction('waiting')">Waiting</a>
+                    <a (click)="filtreFunction('ready')">Ready</a></tr>
+                    <tr>
+                  </table>
                 </div>
             </div>
             <div class="dropdown">
@@ -58,9 +51,7 @@
                     <i class="glyphicon glyphicon-triangle-bottom icon"></i>
                 </button>
                 <div id="myDropdown2" class="dropdown-content">
-                  <a href="#">Type of Operation</a>
-                  <a href="#">Warehouse</a>
-                  <a href="#">Add Custom Group</a>
+                  <a  (click)="functionGroupByStatus()">Status</a>
                 </div>
             </div>
             <div class="dropdown">
@@ -95,11 +86,10 @@
     </div>
        <!-- End of head-->
        <div class="main">
-         <span class="section-title2">{{fromOperation}}</span>
          <div id="table">
          <table id ="tablereceipts" class="table table-hover">
            <tr class="table-header">
-            <td><input type="checkbox" id="checkbox-principal" (click)="FunctionCheckBox('checkbox','checkbox-principal')"></td>
+            <td><input type="checkbox" id="checkbox-principal" (click)="FunctionCheckBox('checkbox-principal','checkbox')"></td>
             <td>Reference</td>
             <td>Contact</td>
             <td>Scheduled Date</td>
@@ -108,70 +98,72 @@
             <td>Company</td>
            </tr>
            <tbody class="table-body">
-            <tr>
-            <td><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2()" ></td>
-            <td>Reference</td>
-            <td>Contact</td>
-            <td>Scheduled Date</td>
-            <td>Sources Document</td>
-            <td>Status</td>
-            <td>Company</td>
+            <tr *ngFor="let item of tableau1" [ngClass]="(item.status)+'row'"> 
+            <td><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2('checkbox')" ></td>
+            <td>{{item.name}}</td>
+            <td>{{item.partner}}</td>
+            <td>{{item.date}}</td>
+            <td>{{item.document}}</td>
+            <td >{{item.status}}</td>
+            <td>{{item.company}}</td>
             </tr>   
-            <tr>
-              <td><input type="checkbox" class="checkbox"(click)="FunctionCheckBox2()" ></td>
-              <td>Reference</td>
-              <td>Contact</td>
-              <td>Scheduled Date</td>
-              <td>Sources Document</td>
-              <td>Status</td>
-              <td>Company</td>
-              </tr>  
            </tbody>
          </table>
         </div>
+        <div class="create-new" id="create-new">
+          <img class="create-new-img" src="assets/file.jpg">
+          <span class="create-new-title">Create a new transfer</span>
+          <span class="create-new-text">Transfers allow you to move products from one location to another.</span>
+        </div>
         <div id="cards" class="cards">
           <div class="inside row">
-              <div class="col-md-4">
+              <div class="col-md-4" *ngFor="let item of tableau1">
                 <div class="left">
-                 <span class="text1">WH/IN/0002</span>
-                 <span class="text2">Wood Corner<i class="glyphicon glyphicon-time"></i></span>
+                 <span class="text1">{{item.name}}</span>
+                 <span class="text2">{{item.partner}}<i class="glyphicon glyphicon-time"></i></span>
                 </div>
                 <div class="right">
-                  <span class="text1"><button>Ready</button></span>
-                  <span class="text2">05/05/2020</span>
+                  <span class="text1"><button 
+                    [ngClass]="(item.status)+'button'">
+                    {{item.status}}</button></span>
+                  <span class="text2">{{item.date}}</span>
                  </div>
-              </div>
-              <div class="col-md-4">
-                <div class="left">
-                 <span class="text1">WH/IN/0002</span>
-                 <span class="text2">Wood Corner<i class="glyphicon glyphicon-time"></i></span>
-                </div>
-                <div class="right">
-                  <span class="text1"><button>Ready</button></span>
-                  <span class="text2">05/05/2020</span>
-                 </div>
-              </div>
-              <div class="col-md-4">
-                <div class="left">
-                 <span class="text1">WH/IN/0002</span>
-                 <span class="text2">Wood Corner<i class="glyphicon glyphicon-time"></i></span>
-                </div>
-                <div class="right">
-                  <span class="text1"><button>Ready</button></span>
-                  <span class="text2">05/05/2020</span>
-                 </div>
-              </div>
-              <div class="col-md-4">
-                <div class="left">
-                 <span class="text1">WH/IN/0002</span>
-                 <span class="text2">Wood Corner<i class="glyphicon glyphicon-time"></i></span>
-                </div>
-                <div class="right">
-                  <span class="text1"><button>Ready</button></span>
-                  <span class="text2">05/05/2020</span>
-                 </div>
-              </div>
+              </div>   
             </div>
         </div>
+        <div id="table-group1">
+          <table id ="tablereceipts-group1" class="table table-hover">
+            <tr class="table-header-group1">
+             <td><input type="checkbox" id="checkbox-principal2" (click)="FunctionCheckBox('checkbox-principal2','checkbox2')"></td>
+             <td class="cellule-content">Reference</td>
+             <td class="cellule-content">Contact</td>
+             <td class="cellule-content">Scheduled Date</td>
+             <td class="cellule-content">Sources Document</td>
+             <td class="cellule-content">Status</td>
+             <td class="cellule-content">Company</td>
+            </tr>
+          </table>
+            <div *ngFor="let item2 of tabStatus;let i= index;">
+              <div class="row-status" (click)="functionShowtable(item2.status,i)">{{item2.status}} ({{item2.count}})
+                <i class="glyphicon glyphicon-triangle-bottom icon" id={{item2.status}}{{i}} >
+                </i></div>
+              <div id={{item2.status}}>
+              <table class="table table-hover">
+                <tbody class="table-body-group1" >
+                 <tr *ngFor="let item of tableau2" [ngClass]="(item.status)+'row'"> 
+                 <td *ngIf="(item.status == item2.status)"><input type="checkbox" class="checkbox2" (click)="FunctionCheckBox2('checkbox2')"></td>
+                 <td class="cellule-content" *ngIf="(item.status == item2.status)">{{item.name}}</td>
+                 <td class="cellule-content" *ngIf="(item.status == item2.status)">{{item.partner}}</td>
+                 <td class="cellule-content" *ngIf="(item.status == item2.status)">{{item.date}}</td>
+                 <td class="cellule-content" *ngIf="(item.status == item2.status)">{{item.document}}</td>
+                 <td class="cellule-content" *ngIf="(item.status == item2.status)">{{item.status}}</td>
+                 <td class="cellule-content" *ngIf="(item.status == item2.status)">{{item.company}}</td>
+                 </tr>   
+                </tbody>
+              </table>
+            </div>
+            </div>
+        
+         </div>
        </div>
 </div>

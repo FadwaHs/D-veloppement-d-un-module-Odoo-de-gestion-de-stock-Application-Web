@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -41,6 +42,7 @@ import { CreateInventoryAdjustmentsComponent } from './create-inventory-adjustme
 import { PopupstockmovesComponent } from './popupstockmoves/popupstockmoves.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateScarpComponent } from './create-scarp/create-scarp.component';
+import { OvreviewDashboardComponent } from './ovreview-dashboard/ovreview-dashboard.component';
 
 
 @NgModule({
@@ -72,7 +74,8 @@ import { CreateScarpComponent } from './create-scarp/create-scarp.component';
     CreateTransfersComponent,
     CreateInventoryAdjustmentsComponent,
     PopupstockmovesComponent,
-    CreateScarpComponent
+    CreateScarpComponent,
+    OvreviewDashboardComponent
   ],
   imports: [
     BrowserModule,
