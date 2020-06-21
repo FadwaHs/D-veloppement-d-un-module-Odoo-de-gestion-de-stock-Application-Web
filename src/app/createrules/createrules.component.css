@@ -27,6 +27,12 @@ button.saverules
     color: white;
     border-radius: 4px;
 }
+
+button.saverules:hover
+{
+    background-color:#086edb;
+    box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.2);
+}
 .div-1-2
 {
   margin-top: 10px;
@@ -75,10 +81,20 @@ button#externalbtn
     color: #007bff;
 }
 
-#form-control2{
+#form-control2-mul{
     height:30px;
     width:250px;
    
+}
+#form-control2-min
+{
+    height:30px;
+    width:250px;
+}
+#form-control2-max
+{
+    height:30px;
+    width:250px;
 }
 
 #form-control3{
@@ -104,6 +120,65 @@ h1{
 
 a{
     text-decoration: none;
+    cursor: pointer;
+}
+
+.dropdown-content1{
+
+    display: none;
+
+    position: absolute;
+
+    background-color: #FFF !important;
+
+    min-width: 270px;
+
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+    z-index: 1;
+
+  }
+
+  .dropdown-content1 td {
+
+    color: black;
+    padding: 5px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  .dropdown-content1 td:hover {
+
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+ .input-tab 
+
+{ 
+    height:30px;
+    width:250px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    font-size:10px;
+    margin-right:80px;
+}
+
+input#productinput
+{
+    width: 93%;
+    border: none;
+    padding: 3px 4px;
+    font-size: 14px;
+}
+
+.show {display:block;}
+
+.glyphicon-triangle-bottom
+{
     cursor: pointer;
 }
 

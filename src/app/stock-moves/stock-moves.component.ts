@@ -18,6 +18,7 @@ export class StockMovesComponent implements OnInit {
   StockMovesWAData : JSON;
   StockMovesAData : JSON;
   StockMovesNewData : JSON;
+  proData :JSON;
   ourdata: JSON;
   ourdataDone: JSON;
   ourdataWA: JSON;
@@ -26,6 +27,7 @@ export class StockMovesComponent implements OnInit {
   items9 = [];
   items10 = [];
   items11 = [];
+  namesofpdro=[];
 
   constructor(private Dialog : MatDialog ,private _activatedroute:ActivatedRoute,private _route:Router , private http :HttpClient)
    { 
@@ -41,6 +43,18 @@ export class StockMovesComponent implements OnInit {
     
       console.log(this.items7);
       });
+
+      this.http.get('http://127.0.0.1:5002/nameproductonetime').subscribe(data => {
+        this.proData = data as JSON;
+        this.ourdata = this.proData["result"]["response"];
+      
+        for (let key in this.proData["result"]["response"])
+         {
+          this.namesofpdro.push(this.proData["result"]["response"][key]);
+        }
+      
+        console.log(this.namesofpdro);
+        });
 
       // tslint:disable-next-line: align
       this.http.get('http://127.0.0.1:5002/StockMovesDone').subscribe(data => {
@@ -87,25 +101,46 @@ export class StockMovesComponent implements OnInit {
             this.items11.push(this.StockMovesNewData["result"]["response"][key]);
           }
           console.log(this.items11);
+
+          this.FunctionCahrtbar(this.items8 ,this.items9,this.items10,this.items11 ,this.namesofpdro);
+
+          this.PieCharData(this.items7);
           });
+
+         
    }
 
 
    /////////////////////////////////////// StatistiqueChart//////////////////////
   pieChart=[];
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+ PieCharData(Data : any[])
+  { 
+    var productnameall = [];
+    var productinitialdemande = [];
+
+    for (let key in Data)
+       {
+        productnameall.push(Data[key]["pro"]);
+      } 
+
+      for (let key in Data)
+      { 
+       productinitialdemande.push(Data[key]["proqty"]);
+     }
 
     this.pieChart = new Chart(document.getElementById('pie-chart'), {
       type: 'pie',
       data: {
-        labels: ["Product name", "Product name", "Product name","Product name", "Product name", "Product name",
-        "Product name", "Product name", "Product name"],
+        labels: productnameall,
         datasets: [
           {
             label: "Initial Quantity",
             backgroundColor: ["#98df8a", "#2ca02c","#1f77b4","#9edae5", "#ff7f0e","#c5b0d5",
-            "#ffbb78", "#f7b6d2","#d62728" ],
-            data: [16,50,434,247,700,73,47,30,17]
+            "#ffbb78", "#f7b6d2","#d62728","#d62728","#dbdb8d","#8c564b","#bcbd22","#17becf","#ff9896","#98df8a", "#2ca02c","#1f77b4","#9edae5", "#ff7f0e","#c5b0d5",
+            "#ffbb78", "#f7b6d2","#d62728","#d62728","#dbdb8d","#8c564b","#bcbd22","#17becf","#ff9896","#c7c7c7","#98df8a","#ff7f0e","#98df8a","#17becf","#ff9896","#c7c7c7","#98df8a","#ff7f0e","#98df8a"],
+            data: productinitialdemande
           }
         ]
       },
@@ -116,60 +151,93 @@ export class StockMovesComponent implements OnInit {
         }
       }
   });
+    
+  }
+
+   FunctionCahrtbar(Done: any[], Wa: any[], Available:any[], New: any[] , Productid:any[])
+   {
+    var Doneqty = [];
+    var Waqty = [];
+    var Aqty = [];
+    var Newqty = [];
+    var productname = [];
+
+    for (let key in Productid)
+       {
+        productname.push(Productid[key]);
+      }
+
+    for (let key in Done)
+       {
+        Doneqty.push(Done[key]["proqty"]);
+      }
+
+
+      for (let key in Wa)
+       {
+          Waqty.push(Wa[key]["proqty"]);
+        }
+
+      for (let key in Available)
+       {
+        Aqty.push(Available[key]["proqty"]);
+        }
+
+      for (let key in New)
+      { 
+        Newqty.push(New[key]["proqty"]);
+       }
 
     var barChartData2 = {
 
-    labels: ["Product name", "Product name", "Product name","Product name", "Product name", "Product name",
-      "Product name", "Product name", "Product name"],
-	datasets: [{
-	label: 'Done',
-  backgroundColor: "#1f77b4",
-   data:[900,50,43,247,700,730,47,30,170]
-  },
-  {
-    label: 'Waiting Availability',
-    backgroundColor: "#ff7f0e",
-    data:[160,80,0,247,600,7,47,0,1]
+    labels:productname, 
+    datasets: [{
+    label: 'Done',
+    backgroundColor: "#1f77b4",
+     data:Doneqty
     },
     {
-      label: 'New',
-      backgroundColor: "#aec7e8", 
-      data:[0,50,43,247,0,79,49,300,0]
+      label: 'Waiting Availability',
+      backgroundColor: "#ff7f0e",
+      data:Waqty
       },
       {
-        label: 'Available',
-        backgroundColor: "#ffbb78",
-        data:[0,50,43,247,4,0,49,0,17]
-      }
-  ]
-};
+        label: 'New',
+        backgroundColor: "#aec7e8", 
+        data:Newqty
+        },
+        {
+          label: 'Available',
+          backgroundColor: "#ffbb78",
+          data:Aqty
+        } 
+    ]
+  };
     var canvas = <HTMLCanvasElement> document.getElementById("canvas2");
     var ctx = canvas.getContext("2d");
     new Chart(ctx, {
-	type: 'bar',
-	data: barChartData2,
-		options: {
-		title: {
-				display: true,
-				text: 'Quantity MOves'
-					},
-					tooltips: {
-						mode: 'index',
-						intersect: false,
-					},
-					responsive: true,
-		scales: {
-						xAxes: [{
-							stacked: true,
-						}],
-						yAxes: [{
-							stacked: true
-						}]
-					}
-				}
-			});
-
-
+    type: 'bar',
+    data: barChartData2,
+      options: {
+      title: {
+          display: true,
+          text: 'Quantity MOves'
+            },
+            tooltips: {
+              mode: 'index',
+              intersect: false,
+            },
+            responsive: true,
+      scales: {
+              xAxes: [{
+                stacked: true,
+              }],
+              yAxes: [{
+                stacked: true
+              }]
+            }
+          }
+        });
   }
 
   Function2(id:string) {

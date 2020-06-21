@@ -1,6 +1,6 @@
 body{
     background-color: #f3f5f7;
-}
+} 
 div.navbar
 {
    padding-left: 20px;
@@ -29,6 +29,12 @@ button.saveproducts
     border: none;
     color: white;
     border-radius: 4px;
+}
+button.saveproducts:hover
+{
+    background-color:#086edb;
+    box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.2);
+
 }
 
 .div-1-2
@@ -63,13 +69,33 @@ button.saveproducts
 #form-control1{
     height:50px;
     width: 700px;
+    font-size: 25px;
     background-color:#d2d2ff;
    
 }
 #form-control2{
     height:25px;
+    width:350px;  
+}
+#form-control2-In
+{
+    height:25px;
     width:350px;
-   
+}
+#form-control2-br
+{
+    height:25px;
+    width:350px;   
+}
+#form-control2-sp
+{
+    height:25px;
+    width:350px;   
+}
+#form-control2-cost
+{
+    height:25px;
+    width:350px; 
 }
 #menucolor1
 {

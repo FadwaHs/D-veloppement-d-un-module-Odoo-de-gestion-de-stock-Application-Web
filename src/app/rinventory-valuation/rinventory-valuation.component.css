@@ -255,15 +255,17 @@ table{
     border-radius: 4px;
     
 }
-#chekedQT
+.chekedQT
 {
     font-weight: bold;
+    color: #000;
 }
 div#canvasdiv
-{  
+{   
     
     background-color: white;
     height: 700px;
+   
 }
 button#btnchart
 {
@@ -274,7 +276,8 @@ div#divboundery
 {
     display: none;
     background-color: white; 
-    height: 700px;
+    height: 500px;
+    width: 1120px;
 }
 div#divtable
 { 
@@ -321,6 +324,20 @@ table#buttongroup2 td{
    
     padding-right: 10px;
  
+}
+#canvasdiv2
+{display: none;
+    background-color: white;
+    height: 700px;
+}
+
+#canvasdiv3
+{    display: none;
+    background-color: white;
+    height: 700px;
+}
+a{
+    cursor: pointer;
 }
 
 

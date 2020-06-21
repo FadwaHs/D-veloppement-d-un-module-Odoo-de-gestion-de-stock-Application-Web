@@ -91,7 +91,7 @@ export class StatisticsComponent implements OnInit {
     options: {
       title: {
         display: true,
-        text: '############'
+        text: 'Statistics for Receipt and Delivery Orders'
       }
     }
   });
@@ -117,7 +117,7 @@ export class StatisticsComponent implements OnInit {
       options: {
         title: {
           display: true,
-          text: '####################'
+          text: 'Statistics for Receipt and Delivery'
         }
       }
   });

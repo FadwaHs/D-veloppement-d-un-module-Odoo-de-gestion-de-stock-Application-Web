@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
   <title>Products table</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,7 @@
         <button type="button" class="btn">Replenish</button>
     </div>
     <div class="div-1-2">
-        <button type="button" class="saveproducts ">Save</button>
+        <button type="button" class="saveproducts" (click)="createproduct()">Save</button>
     </div>
     
     </div>
@@ -49,10 +49,10 @@
          </div>
  
           <div class="checkbox">
-            <label><input type="checkbox" value="">Can be Sold</label>
+            <label><input type="checkbox" value="" checked>Can be Sold</label>
           </div>
           <div class="checkbox">
-              <label><input type="checkbox" value="">Can be Purchased</label>
+              <label><input type="checkbox" value="" checked>Can be Purchased</label>
           </div>
          
       </form><br>
@@ -89,17 +89,17 @@
           </select><br>
 
           <label >Internal Reference</label>
-          <input type="text" class="form-control" id="form-control2"><br>
+          <input type="text" class="form-control" id="form-control2-In"><br>
           <label >barcode</label>
-          <input type="text" class="form-control" id="form-control2" > <br>
+          <input type="text" class="form-control" id="form-control2-br" > <br>
           
 
           <label >Sale price</label>
           <span class="glyphicon glyphicon-euro" aria-hidden="true"></span>
-          <input type="text" class="form-control" id="form-control2"/><br>
+          <input type="text" class="form-control" id="form-control2-sp"/><br>
 
           <label >Cost</label>
-          <input type="text" class="form-control" id="form-control2" placeholder="0.00"/><br>
+          <input type="text" class="form-control" id="form-control2-cost" placeholder="0.00"/><br>
 
           <label for="sel1">Company</label>
           <select class="form-control" id="select">

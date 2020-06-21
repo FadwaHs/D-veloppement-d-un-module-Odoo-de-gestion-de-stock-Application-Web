@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Products table</title>
+  <title>Products table</title> 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -15,7 +15,7 @@
     <button type="button" class="btn" (click)="functionBackReorderingRules()">Back to Reordering Rules</button>
     <button type="button" class="btn btn-default">Discard</button>
     <div class="div-1-2">
-        <button type="button" class="saverules">Save</button>
+        <button type="button" class="saverules" (click)="createRules()">Save</button>
     </div> 
     </div>
 
@@ -29,13 +29,22 @@
         <tbody>
             <tr>
                 <td>
-                        <p>Product</p>
+                        <p>Product Id</p>
                 </td>
                 <td>
-                        <select class="form-control" id="selectproduct">
-                          <option>product1</option>
-                          <option>product2</option>           
-                        </select><br>    
+                        <div class="input-tab" >
+                           <input type="text" id="productinput">
+                           <i (click)="FunctionShowOptions('myDropdown1')" class="glyphicon glyphicon-triangle-bottom" > </i>  
+                        <div id="myDropdown1" class="dropdown-content1">
+                            
+                                <table>
+                                 <tr *ngFor = 'let item of itemsName'>
+
+                                      <td>{{item.names}}</td>      
+                                </tr>
+                                </table>
+                         </div>               
+                        </div>           
                 </td>
 
                 <td> <p>Procurement Group Company </p> </td>
@@ -55,7 +64,7 @@
                             <p>Minimum Quantity</p>
                     </td>
                     <td>
-                        <input type="text" class="form-control" id="form-control2" placeholder="0.00"/><br> 
+                        <input type="text" class="form-control" id="form-control2-min" placeholder="0.00"/><br> 
                     </td>
                     <td>
                             <p>Lead Time</p><br>
@@ -73,7 +82,7 @@
                             <p> Maximum Quantity</p>
                     </td>
                     <td>
-                        <input type="text" class="form-control" id="form-control2" placeholder="0.00"/><br> 
+                        <input type="text" class="form-control" id="form-control2-max" placeholder="0.00"/><br> 
                     </td>        
             </tr>
             <tr>
@@ -81,7 +90,7 @@
                             <p>Multiple Quantity</p>
                     </td>
                     <td>
-                        <input type="text" class="form-control" id="form-control2" placeholder="1.000"/><br> 
+                        <input type="text" class="form-control" id="form-control2-mul" placeholder="1.000"/><br> 
                     </td>        
             </tr>
         </tbody>

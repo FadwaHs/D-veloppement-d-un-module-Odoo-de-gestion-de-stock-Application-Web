@@ -252,6 +252,10 @@ table td
     border-radius: 4px;
     
 }
+.button-create:hover{
+    background-color:#086edb;
+    box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.2);
+}
 button#exportbtn
 {
     margin-left: 10px;
@@ -378,7 +382,10 @@ p#styleProductname
 #table-group1,#table-group2
 {
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+    color: #0a8ea4;
 }
+
 
 .row-status
 {

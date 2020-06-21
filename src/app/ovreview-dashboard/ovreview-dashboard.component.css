@@ -1,7 +1,7 @@
 /* Begin style de head*/
 .section-title
 {
-    float: left;
+    float: left; 
     color: #2a3f5a;
     font-size: 20px;
     font-weight: 500;
@@ -112,6 +112,7 @@ head2 begin
     .dropdown-content a:hover {
         background-color: #007bff;
         color: white;
+        cursor: pointer;
     }
     .dropdown-content tr{
        border-bottom: 0.1px solid #e9ecef;

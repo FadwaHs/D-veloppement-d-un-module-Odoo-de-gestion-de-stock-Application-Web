@@ -2,7 +2,7 @@
     <!-- Begin of head-->
     <div class="head-principal">
     <div class="row head">
-    
+     
         <div class="section-title">
            <span>Dashboard / Overview</span>
         </div>
@@ -23,7 +23,7 @@
                     <i class="glyphicon glyphicon-menu-down"></i>
                 </button>
                 <div id="myDropdown1" class="dropdown-content">
-                  <a href="#">Archived</a>
+                  <a href="">Archived</a>
                 </div>
             </div>
             <div class="dropdown">
@@ -132,6 +132,7 @@
      <!-- End of one Composant-->
      <h2>Delivery</h2>
      <!-- Begin of one composant-->
+      <div class="display">
      <div class="col-xs-4" *ngFor="let item of tableau_out;let i= index;">
        <div class="menu-top">
           <span class="header-title" (click)="FunctionClickedInButtonReceipts(item.name+':'+item.com,item.type,item.pickingId)" >
@@ -164,6 +165,8 @@
         class="button-comp" >{{item.quantity}} To Process</button>
        </div>
    </div>
+  </div>
+
   
   <!-- End of one Composant-->
     </div>

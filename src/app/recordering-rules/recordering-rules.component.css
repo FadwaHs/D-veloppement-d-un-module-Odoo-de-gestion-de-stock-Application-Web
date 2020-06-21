@@ -225,6 +225,11 @@ head2 end
     border-radius: 4px;
     
 }
+.btn-creatrules:hover
+{
+    background-color:#086edb;
+    box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.2);
+}
 button#exportbtnrules
 {
     margin-left: 10px;

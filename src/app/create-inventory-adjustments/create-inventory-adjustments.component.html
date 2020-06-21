@@ -11,7 +11,7 @@
        </div>
        <div class="row head2">
           <div class="button-group1">
-           <button  class="save" >Save</button>
+           <button  class="save" (click)="createinventory()">Save</button>
            <button class="btn btn-default">Discard</button>
           </div>
        </div>
@@ -30,7 +30,7 @@
            <div class="inside1">
             <div class="inside1-header">
                <label>Inventory Reference
-                <input type="text" value="Inventory">
+                <input type="text" value="Inventory" id="inventoryname">
                </label> 
             </div>
                <table id="table-principal">
@@ -43,9 +43,7 @@
                          <input type="text">
                          <i  (click)="FunctionShowOptions('myDropdown1')" class="glyphicon glyphicon-triangle-bottom" > </i>
                             <div id="myDropdown1" class="dropdown-content1">
-                               <a>Product1</a>
-                               <a>Product2</a>
-                               <a>Product3</a>
+                            
                             </div>  
                       </div>
                     </td> 
@@ -70,10 +68,19 @@
                   </tr>
                   <tr>
                      <td>
-                     <label for="sel1">Company</label></td>
-                     <td class="input-tab-td dropdown"> <select class="form-control" id="select">
-                      <option>My Company</option> 
-                      </select></td>
+                     <label for="sel1">Company id </label></td>
+                     <td class="input-tab-td dropdown"> 
+                        <div class="input-tab">
+                           <input type="text" id="selectcom">
+                           <i  (click)="FunctionShowOptions('myDropdown3')" class="glyphicon glyphicon-triangle-bottom" > </i>
+                              <div id="myDropdown3" class="dropdown-content1">
+                                
+                                         <a>My Company (Chicago)</a> 
+                                         <a>My Company (San Francisco)</a>  
+                                 
+                              </div>  
+                        </div>
+                     </td>
                   </tr>
 
 

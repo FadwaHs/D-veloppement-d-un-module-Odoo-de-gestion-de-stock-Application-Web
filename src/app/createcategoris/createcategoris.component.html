@@ -8,7 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body> 
 
     <div class="navbarrules">
 
@@ -16,17 +16,34 @@
         </button>
     <button type="button" class="btn btn-default">Discard</button>
     <div class="div-1-2">
-        <button type="button" class="savecategory">Save</button>
+        <button type="button" class="savecategory" (click)="createcategorie()">Save</button>
     </div> 
     </div>
     <div class="div-2">
             <p>Category name</p>
-            <input class="form-control" id="form-control1" type="text"  placeholder="E.G.Lamps" /><br>
+            <input class="form-control" id="form-control1-namecat" type="text"  placeholder="E.G.Lamps" /><br>
             <p>Parent Category</p>
-            <select class="form-control" id="select">
-                    <option>All</option>
+                    <div class="input-tab" >
+                        <input type="text" id="categorieinput">
+                        <i (click)="FunctionShowOptions('myDropdown2')" class="glyphicon glyphicon-triangle-bottom" > </i>  
+                     <div id="myDropdown2" class="dropdown-content1">
+                         
+                           <table>
+                              <tr >
+                                   <td>All</td> 
+                                   <td>All / Consumable</td>  
+                                   <td>All / Expenses</td>  
+                                   <td>All / Internal</td>  
+                                   <td>All / Saleable</td>  
+                                   <td>All / Saleable / Office Furniture</td>   
+                                   <td>All / Saleable / Services</td>  
+                                   <td>	All / Saleable / Services / Saleable</td>       
+                             </tr>
+                             </table>
+                      </div>               
+                     </div>      
                 
-            </select><br>
+           
             <p id="logi">Logistics</p><br>
              <p>Force Removal Strategy</p>
             <select class="form-control" id="select">

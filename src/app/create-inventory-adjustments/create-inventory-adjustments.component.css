@@ -9,6 +9,11 @@
     margin-top: 20px;
 }
 
+.save:hover{
+    background-color:#086edb;
+    box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
 /* End style de head*/
 
 /*
@@ -311,12 +316,6 @@ tr
     margin-top: 8px;
     margin-right: 5px;
 } 
-select#select{
-    width:300px;
-    height:25px;
-    font-size:10px;
-    background-color:#d2d2ff;
-}
 
 
 /*----------------------------------------------------------------------*/
@@ -375,4 +374,9 @@ select#select{
   .dropdown-content1 a:hover,.dropdown-content2 a:hover{background-color: #007bff; color: white;}
 
 /*----------------------------------------------------------------------*/
+.glyphicon-triangle-bottom
+{
+    cursor: pointer;
+}
+
 

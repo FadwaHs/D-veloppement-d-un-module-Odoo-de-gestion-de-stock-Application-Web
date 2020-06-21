@@ -107,6 +107,7 @@ head2 begin
     .dropdown-content a:hover {
         background-color: #007bff;
         color: white;
+        cursor: pointer;
     }
     .dropdown-content tr{
        border-bottom: 0.1px solid #e9ecef;
@@ -358,7 +359,10 @@ table{
     display: inline-block;
     height: 80px;
     width: 340px;
-    margin: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
     border:#d2d2ff 2px solid;
     border-radius: 3px;
     background-color: white;
