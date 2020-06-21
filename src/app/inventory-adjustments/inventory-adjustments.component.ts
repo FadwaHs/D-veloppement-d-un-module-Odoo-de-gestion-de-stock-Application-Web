@@ -218,4 +218,9 @@ filtreFunction(status:string)
      this.functionGetWidthCellul();
 
   }
+
+  functionGoToDetails(id:string)
+  {
+    this._route.navigate(['inventory-detail',id]);
+  }
 }

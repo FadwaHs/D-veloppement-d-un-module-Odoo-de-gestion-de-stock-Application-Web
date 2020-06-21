@@ -43,6 +43,8 @@ import { PopupstockmovesComponent } from './popupstockmoves/popupstockmoves.comp
 import { HttpClientModule } from '@angular/common/http';
 import { CreateScarpComponent } from './create-scarp/create-scarp.component';
 import { OvreviewDashboardComponent } from './ovreview-dashboard/ovreview-dashboard.component';
+import { InventoryDetailsComponent } from './inventory-details/inventory-details.component';
+import { OperationDetailsComponent } from './operation-details/operation-details.component';
 
 
 @NgModule({
@@ -75,7 +77,9 @@ import { OvreviewDashboardComponent } from './ovreview-dashboard/ovreview-dashbo
     CreateInventoryAdjustmentsComponent,
     PopupstockmovesComponent,
     CreateScarpComponent,
-    OvreviewDashboardComponent
+    OvreviewDashboardComponent,
+    InventoryDetailsComponent,
+    OperationDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -213,4 +213,9 @@ export class ReceiptsComponent implements OnInit {
     }
 
   }
+  functionGoToDetails(reference:string)
+  {
+     this._route.navigate(['operationdetail',this.nameOperation,this.typeOperation,reference]);
+    
+  }
 }

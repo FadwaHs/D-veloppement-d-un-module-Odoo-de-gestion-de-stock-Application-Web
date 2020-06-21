@@ -1,0 +1,366 @@
+<div class="container-fluid">
+    <!-- Begin of head-->
+    <div class="head-principal">
+       <div class="row head">
+    
+        <div class="section-title">
+            <button type="button" class="btn" (click)="functionBack()">Back To Inventory Overview</button>
+        </div>
+          
+       </div>
+       <div class="row head2">
+          <div class="button-group1">
+           <button  class="save" id="btnEdit" 
+           (click)="functionEdit()" >Edit
+           </button>
+           <button class="btn btn-default" id="btnCreate" (click)="functionCreate()">Create</button>
+           <button  class="save none" id="btnSave" >Save</button>
+           <button class="btn btn-default none" id="btnDiscard" >Discard</button>
+          </div>
+       </div>
+       <div class="row head3">
+         <div class="button-group2">
+          <button class="save">Validate</button>
+          <button class="btn btn-default" (click)="functionCancel()">Cancel</button>
+         </div>
+         <div class="comp-right">
+      
+         </div>
+      </div>
+    </div>
+       <!-- End of head-->
+       <div class="main">
+        
+         <div class="principal" id="div-principal1">
+           <div class="header">
+              <div class="inside-header">
+               <i class="glyphicon glyphicon-resize-vertical"></i>
+               <span>Operations</span>
+            </div>
+           </div>
+           <!-------Information Haut------->
+           <div class="inside1">
+              <h1 class="reference-title">{{reference}}</h1>
+              <div class="inside1">
+                 <table id="table-principal">
+                    <!---First Row-->
+                    <tr> 
+                       <!--First cellule-->
+                     <!-- <td id="receive-from" *ngIf="typeOp==''>Receive From</td> -->
+                     <td  class="label-tab" *ngIf="typeOp=='incoming'">
+                        Receive From
+                     </td>
+                     <td  class="label-tab" *ngIf="typeOp=='outgoing'">
+                        Delivery To
+                     </td>
+          
+                     <td class="label-content">
+                        {{contact}}
+                     </td>
+                     
+                      <!--End first cellule-->
+                       <!--Second cellule-->
+                     <td class="label-tab">Scheduled Date</td>
+                     <td class="label-content">
+                       {{dateOp}}
+                      </td>
+                      <!--End second cellule-->
+                    </tr>
+                    <!---End first Rowwww-->
+                    <!--Second Row-->
+                    <tr>
+                         <!--First cellule-->
+                        <td class="label-tab">Operation Type</td>
+                        <td class="label-content">
+                           {{from}}:{{operation}}
+                        </td>
+                       
+                          <!--End first cellule-->
+                           <!--Second cellule-->
+                           <td class="label-tab">
+                              Source Document</td>
+                           <td >
+                              {{document}}
+                            </td>
+                           <!--End second cellule-->
+                    </tr>
+                    <!--End Second Row-->
+                 </table>
+              </div>
+           </div>
+           <!----Ennnnnnnnnnnnnnnnnnnnnnnnnnnnd-->
+           <!---menu-->
+           <div class="inside2">
+              <ul class="list-nav">
+                 <li (click)="FunctionMenuInsideClick('l1','l2','l3','d1','d2','d3')"
+                 class="nav-link active" id="l1">Operations</li>
+                 <li (click)="FunctionMenuInsideClick('l2','l1','l3','d2','d1','d3')" 
+                  class="nav-link " id="l2">Additional Info</li>
+                 <li (click)="FunctionMenuInsideClick('l3','l2','l1','d3','d2','d1')"
+                 class="nav-link" id="l3">Note</li>
+              </ul>
+              <!---sous menu---1-->
+              <div class="div1" id='d1'>
+                 <!--tableeeeeee-->
+               <table class="table-menu1" id="table-menu-1">
+                  <!--roooooooooooooooooow-->
+                  <tr class="table-header" id="table-header1">
+                     <!--cellule-->
+                     <td class="product-cellule" id="product-cellule">Product</td>
+                     <!--cellule-->
+                     <td class="status-cellule" id="done-cellule">Done</td>
+                     <!--cellule-->
+                     <td class="dropdown" id="menu-cellule"><i (click)="FunctionSousMenu('myDropdown')"class="dropbtn glyphicon glyphicon-option-vertical"></i>
+                        <div id="myDropdown" class="dropdown-content">
+                           <div><input type="checkbox"  id="new-cellule1" 
+                              (click)="AddCellule('new-cellule1','table-menu-1','new-cellule2',1,'Description')">
+                              Description</div>
+                           <div><input type="checkbox"  id="new-cellule2" 
+                              (click)="AddCellule('new-cellule2','table-menu-1','new-cellule1',2,'Date')">
+                              Date</div>
+                         </div>
+                     </td>
+                  </tr>
+                  <tr *ngFor="let item of tableau3; let i=index"
+                  style="border-bottom: 1px solid #eee;">
+                     <!--cellule-->
+                     <td style=" font-weight:400;padding: 3px 4px; font-size: 15px;">
+                          {{item.name_product}}
+                        
+                       </td>
+                     <!--cellule-->
+                     <td style=" font-weight:400;padding: 3px 4px;">
+                            {{item.quantity}}
+                         
+                     </td>
+                     <!--cellule-->
+                     <td>
+                     </td>
+                  </tr>
+               </table>
+              </div>
+              <!---sous menu---2-->
+              <div class="div2" id='d2'>
+               <span class="Informations-title" >Other Information</span>
+               <table class="table-menu2">
+                  <tr>
+                     <td class="cellule-left">Priority</td>
+                     <td class="cellule-right">
+                        <i  class="glyphicon glyphicon-star-empty icon-star"></i>
+                        <i  class="glyphicon glyphicon-star-empty icon-star"></i>
+                        <i  class="glyphicon glyphicon-star-empty icon-star" ></i>
+                       
+                     </td>
+                  </tr>
+                  <tr>
+                   <td class="cellule-left">Responsible</td>
+                   <td class="cellule-right" style="font-size: 15px; font-weight: 400;">
+                     {{respo}}
+                   </td>
+                </tr>
+                <tr>
+                   <td class="cellule-left">Procurement Group Company</td>
+                   <td class="cellule-right">
+                     <span style="font-size: 15px; font-weight: 400;">{{group}}</span>  
+                   </td>
+                </tr>
+               </table>
+              </div>
+              <!---sous menu--3-->
+              <div class="div3" id='d3'>
+               <div style="font-size: 15px; font-weight: 400;" *ngIf="note!='empty'"> 
+                  {{note}}
+               </div>
+              </div>
+           </div>
+           </div>
+
+           <div class="principal" id="div-principal2">
+            <div class="header">
+               <div class="inside-header">
+                <i class="glyphicon glyphicon-resize-vertical"></i>
+                <span>Operations</span>
+             </div>
+            </div>
+            <!-------Information Haut------->
+            <div class="inside1">
+               <h1 class="reference-title">{{reference}}</h1>
+               <div class="inside1">
+                  
+                  <table id="table-principal2">
+                     <!---First Row-->
+                     <tr> 
+                        <!--First cellule-->
+                      <td class="label-tab">Receive From</td>
+                      <td class="input-tab-td dropdown" style="padding-left: 10px;" >
+                         <div class="input-tab">
+                            <input type="text" style="border:none;padding: 3px 4px; width:95%;" value={{contact}}>
+                            <i (click)="FunctionShowOptions('myDropdown2')" style="font-size: 8px;"
+                            class="glyphicon glyphicon-triangle-bottom" > </i>
+                               <div id="myDropdown2" class="dropdown-content1">
+                                  <a>Create and Edit..</a>
+                               </div> 
+                   
+                         </div>
+                         <i (click)="OpenCreateContact()"
+                         class="glyphicon glyphicon-share"></i> 
+                       </td> 
+                       <!--End first cellule-->
+                        <!--Second cellule-->
+                      <td class="label-tab">Scheduled Date</td>
+                      <td class="input-tab-td" style="padding-left: 10px;">
+                         <div class="input-tab">
+                            <input [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" 
+                            style="border:none;padding: 3px 4px; width:95%;"
+                            >
+                            <span class="trigger" [owlDateTimeTrigger]="dt1">
+                               <i class="glyphicon glyphicon-triangle-bottom" style="font-size: 8px;"></i>
+                            </span>
+                            <owl-date-time #dt1></owl-date-time>
+                         </div>
+                       </td>
+                       <!--End second cellule-->
+                     </tr>
+                     <!---End first Rowwww-->
+                     <!--Second Row-->
+                     <tr>
+                          <!--First cellule-->
+                         <td class="label-tab">Operation Type</td>
+                         <td class="input-tab-td" id="operation-type" style="padding-left: 10px;">
+                            <div class="input-tab" >
+                               <select id="select-menu2"  class="form-control">
+                                  <option *ngFor="let item of tab_Select;" value={{item}} 
+                                  >{{item}}</option>
+                               </select>
+                            </div>
+                            
+                          </td>
+                           <!--End first cellule-->
+                            <!--Second cellule-->
+                            <td class="label-tab">
+                               Source Document</td>
+                            <td class="input-tab-td" style="padding-left: 10px;">
+                               <div class="input-tab">
+                                  <input type="text" placeholder="e.g. PO0032"
+                                  style="border:none;padding: 3px 4px; width:95%;" value={{document}}>
+                               </div>
+                             </td>
+                            <!--End second cellule-->
+                     </tr>
+                     <!--End Second Row-->
+                  </table>
+               </div>
+            </div>
+            <!----Ennnnnnnnnnnnnnnnnnnnnnnnnnnnd-->
+            <!---menu-->
+            <div class="inside2">
+               <ul class="list-nav">
+                  <li (click)="FunctionMenuInsideClick('m1','m2','m3','ins1','ins2','ins3')"
+                  class="nav-link active" id="m1">Operations</li>
+                  <li (click)="FunctionMenuInsideClick('m2','m1','m3','ins2','ins1','ins3')" 
+                   class="nav-link" id="m2">Additional Info</li>
+                  <li (click)="FunctionMenuInsideClick('m3','m1','m2','ins3','ins2','ins1')"
+                  class="nav-link" id="m3">Note</li>
+               </ul>
+               <!---sous menu---1-->
+               <div class="div1" id='ins1'>
+                  <!--tableeeeeee-->
+                <table class="table-menu1" id="table-menu-div2">
+                   <!--roooooooooooooooooow-->
+                   <tr class="table-header" id="table-header2">
+                      <!--cellule-->
+                      <td class="product-cellule" id="product-cellule2">Product</td>
+                      <!--cellule-->
+                      <td class="status-cellule" id="done-cellule">Done</td>
+                      <!--cellule-->
+                      <td class="dropdown" id="menu-cellule"><i (click)="FunctionSousMenu('myDropdown3')"class="dropbtn glyphicon glyphicon-option-vertical"></i>
+                         <div id="myDropdown3" class="dropdown-content">
+                            <div><input type="checkbox"  id="new-cellule3"
+                              (click)="AddCellule2('new-cellule3','table-menu-div2','new-cellule4',1,'Description')" >   
+                               Description</div>
+                            <div><input type="checkbox"  id="new-cellule4"
+                              (click)="AddCellule2('new-cellule4','table-menu-div2','new-cellule3',2,'Date')" >
+                               Date</div>
+                          </div>
+                      </td>
+                   </tr>
+                   <tr *ngFor="let item of tableau3; let i=index"
+                  style="border-bottom: 1px solid #eee;">
+                     <!--cellule-->
+                     <td>
+                        <div style="border: 1px solid #ccc; border-radius: 3px;background-color:#D2D2FF;">
+                           <input style="border:none;padding: 3px 4px; width:100%;"
+                           value={{item.name_product}}>
+                        </div>
+                          
+                        
+                     </td>
+                     <!--cellule-->
+                     <td>
+                        <div style="border: 1px solid #ccc; border-radius: 3px;background-color:#D2D2FF;">
+                           <input style="border:none;padding: 3px 4px; width:100%;"
+                           value={{item.quantity}}>
+                        </div>
+                     </td>
+                     
+                     <!--cellule-->
+                     <td>
+                        <div style="border: 1px solid #ccc; border-radius: 3px;">
+                           <i style="padding: 5px 5px;padding-left:18px;" (click)="functionDeleteRow(i)"
+                           class="glyphicon glyphicon-trash"></i>
+                        </div>
+                     </td>
+                  </tr>
+                </table>
+                <span class="add-line" (click)="functionAddRow()">Add line</span>
+               </div>
+               <!---sous menu---2-->
+               <div class="div2" id='ins2'>
+                <span class="Informations-title" >Other Information</span>
+                <table class="table-menu2">
+                   <tr>
+                      <td class="cellule-left">Priority</td>
+                      <td class="cellule-right">
+                         <i (click)="functionStar('0')" class="glyphicon glyphicon-star-empty icon-star icon2"></i>
+                         <i (click)="functionStar('1')" class="glyphicon glyphicon-star-empty icon-star icon2"></i>
+                         <i (click)="functionStar('2')" class="glyphicon glyphicon-star-empty icon-star icon2" ></i>
+                        
+                      </td>
+                   </tr>
+                   <tr>
+                    <td class="cellule-left">Responsible</td>
+                    <td class="cellule-right">
+                      <div class="input-tab">
+                         <input type="text" id="input-responsable" value={{respo}}>
+                         <i class="glyphicon glyphicon-triangle-bottom" (click)="FunctionSousMenu('dropDownRes1')"></i>
+                         <div id="dropDownRes1" class="dropdown-content2">
+                            <a (click)="functionSelectOption('responsable1')">responsable1</a>
+                            <a (click)="functionSelectOption('responsable2')">responsable2</a>
+                            <a (click)="functionSelectOption('responsable3')">responsable3</a>
+                         </div> 
+                      </div>
+                    </td>
+                 </tr>
+                 <tr>
+                    <td class="cellule-left">Procurement Group Company</td>
+                    <td class="cellule-right">
+                      <span>{{group}}</span>  
+                    </td>
+                 </tr>
+                </table>
+               </div>
+               <!---sous menu--3-->
+               <div class="div3" id='ins3'>
+                <div class="input-notes"> 
+                   <textarea style="width: 100%;" placeholder=" Add an internal note that will be printed on the Picking Operations sheets" 
+                   rows="2" cols="120" maxlength="300" value={{note}}> 
+               
+                  </textarea>
+                </div>
+               </div>
+            </div>
+         </div>  
+      </div>
+     
+      
+</div>

@@ -1,0 +1,141 @@
+
+<div class="container-fluid">
+    <!-- Begin of head-->
+    <div class="head-principal">
+       <div class="row head">
+    
+         <div class="section-title">
+            <span> Inventory Adjustments / New</span>
+         </div> 
+          
+       </div>
+       <div class="row head2">
+          <div class="button-group1">
+            <button  class="save" (click)="functionEdit()" id="btnEdit" >Edit</button>
+            <button class="btn btn-default" (click)="functionCreate()" id="btnCreate" >Create</button>
+           <button  class="save none" id="btnSave">Save</button>
+           <button class="btn btn-default none" id="btnDiscard">Discard</button>
+          </div>
+       </div>
+       <div class="row head3">
+         <div class="button-group2">
+          <button class="StartINV">Start Inventory</button>
+         </div>
+         <div class="comp-right">
+      
+         </div>
+      </div>
+    </div>
+       <!-- End of head-->
+       <div class="main">
+         <div class="principal" id="div1">
+           <div class="inside1">
+            <div class="inside1-header" *ngFor="let item of tableau1">
+               <label>Inventory Reference
+                <input type="text" value={{item.iv}}>
+               </label> 
+            </div>
+               <table id="table-principal">
+                  <!---First Row-->
+                  <tr>
+                     <!--First cellule-->
+                   <td class="label-tab">Products</td>
+                   <td class="input-tab-td dropdown">
+                      <div class="input-tab" *ngFor="let item of tableau1">
+                         <input type="text" value={{item.pid}}>
+                         <i  (click)="FunctionShowOptions('myDropdown1')" class="glyphicon glyphicon-triangle-bottom" > </i>
+                            <div id="myDropdown1" class="dropdown-content1">
+                               <a>Product1</a>
+                               <a>Product2</a>
+                               <a>Product3</a>
+                            </div>  
+                      </div>
+                    </td> 
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <!--End first cellule-->
+                     <!--Second cellule-->
+                   <td class="label-tab">Counted Quantities</td>
+                   <td class="input-tab-td">
+                      <div>
+                        <label id="label1"><input type="radio" id="radio1">Default to stock on hand
+                        </label><br>
+                        <label id="label2"><input type="radio" id="radio2">Default to zero
+                        </label>
+                      </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <!--End second cellule-->
+                  </tr>
+                  <tr>
+                     <td>
+                     <label for="sel1">Company</label></td>
+                     <td class="input-tab-td dropdown"> <select class="form-control" id="select">
+                      <option *ngFor="let item of tableau1">{{item.ci}}</option> 
+                      </select></td>
+                  </tr>
+
+
+                  <!---End first Rowwww-->
+                  <!--Second Row-->
+                  <tr>
+                       
+                  </tr>
+                  <!--End Second Row-->
+               </table>
+            </div>
+         </div>
+         <!----Ennnnnnnnnnnnnnnnnnnnnnnnnnnnd-->
+           
+         <div class="principal2" id="div2">
+            <div class="inside1">
+             <div class="inside1-header">
+                <h1 style="color: #2a3f5a;">{{nameOperation}}</h1>
+             </div>
+                <table id="table-principal">
+                   <!---First Row-->
+                   <tr *ngFor="let item of tableau1">
+                      <!--First cellule-->
+                    <td class="label-tab">Products</td>
+                    <td style="padding-left: 8px; font-weight: 500;">
+                       {{item.pid}}
+                     </td> 
+                     <td></td>
+                     <td></td>
+                   </tr>
+                   <tr>
+                     <!--End first cellule-->
+                      <!--Second cellule-->
+                    <td class="label-tab">Counted Quantities</td>
+                    <td style="padding-left: 8px; font-weight: 500;">
+                       {{quantity}}
+                     </td>
+                     <td></td>
+                     <td></td>
+                     <!--End second cellule-->
+                   </tr>
+                   <tr *ngFor="let item of tableau1">
+                     <td class="label-tab">Company</td>
+                      <td style="padding-left: 8px; font-weight: 500;">
+                       {{item.ci}}
+                       </td>
+                   </tr>
+ 
+ 
+                   <!---End first Rowwww-->
+                   <!--Second Row-->
+                   <tr>
+                        
+                   </tr>
+                   <!--End Second Row-->
+                </table>
+             </div>
+          </div>
+           
+      </div>
+         
+      
+</div>

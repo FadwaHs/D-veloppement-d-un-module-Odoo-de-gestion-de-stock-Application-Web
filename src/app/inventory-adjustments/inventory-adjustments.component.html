@@ -113,7 +113,7 @@
             </thead>
 
             <tbody >
-              <tr *ngFor = 'let item of tableau1'>
+              <tr *ngFor = 'let item of tableau1' (click)="functionGoToDetails(item.iv)">
                 <td class="input-cel">
                   <input type="checkbox" class="checkbox1" (click)="FunctionCheckBox2('checkbox1')">
                 </td>
@@ -137,7 +137,7 @@
 
         <div id="divCompView" class="cards">
           <div class="inside row">
-              <div class="col-md-4" *ngFor = 'let item of tableau1'>
+              <div class="col-md-4" *ngFor = 'let item of tableau1'  (click)="functionGoToDetails(item.iv)">
                 <div class="top">
                  <span class="title-col">{{item.iv}}</span>
                  <span class="button-col"><button>{{item.status}}</button></span> 
@@ -185,7 +185,7 @@
         <div id={{item2.status}} style="display:none;">
          <table class="table-group1">
         <tbody class="table-body-group1">
-          <tr *ngFor = 'let item of tableau2'>
+          <tr *ngFor = 'let item of tableau2' (click)="functionGoToDetails(item.iv)">
             <td class="input-cel"  *ngIf="(item.status == item2.status)">
               <input type="checkbox" class="checkbox2" (click)="FunctionCheckBox2('checkbox2')">
             </td>

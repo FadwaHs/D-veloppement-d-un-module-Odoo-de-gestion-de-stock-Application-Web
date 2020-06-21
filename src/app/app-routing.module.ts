@@ -26,6 +26,8 @@ import { CreateTransfersComponent } from './create-transfers/create-transfers.co
 import { CreateInventoryAdjustmentsComponent } from './create-inventory-adjustments/create-inventory-adjustments.component';
 import { CreateScarpComponent } from './create-scarp/create-scarp.component';
 import { OvreviewDashboardComponent } from './ovreview-dashboard/ovreview-dashboard.component';
+import { OperationDetailsComponent } from './operation-details/operation-details.component';
+import { InventoryDetailsComponent } from './inventory-details/inventory-details.component';
 
 
 
@@ -63,6 +65,10 @@ const routes: Routes = [
     component:InventoryAdjustmentsComponent
   },
   {
+    path:'inventory-detail/:name',
+    component:InventoryDetailsComponent
+  },
+  {
     path:'scrap',
     component:ScarpComponent
   },
@@ -89,6 +95,10 @@ const routes: Routes = [
   {
     path:'create-receipt/:name/:type/:from',
     component:CreateReceiptComponent
+  },
+  {
+    path:'operationdetail/:name/:from/:reference',
+    component:OperationDetailsComponent
   },
   {
     path:'create-product',

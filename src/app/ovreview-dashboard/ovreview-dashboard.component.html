@@ -58,7 +58,7 @@
           <!-- Begin of one composant-->
         <div class="col-xs-4" *ngFor="let item of tableau1;let i= index;">
               <div class="menu-top">
-                 <span class="header-title" (click)="FunctionClickedInButtonReceipts(item.name+':'+item.com,item.type,item.pickingId)" >
+                 <span class="header-title" (click)="FunctionClickedInButtonReceipts(item.name,item.com,item.pickingId)"  >
                    {{item.name}}
                 </span>
                  <div class="menu">
@@ -84,7 +84,7 @@
                  </span>
                 </div>
               <div class="menu-inside">
-               <button (click)="FunctionClickedInButtonReceipts(item.name+':'+item.com,item.type,item.pickingId)" 
+               <button (click)="FunctionClickedInButtonReceipts(item.name,item.com,item.pickingId)" 
                class="button-comp" >{{item.quantity}} To Process</button>
               </div>
           </div>
@@ -98,7 +98,7 @@
         <!-- Begin of one composant-->
         <div class="col-xs-4" *ngFor="let item of tableau_in;let i= index;">
           <div class="menu-top">
-             <span class="header-title" (click)="FunctionClickedInButtonReceipts(item.name+':'+item.com,item.type,item.pickingId)" >
+             <span class="header-title" (click)="FunctionClickedInButtonReceipts(item.name,item.com,item.pickingId)" >
                {{item.name}}
             </span>
              <div class="menu">
@@ -124,7 +124,7 @@
              </span>
             </div>
           <div class="menu-inside">
-           <button (click)="FunctionClickedInButtonReceipts(item.name+':'+item.com,item.type,item.pickingId)" 
+           <button (click)="FunctionClickedInButtonReceipts(item.name,item.com,item.pickingId)" 
            class="button-comp" >{{item.quantity}} To Process</button>
           </div>
       </div>
@@ -135,7 +135,7 @@
       <div class="display">
      <div class="col-xs-4" *ngFor="let item of tableau_out;let i= index;">
        <div class="menu-top">
-          <span class="header-title" (click)="FunctionClickedInButtonReceipts(item.name+':'+item.com,item.type,item.pickingId)" >
+          <span class="header-title" (click)="FunctionClickedInButtonReceipts(item.name,item.com,item.pickingId)" >
             {{item.name}}
          </span>
           <div class="menu">
@@ -161,7 +161,7 @@
           </span>
          </div>
        <div class="menu-inside">
-        <button (click)="FunctionClickedInButtonReceipts(item.name+':'+item.com,item.type,item.pickingId)" 
+        <button (click)="FunctionClickedInButtonReceipts(item.name,item.com,item.pickingId)" 
         class="button-comp" >{{item.quantity}} To Process</button>
        </div>
    </div>

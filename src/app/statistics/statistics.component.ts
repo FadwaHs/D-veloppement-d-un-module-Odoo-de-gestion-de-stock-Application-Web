@@ -19,6 +19,8 @@ export class StatisticsComponent implements OnInit {
   items3 = [];items4 = [];
   lineChart=[];
   donutChart=[];
+  table_del =  new Array<number>(12);
+  table_rec =  new Array<number>(12);
   
   constructor(private http2 :HttpClient) {
    
@@ -51,14 +53,9 @@ export class StatisticsComponent implements OnInit {
             this.deliverylength++;
           }
       }
-      // var d = new Date();
-      // console.log(d.getFullYear());
-      this.functionDonutChart(this.receiptlength,this.deliverylength,this.scraplength)
-  
 
     
     });
-
     this.http2.get('http://127.0.0.1:5002/OperationsParMois').subscribe(data => {
       this.StaticsData = data as JSON;
       this.ourdata1 = this.StaticsData["result"];
@@ -66,36 +63,101 @@ export class StatisticsComponent implements OnInit {
       {
         this.items4.push(this.StaticsData["result"]["response1"][key]);
       }
-
+      var i=0;
       console.log(this.items4);
-    
-    });
-
-  this.lineChart=new Chart(document.getElementById("line-chart"), {
-    type: 'line',
-    data: {
-      labels: ['Jun','Feb','Mar','Apr','Mai','Juin','Jui','Aug','Sep','Oct','Nov','Dec'],
-      datasets: [{ 
-          data: [86,114,106,106,107,111,133,221,783,2478,500,0],
-          label: "Delivery Orders",
-          borderColor: "#3e95cd",
-          fill: false
-        }, { 
-          data: [282,350,411,502,635,809,947,1402,3700,5267,500,0],
-          label: "Receipts",
-          borderColor: "#8e5ea2",
-          fill: false
-        }
-      ]
-    },
-    options: {
-      title: {
-        display: true,
-        text: 'Statistics for Receipt and Delivery Orders'
+      var d = new Date();
+      for(var j=0;j<this.items4.length;j++)
+      {
+         if(parseInt(this.items4[j].date.slice(0, 4))==d.getFullYear())
+         {
+            for(var n=0;n<this.table_del.length;n++)
+            {
+              
+              if(parseInt(this.items4[j].date.slice(5,7))==n+1)
+              {
+                if(this.items4[j].type=="incoming")
+                {
+                  if(this.table_rec[n]==null)
+                  {
+                     this.table_rec[n]=0;
+                  }
+                  this.table_rec[n]+=1;
+                }
+                else if(this.items4[j].type=="outgoing")
+                {
+                  if(this.table_del[n]==null)
+                  {
+                     this.table_del[n]=0;
+                  }
+                  this.table_del[n]+=1;
+                }
+                
+              }
+          
+            }
+         }
       }
-    }
-  });
-    
+      for(var i=0;i<this.items4.length;i++)
+      {
+          if(this.items4[i].type=="incoming")
+          {
+            this.receiptlength++;
+  
+          }
+          else if(this.items4[i].type=="outgoing")
+          {
+            this.deliverylength++;
+          }
+      }
+     
+      this.functionDonutChart(this.receiptlength,this.deliverylength,this.scraplength);
+      this.lineChart=new Chart(document.getElementById("line-chart"), {
+        type: 'line',
+        data: {
+          labels: ['Jun','Feb','Mar','Apr','Mai','Juin','Jui','Aug','Sep','Oct','Nov','Dec'],
+          datasets: [{ 
+              data: [this.table_del[0],
+              this.table_del[1],
+              this.table_del[2],
+              this.table_del[3],
+              this.table_del[4],
+              this.table_del[5],
+              this.table_del[6],
+              this.table_del[7],
+              this.table_del[8],
+              this.table_del[9],
+              this.table_del[10],
+              this.table_del[11]],
+              label: "Delivery Orders",
+              borderColor: "#3e95cd",
+              fill: false
+            }, { 
+              data: [this.table_rec[0],
+              this.table_rec[1],
+              this.table_rec[2],
+              this.table_rec[3],
+              this.table_rec[4],
+              this.table_rec[5],
+              this.table_rec[6],
+              this.table_rec[7],
+              this.table_rec[8],
+              this.table_rec[9],
+              this.table_rec[10],
+              this.table_rec[11]],
+              label: "Receipts",
+              borderColor: "#8e5ea2",
+              fill: false
+            }
+          ]
+        },
+        options: {
+          title: {
+            display: true,
+            text: '############'
+          }
+        }
+      });
+    });
 
 
 
