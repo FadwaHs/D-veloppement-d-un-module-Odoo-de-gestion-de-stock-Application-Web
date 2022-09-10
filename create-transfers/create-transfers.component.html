@@ -1,0 +1,185 @@
+
+<div class="container-fluid">
+    <!-- Begin of head-->
+    <div class="head-principal">
+       <div class="row head">
+    
+         <div class="section-title">
+            <span>Transfers / New</span>
+         </div>
+          
+       </div>
+       <div class="row head2">
+          <div class="button-group1">
+           <button  class="save" >Save</button>
+           <button class="btn btn-default">Discard</button>
+          </div>
+       </div>
+       <div class="row head3">
+         <div class="button-group2">
+          <button class="save">Scrap</button>
+          <button class="btn btn-default" (click)="functionCancel()" >Cancel</button>
+         </div>
+         <div class="comp-right">
+      
+         </div>
+      </div>
+    </div>
+       <!-- End of head-->
+       <div class="main">
+         <div class="principal">
+           <!-------Information Haut------->
+           <div class="inside1">
+              <div class="inside1">
+                 <table id="table-principal">
+                    <!---First Row-->
+                    <tr>
+                       <!--First cellule-->
+                     <td class="label-tab">Contact</td>
+                     <td class="input-tab-td dropdown">
+                        <div class="input-tab">
+                           <input type="text">
+                           <i (click)="FunctionShowOptions('myDropdown1')" class="glyphicon glyphicon-triangle-bottom" > </i>
+                              <div id="myDropdown1" class="dropdown-content1">
+                                 <a>Contact1</a>
+                                 <a>Contact2</a>
+                                 <a>Contact3</a>
+                              </div>  
+                        </div>
+                      </td> 
+                      <!--End first cellule-->
+                       <!--Second cellule-->
+                     <td class="label-tab">Scheduled Date</td>
+                     <td class="input-tab-td">
+                        <div class="input-tab">
+                           <input [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time">
+                           <span class="trigger" [owlDateTimeTrigger]="dt1">
+                              <i class="glyphicon glyphicon-triangle-bottom"></i>
+                           </span>
+                           <owl-date-time #dt1></owl-date-time>
+                        </div>
+                      </td>
+                      <!--End second cellule-->
+                    </tr>
+                    <!---End first Rowwww-->
+                    <!--Second Row-->
+                    <tr>
+                         <!--First cellule-->
+                        <td class="label-tab">Operation Type</td>
+                        <td class="input-tab-td" id="operation-type">
+                           <div class="input-tab" >
+                              <select id="select-menu" class="form-control" >
+                                 <option disabled selected value value="Default"> ---- </option>
+                                 <option value="Delivery Mai:YourCompany-Delivery Orders">Delivery Mai: Your Company</option>
+                                 <option value="Receipts Houda:YourCompany-Receipts">Receipts Houda: Your Company</option>
+                              </select>
+                           </div>
+                         </td>
+                          <!--End first cellule-->
+                           <!--Second cellule-->
+                           <td class="label-tab">
+                              Source Document</td>
+                           <td class="input-tab-td">
+                              <div class="input-tab">
+                                 <input type="text" placeholder="e.g. PO0032">
+                              </div>
+                            </td>
+                           <!--End second cellule-->
+                    </tr>
+                    <!--End Second Row-->
+                 </table>
+              </div>
+           </div>
+           <!----Ennnnnnnnnnnnnnnnnnnnnnnnnnnnd-->
+           <!---menu-->
+           <div class="inside2">
+              <ul class="list-nav">
+                 <li (click)="FunctionMenuInsideClick('l1','l2','l3','d1','d2','d3')"
+                 class="nav-link active" id="l1">Operations</li>
+                 <li (click)="FunctionMenuInsideClick('l2','l1','l3','d2','d1','d3')" 
+                  class="nav-link " id="l2">Additional Info</li>
+                 <li (click)="FunctionMenuInsideClick('l3','l2','l1','d3','d2','d1')"
+                 class="nav-link" id="l3">Note</li>
+              </ul>
+              <!---sous menu---1-->
+              <div class="div1" id='d1'>
+                 <!--tableeeeeee-->
+               <table class="table-menu1" id="table-menu-1">
+                  <!--roooooooooooooooooow-->
+                  <tr class="table-header" id="table-header">
+                     <!--cellule-->
+                     <td class="product-cellule" id="product-cellule">Product</td>
+                      <!--cellule-->
+                      <td class="other-cellule">Demand</td>
+                      <!--cellule-->
+                      <td class="other-cellule">Reserved</td>
+                     <!--cellule-->
+                     <td class="other-cellule" id="done-cellule">Done</td>
+                    
+                     <!--cellule-->
+                     <td class="dropdown" id="menu-cellule"><i (click)="FunctionSousMenu('myDropdown')"class="dropbtn glyphicon glyphicon-option-vertical"></i>
+                        <div id="myDropdown" class="dropdown-content">
+                           <div><input type="checkbox"  id="new-cellule1" (click)="AddCellule1('new-cellule1')">
+                              Description</div>
+                           <div><input type="checkbox"  id="new-cellule2" (click)="AddCellule2('new-cellule2')">
+                              Date</div>
+                         </div> 
+                     </td>
+                  </tr>
+               </table>
+               <span class="add-line" (click)="functionAddRow()">Add line</span>
+              </div>
+              <!---sous menu---2-->
+              <div class="div2" id='d2'>
+               <span class="Informations-title" >Other Information</span>
+               <table class="table-menu2">
+                  <tr>
+                     <td class="cellule-left">Shipping Policy</td>
+                     <td class="cellule-right">
+                      
+                         <select  id="select-th" class="form-control">
+                            <option selected>As soon as possible</option>
+                            <option>When all products are ready</option>
+                         </select>
+                       
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="cellule-left">Priority</td>
+                     <td class="cellule-right">
+                        <i (click)="functionStar('0')" class="glyphicon glyphicon-star-empty icon-star"></i>
+                        <i (click)="functionStar('1')" class="glyphicon glyphicon-star-empty icon-star"></i>
+                        <i (click)="functionStar('2')" class="glyphicon glyphicon-star-empty icon-star" ></i>
+                       
+                     </td>
+                  </tr>
+                  <tr>
+                   <td class="cellule-left">Responsible</td>
+                   <td class="cellule-right">
+                     <div class="input-tab">
+                        <input type="text" id="input-responsable">
+                        <i class="glyphicon glyphicon-triangle-bottom" (click)="FunctionSousMenu('dropDownRes')"></i>
+                        <div id="dropDownRes" class="dropdown-content2">
+                           <a (click)="functionSelectOption('responsable1')">responsable1</a>
+                           <a (click)="functionSelectOption('responsable2')">responsable2</a>
+                           <a (click)="functionSelectOption('responsable3')">responsable3</a>
+                        </div> 
+                     </div>
+                   </td>
+                </tr>
+               </table>
+              </div>
+              <!---sous menu--3-->
+              <div class="div3" id='d3'>
+               <div class="input-notes"> 
+                  <textarea placeholder=" Add an internal note that will be printed on the Picking Operations sheets" 
+                  rows="2" cols="120" maxlength="300"></textarea>
+               </div>
+              </div>
+           </div>
+           </div>
+           
+      </div>
+         
+      
+</div>

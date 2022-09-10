@@ -1,0 +1,286 @@
+<div class="container-fluid">
+    <!-- Begin of head-->
+    <div class="head-principal">
+        <div class="row head"> 
+        
+            <div class="section-title">
+               <span>Stok Moves</span>
+            </div>
+               <div class="input-group">
+                   <input type="text" class="form-control" placeholder="Search" name="search">
+                   <div class="input-group-btn">
+                     <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                   </div>
+              </div>
+              
+           </div>
+           <div class="row head2">
+               <div class="button-group2">
+                <div class="dropdown">
+                    <button (click)="Function2('myDropdown1')" class="dropbtn">
+                        <i class="glyphicon glyphicon-filter"></i>
+                        Filters
+                        <i class="glyphicon glyphicon-menu-down"></i>
+                    </button>
+                    <div id="myDropdown1" class="dropdown-content">
+                      <a href="#">Ready</a>
+                      <a href="#">To do</a>
+                      <a href="#">Done</a>
+                      <a href="#">Incoming</a>
+                      <a href="#">Outgoing</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button (click)="Function2('myDropdown2')" class="dropbtn">
+                        <i class="glyphicon glyphicon-tasks"></i>
+                        Group By
+                        <i class="glyphicon glyphicon-menu-down"></i>
+                    </button>
+                    <div id="myDropdown2" class="dropdown-content">
+                      <a href="#">Status</a>
+                      <a href="#">Product</a>
+                      <a href="#">Picking</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button (click)="Function2('myDropdown3')" class="dropbtn">
+                        <i class="glyphicon glyphicon-star"></i>
+                        Favorites
+                        <i class="glyphicon glyphicon-menu-down"></i>
+                    </button>
+                    <div id="myDropdown3" class="dropdown-content"> 
+                      <a href="#">Save Current Search</a>
+                    </div> 
+                </div>
+    
+                <button  id="btnlist" class="btn btn-default" 
+                (click)="Active('btnlist','btnChar3','btnkanban','btnchart')" 
+                (click)="OpenCharts('tablestokemoves','Chartline','Pie','kanbanstokemoves')">
+                    <i class="glyphicon glyphicon-th-list"></i>
+                  </button> 
+                  <button  id="btnkanban" class="btn btn-default"
+                  (click)="Active('btnkanban','btnChar3','btnchart','btnlist')" 
+                (click)="OpenCharts('kanbanstokemoves','Chartline','tablestokemoves','Pie')" >
+                      <i class="glyphicon glyphicon-th-large"></i>
+                    </button>    
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="button-measures" (click)="Function2('myDropdown4')">Measures
+                      <span class="caret"></span>
+                    </button>
+                    
+                    <div id="myDropdown4" class="dropdown-content">
+                        <a href="" id="chekedQT">Initial Demande</a>
+                        <a href="">Unit Price</a>
+                        <a href="">count</a>
+                      </div>
+                </div>
+                <button  id="btnchart" class="btn btn-default active"
+                (click)="Active('btnchart','btnChar3','btnkanban','btnlist')" 
+                (click)="OpenCharts('Pie','Chartline','tablestokemoves','kanbanstokemoves')" >
+                    <i class="fa fa-pie-chart"></i>
+                </button>
+                <button  id="btnChar3" class="btn btn-default"
+                (click)="Active('btnChart3','btnchart','btnkanban','btnlist')" 
+                (click)="OpenCharts('Chartline','Pie','tablestokemoves','kanbanstokemoves')" >
+                  <i class="fa fa-bar-chart"></i>
+                </button>
+                <button id="exportbtn" class="btn btn-default ">
+                    <span class="glyphicon glyphicon-download-alt"></span>
+                </button>
+              </div>
+              </div>
+       <!-- End of head-->
+       <div class="main">
+          
+            <div  id="Pie" class="col-md-2">
+
+              <canvas id="pie-chart"></canvas> 
+
+           </div>
+           <div id="Chartline">
+             
+               <canvas id="canvas2"></canvas>  
+
+           </div>
+           <div id="tablestokemoves">
+                <table id="tablesbystatus" class="table table-hover">
+                    <thead>
+                        <th >Date</th>
+                        <th >References</th>
+                        <th >Product</th>
+                        <!-- <th >From</th>
+                        <th >To</th> -->
+                        <th>Initial Demande</th>
+                        <th >status</th>
+                     
+                    </thead>
+        
+                    <tbody >
+                            <tr *ngFor = 'let item of items7'>
+                                    <td>{{item.date}}</td>
+                                    <td>{{item.ref}}</td>
+                                    <td>{{item.pro}}</td>
+                                    <!-- <td>{{item.lo}}</td>
+                                    <td>{{item.lodesr}}</td> -->
+                                    <td>{{item.proqty}}</td>
+                                    <td>{{item.state}}</td>               
+                             </tr>
+
+                        
+                    </tbody>
+                </table>
+ 
+           </div>
+
+        <div id="kanbanstokemoves">
+           
+        <div class="divstatus">
+            <p class="availabletext">Available
+                <span id ="Av" class="glyphicon glyphicon-plus" (click)="ShowCreateDiv('S1999')"></span>
+            </p>
+
+            <div class="display" id="S1999">
+                <input type="text" class="form-control" id="titleinput" placeholder="title"/>
+                <button type="button" class="Addstatus" (click)="OpenPopupSm('pop1')">Add</button>
+                <button type="button" class="Editstatus">Edit</button>
+                <button type="button" class="btn btn-default">Discard</button>
+            </div>
+
+        <div class="divstokemovesA" *ngFor = 'let item of items10'>
+              <table id="donetable">
+             <tbody>
+             <tr>
+                <td>
+                    <div class="productsinfo">
+                        <p id="styleP">{{item.ref}}</p>
+                        <p id="styleP">Quantity Done</p>
+                        
+                      </div>
+                </td>
+                <td>
+                    <div class="productsinfo">
+                        <p id="stylePstatusA"> {{item.state}}</p>
+                        <p id="styleP">0.00 / {{item.proqty}} </p>
+                                         
+                    </div>
+                </td>
+              </tr>   
+            </tbody>
+          </table>
+
+        </div>
+         
+
+        </div>
+        <div class="divstatus">
+
+              <p class="Wavailabletext">Waiting Availability
+                  <span  class="glyphicon glyphicon-plus"  (click)="ShowCreateDiv('S1998')"></span>
+              </p>
+              <div class="display" id="S1998">
+                  <input type="text" class="form-control" id="titleinput" placeholder="title"/>
+                  <button type="button" class="Addstatus" (click)="OpenPopupSm('pop2')">Add</button>
+                  <button type="button" class="Editstatus">Edit</button>
+                  <button type="button" class="btn btn-default">Discard</button>
+              </div>         
+  
+        <div class="divstokemovesWA" *ngFor = 'let item of items9'>
+             <table id="donetable">
+             <tbody>
+             <tr>
+                <td>
+                    <div class="productsinfo">
+                        <p id="styleP">{{item.ref}}</p>
+                        <p id="styleP">Initial Demande</p>
+                        
+                      </div>
+                </td>
+                <td>
+                    <div class="productsinfo">
+                        <p id="stylePstatusWA"> {{item.state}}</p>
+                        <p id="styleP">{{item.proqty}} /0.00</p>
+                                         
+                    </div>
+                </td>
+              </tr>   
+            </tbody>
+          </table>
+              </div>
+        </div>
+
+        <div class="divstatus">
+
+                <p class="Davailabletext">Done
+                    <span id ="done" class="glyphicon glyphicon-plus"  (click)="ShowCreateDiv('S1997')"></span>
+                </p> 
+                <div class="display" id="S1997">
+                    <input type="text" class="form-control" id="titleinput" placeholder="title"/>
+                    <button type="button" class="Addstatus" (click)="OpenPopupSm('pop3')">Add</button>
+                    <button type="button" class="Editstatus">Edit</button>
+                    <button type="button" class="btn btn-default">Discard</button>
+                </div>
+
+        <div class="divstokemovesD"  *ngFor = 'let item of items8' >
+                   
+         <table id="donetable">
+             <tbody>
+             <tr>
+                <td>
+                    <div class="productsinfo">
+                        <p id="styleP">{{item.ref}}</p>
+                        <p id="styleP">Initial Demande</p>
+                        <p id="styleP">Quanity Done :</p>
+                      </div>
+                </td>
+                <td>
+                    <div class="productsinfo">
+                        <p id="stylePstatus"> {{item.state}}</p>
+                        <p id="styleP">{{item.proqty}}</p>
+                        <p id="styleP">{{item.proqty}}</p>                   
+                    </div>
+                </td>
+              </tr>   
+            </tbody>
+          </table>
+
+        </div>
+               
+        </div>           
+            <div class="divstatus">
+
+                <p class="Navailabletext">New
+                    <span id ="done" class="glyphicon glyphicon-plus"  (click)="ShowCreateDiv('S1996')"></span>
+                </p>
+                <div class="display" id="S1996">
+                    <input type="text" class="form-control" id="titleinput" placeholder="title"/>
+                    <button type="button" class="Addstatus" (click)="OpenPopupSm('pop4')">Add</button>
+                    <button type="button" class="Editstatus">Edit</button>
+                    <button type="button" class="btn btn-default">Discard</button>
+                </div>  
+
+            <div class="divstokemovesN" *ngFor = 'let item of items11'>
+              <table id="donetable">
+             <tbody>
+             <tr>
+                <td>
+                    <div class="productsinfo">
+                        <p id="styleP">{{item.ref}}</p>
+                        <p id="styleP">Initial Demande</p>
+                       
+                      </div>
+                </td>
+                <td>
+                    <div class="productsinfo">
+                        <p id="stylePstatusNew"> {{item.state}}</p>
+                        <p id="styleP">{{item.proqty}} /0.00</p>
+                                       
+                    </div>
+                </td>
+              </tr>   
+            </tbody>
+             </table>
+            </div>   
+        </div>                 
+     </div>
+</div>

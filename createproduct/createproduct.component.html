@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <title>Products table</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="navbar">
+
+    <button type="button" class="btn" (click)="backToProduct()">Back To Products</button>
+    <button type="button" class="btn btn-default"  >Discard</button>
+    <div class="div-1-1">
+        <button type="button"id="upQt" class="btn">Update Quantity</button>
+        <button type="button" class="btn">Replenish</button>
+    </div>
+    <div class="div-1-2">
+        <button type="button" class="saveproducts" (click)="createproduct()">Save</button>
+    </div>
+    
+    </div>
+
+ 
+    <div class="div-2">
+
+        <div id="buttontop" class="btn-group btn-group-lg">
+            <button type="button" id="btntopUOH" class="fa fa-cubes" > Units On Hands</button>
+            <button type="button" id="btntop" class="fa fa-cubes"> Units Forecasted</button>
+            <!-- <button type="button" id="btntop" class="glyphicon glyphicon-transfer" > Traceability</button>
+            <button type="button" id="btntop" class="glyphicon glyphicon-refresh"> Reordering</button> -->
+            
+        </div><br><br><br>
+         
+      <form >
+          
+        <p>Product name</p>
+        <input class="form-control" id="form-control1" type="text" name ="name" placeholder="Product Name" />
+        <div class="photo-input">
+            <div class="div-add-photo" id="div-add-photo">
+                <i class="glyphicon glyphicon-pencil" (click)="functionAddFile()"></i>
+                <input type="file" id="file-input" >
+            </div>
+             <img src={{urlImage}} (mouseover)="mousseOverPhoto()" (mouseout)="mousseOutPhoto()">
+            
+         </div>
+ 
+          <div class="checkbox">
+            <label><input type="checkbox" value="" checked>Can be Sold</label>
+          </div>
+          <div class="checkbox">
+              <label><input type="checkbox" value="" checked>Can be Purchased</label>
+          </div>
+         
+      </form><br>
+      <ul class="nav nav-tabs" id="ulsize">
+      <li id="1" class="nav-link active" (click)="Active('1','2')" ><a id="menucolor1" (click)="Openmenu('divinfo','inventoryinfo')">General Information</a></li>
+      <li id="2" class="nav-link "(click)="Active('2','1')"><a id="menucolor2" (click)="Openmenu('inventoryinfo','divinfo')">Inventory</a></li>
+     
+      </ul><br><br>
+ 
+      <div id="divinfo">
+
+       <div id="divright">
+          <p id="internalnote">Internal Note</p>
+          <textarea  class="form-control" rows="4" placeholder="this note in only for internal purposes"></textarea>
+
+       </div> 
+
+          <label for="sel1">Product Type</label>
+          <select class="form-control" id="select">
+            <option>Consumable</option>
+            <option>Service</option>
+            <option>Storable Product</option>
+          </select><br>
+
+
+          <label for="sel1">Product Category</label>
+          <select class="form-control" id="select">
+            <option>ALL</option>
+            <option>ALL/Consumable</option>
+            <option>All/internal</option>
+            <option>ALL/saleable</option>
+            <option>ALL/saleable/services</option>
+            <option>ALL/saleablel/Oficce Furniture</option>
+          </select><br>
+
+          <label >Internal Reference</label>
+          <input type="text" class="form-control" id="form-control2-In"><br>
+          <label >barcode</label>
+          <input type="text" class="form-control" id="form-control2-br" > <br>
+          
+
+          <label >Sale price</label>
+          <span class="glyphicon glyphicon-euro" aria-hidden="true"></span>
+          <input type="text" class="form-control" id="form-control2-sp"/><br>
+
+          <label >Cost</label>
+          <input type="text" class="form-control" id="form-control2-cost" placeholder="0.00"/><br>
+
+          <label for="sel1">Company</label>
+          <select class="form-control" id="select">
+            <option>My Company</option> 
+          </select><br><br><br>
+
+      </div>
+      
+      <div id="inventoryinfo">
+
+        <div class="divtraveability">
+          <p id="traceability">Traceability</p><br>
+            <div class="radio">
+              <label><input type="radio" name="optradio" >By Unique Serial Number</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="optradio">By Lots</label>
+            </div>
+           <div class="radio ">
+              <label><input type="radio" name="optradio" checked>No Tracking</label>
+          </div>     
+            
+        </div>
+
+        <div class="divoperation">
+          <p id="operations">Operations</p><br>
+          <label >Routes</label>
+          <div class="checkbox">
+              <label><input type="checkbox" value="">Replenish on Order (MTO)</label>
+          </div><br>
+          <label >Customer Lead Time</label>
+          <input type="text" class="form-control" id="form-control2" placeholder="0.00 days"/>
+        </div> <br>
+
+        <div class="divLogistics">
+            <p id="operations">Logistics</p><br>
+            <label >Weight</label>
+            <input type="text" class="form-control" id="form-control2" placeholder="0.00 kg"/> 
+            <label >Volumes</label>
+            <input type="text" class="form-control" id="form-control2" placeholder="0.00 m3"/>
+            <label >Responsible</label>
+            <select class="form-control" id="selectlocation">
+                <option>Nom des admins</option>
+
+            </select>
+        </div>
+
+        <div class="divLocations">
+            <p id="operations">Counterpart Locations</p><br>
+            <label >Production Location	</label>
+            <select class="form-control" id="selectlocation">
+                <option>Virtual Locations/YourCompany: Production</option>
+            </select><br>
+            <label >Inventory Location	</label>
+            <select class="form-control" id="selectlocation">
+                <option>Virtual Locations/YourCompany: Inventory adjustment</option>
+                <option>Virtual Locations/YourCompany: scrap</option>
+            </select>
+        </div><br><br>
+
+        <p id="internalnote">Description for Delivery Orders</p>
+          <textarea id="DeliRecei" class="form-control" rows="4" placeholder="this note is added for Delivery Orders"></textarea><br>
+        <p id="internalnote">Description for Receipts</p>
+          <textarea id="DeliRecei" class="form-control" rows="4" placeholder="this note is added to  Receipts Orders"></textarea><br><br>
+            
+      </div>
+        
+    </div>
+
+</body>
+</html>
+

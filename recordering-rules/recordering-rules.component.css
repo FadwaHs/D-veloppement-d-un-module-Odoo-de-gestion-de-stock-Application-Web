@@ -1,0 +1,318 @@
+/* Begin style de head*/
+.section-title
+{
+    float: left;
+    color: #2a3f5a;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+
+.input-group .input-group-btn .btn i{
+    color: #007bff;
+}
+
+
+.input-group
+{
+    float: right;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    width: 400px;
+}
+
+/* End style de head*/
+
+/*
+head2 begin
+*/
+.head2
+{
+  margin-bottom: 10px;
+}
+.head-principal
+{
+    position: fixed;
+    background-color: #fff;
+    border-bottom: 1px solid #BDBDBD;
+    width: 86%;
+    display: block;
+    padding-right: 20px;
+    z-index: 5;
+}
+.container-fluid {
+      padding-right: 0px !important;
+      padding-left: 0px !important;
+
+}
+.button-group2
+{
+    float: right;
+    display: block;
+}
+/*Dropdown Button */
+.dropbtn {
+  background-color: #ffff;
+  color: black;
+  padding: 7px;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  border: #BDBDBD 1px solid;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: #818091;
+    height: 35px;
+    width: 180px;
+    font-weight: bold;
+    padding: 12px 16px;
+    font-size: 13px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+      background-color: #007bff;
+      color: white;
+  }
+  
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+.none
+{
+    display: none;
+}
+/*
+head2 end
+*/
+.row
+{  
+    margin-right: 15px !important;
+    margin-left: 15px !important;    
+}
+
+.main
+{
+    margin-top: 100px;
+   
+}
+@media (max-width:428px)
+{
+.button-group2
+{
+    width: 100%;
+}
+.head2
+{
+     padding-right: 0px;
+}
+}
+@media (max-width:650px)
+{
+.button-group
+{
+    text-align: center;
+}
+.input-group
+{
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 330px;
+}
+
+.input-group
+{
+    padding-left: 10px;
+    width: 370px;
+}
+
+.section-title
+{
+ display: block;
+ padding-left: 10px;
+ width: 100%;
+}
+.button-group2
+{
+    float: left;
+    display: block;
+    width: 100%;
+    padding-left: 10px;
+}
+.main
+{
+    margin-top: 150px;
+}
+}
+
+@media (max-width:960px)
+{
+   .head-principal
+   {
+       width: 100%;
+       padding-right: 20px;
+   }
+   .button-group
+   {
+    text-align: center;
+   }
+}
+@media (max-width:950px)
+{
+    .row
+    {
+        
+        margin-right: 0px !important;
+        margin-left: 0px !important;     
+        
+    }
+    .col-xs-4
+    {
+        margin-left: 0px !important;
+        width: 300px;
+        height: 200px; 
+    }
+   
+}
+@media (max-width:977px)
+{
+   .head-principal
+   {
+       padding-right: 20px;
+   }
+}
+@media only screen and (max-width: 1200px) {
+    .head-principal{
+      padding-right: 50px;
+      padding-left: 20px;
+    }
+}
+
+/*-------------------------------------------------------------------------------------*/
+.btn-creatrules
+{
+    background-color:#007bff;
+    padding: 8px;
+    margin-right: 10px;
+    font-size: 15px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    
+}
+.btn-creatrules:hover
+{
+    background-color:#086edb;
+    box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.2);
+}
+button#exportbtnrules
+{
+    margin-left: 10px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+#btnkanbanviewrules
+{
+    margin-left: 12px;
+    cursor: pointer;
+    margin-right:5px;
+}
+#btnlistviewrules
+{
+    cursor: pointer;
+
+      
+}
+
+table#recorderingtable
+{
+    background-color: white;
+    color: #0a8ea4;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.19);
+   
+}
+thead{
+    background-color: #eeeeee;
+    color: #000;
+    cursor: pointer;
+  
+}
+table td
+{
+  cursor: pointer;
+}
+
+div#divlistviewrules
+{
+    margin-top: 100px;
+   
+}
+div#divkanbanviewrules
+{
+    display: none;
+    margin-top: 120px;
+}
+div#kanbanrules
+{
+    margin-left: 10px;
+    width: 265px;
+    background-color: white;
+    height: 80px;
+    border:#d2d2ff 2px solid;
+    padding-right:0px !important;
+    padding-left: 7px;
+    margin-bottom: 7px;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    display: block;
+    float: left;
+    cursor: pointer;
+}
+.Rulesinfo
+{
+    height: 100px;
+    margin-top: 10px;
+
+}
+
+p#styleP
+{
+    font-weight: bold;
+    color: #818091;
+    font-size: 12px;
+    margin-right:5px;
+}
+td#largetd
+{
+    width: 170px;
+}
+p#styleQt
+{  
+    font-weight: bold;
+    font-size: 12px;
+    color: #007bff;
+}

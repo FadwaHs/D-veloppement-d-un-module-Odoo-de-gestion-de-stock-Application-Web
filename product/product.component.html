@@ -1,0 +1,231 @@
+<div class="container-fluid">
+  <!-- Begin of head-->
+  <div class="head-principal">
+  <div class="row head">
+  
+      <div class="section-title">
+         <span>Products</span>
+      </div>
+
+      <div class="input-group">
+             <input type="text" id="barderecherche" class="form-control" placeholder="Search" name="search">
+             <div class="input-group-btn">
+               <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+             </div>
+        </div>
+      
+     </div>
+     <div class="row head2">
+         <div class="button-group2">
+          <div class="dropdown none" id="dropdown-list1" >
+            <button (click)="Function2('myDropdown4')" class="dropbtn">
+                 Print
+                 <i class="glyphicon glyphicon-triangle-bottom icon"></i>
+            </button>
+            <div id="myDropdown4" class="dropdown-content">
+              <a href="#">Product Label (PDF)</a>
+              <a href="#">Product Barcode (PDF)</a>
+             
+            </div>
+          </div>
+          <div class="dropdown none" id="dropdown-list2">
+            <button (click)="Function2('myDropdown5')" class="dropbtn">
+                Action
+                <i class="glyphicon glyphicon-triangle-bottom icon"></i>
+            </button>
+            <div id="myDropdown5" class="dropdown-content">
+              <a href="#">Archived</a>
+              <a href="#">Unarchive</a>
+              <a href="#">Delete</a>
+              
+            </div>
+        </div>
+          <div class="dropdown">
+              <button (click)="Function2('myDropdown1')" class="dropbtn">
+                  <i class="glyphicon glyphicon-filter"></i>
+                  Filters
+                  <i class="glyphicon glyphicon-menu-down"></i>
+              </button>
+              <div id="myDropdown1" class="dropdown-content">
+                <table>
+                  <tr> <a (click)="functionfiltre('service')">Services</a>
+                   <a (click)="functionfiltre('product')">Products</a>
+                  <a >Add Custom Filter</a></tr>
+                </table>
+              </div>
+          </div>
+          <div class="dropdown">
+              <button (click)="Function2('myDropdown2')" class="dropbtn">
+                  <i class="glyphicon glyphicon-tasks"></i>
+                  Group By
+                  <i class="glyphicon glyphicon-menu-down"></i>
+              </button>
+              <div id="myDropdown2" class="dropdown-content">
+                <table>
+                 <tr> <a (click)="functionGroupByType()">Product Type</a></tr>
+                 <tr> <a (click)="functionGroupByCate()">Product Category</a></tr>
+                 <tr> <a >Add Custom Group</a></tr>
+              </table>
+              </div>
+          </div>
+          <div class="dropdown">
+              <button (click)="Function2('myDropdown3')" class="dropbtn">
+                  <i class="glyphicon glyphicon-star"></i>
+                  Favorites
+                  <i class="glyphicon glyphicon-menu-down"></i>
+              </button>
+              <div id="myDropdown3" class="dropdown-content">
+                <a href="#">Save Current Search</a>
+              </div>
+          </div>
+    
+              <button id="btnkanbanview" class="btn btn-default" (click)="Activer('btnkanbanview','btnlistview')" (click)="Openview('divkanbanview','divlistview')">
+                  <i class="glyphicon glyphicon-th-large"></i> 
+              </button>
+              <button  id="btnlistview" class="btn btn-default active" (click)="Activer('btnlistview','btnkanbanview')" (click)="Openview('divlistview','divkanbanview')">
+                <i class="glyphicon glyphicon-th-list"></i> 
+            </button>                     
+         </div>
+            <button class="button-create" (click)="ClickedInButtonCreateProducts()">Create</button>
+            <button  class="btn btn-default">Import</button>
+            <button id="exportbtn" class="btn btn-default ">
+                <span class="glyphicon glyphicon-download-alt"></span>
+            </button>
+        </div>
+      </div>
+     <!-- End of head-->
+     <div id="divlistview">
+       
+      <table id="tableproducts" class="table table-hover">
+        <thead>
+          <tr>
+            <td>
+              <label><input type="checkbox" id="checkbox-principal" (click)="FunctionCheckBox('checkbox','checkbox-principal')"></label>
+            </td>
+            <th>Internal References</th>
+            <th>Name</th>
+            <th>Sale Price</th>
+            <th>Cost</th>
+            <th>Product Type</th>
+            <th>Quantity On Hand</th>
+          </tr>
+        </thead> 
+        <tbody>
+          <tr *ngFor = 'let item of tableau1'>
+            <td>
+              <label><input type="checkbox" class="checkbox" (click)="FunctionCheckBox2('checkbox')"></label></td>
+               
+                <td>{{item.ir}}</td>
+                <td>{{item.names}}</td>
+                <td>{{item.sp}}</td>
+                <td>{{item.cost}}</td>
+                <td>{{item.types}}</td>
+                <td>{{item.qt}}</td>
+        
+          </tr>
+         
+        </tbody>
+      </table>
+
+     </div>
+
+     <div id="divkanbanview">
+       
+         <div id="kanbanproduct" *ngFor = 'let item of tableau1'>
+
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                    <div class="productimg">
+                      <img src= {{TransformImage(item.img)}} />
+
+                      </div>
+                </td>
+                <td>
+                    <div class="productsinfo">
+                        <p id="styleProductname">{{item.names}}</p>
+                        <p id="styleP">Price $ :</p>
+                        <p id="styleP">On Hand :</p>
+           
+                      </div>
+                </td>
+                <td>
+                    <div class="productsinfo">
+                        <p id="stylePhidden">p</p>
+                        <p id="styleP">{{item.sp}}</p>
+                        <p id="styleP">{{item.qt}}</p>                   
+                    </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+         </div>
+     </div>
+     <div id="div-group1" >
+      <table id ="table-group1" class="table table-hover">
+        <tr class="table-header-group1">
+         <td class="input-cel"><input type="checkbox" id="checkbox-principal3" (click)="FunctionCheckBox('checkbox3','checkbox-principal3')"></td>
+         <td class="cellule-content">Internal References</td>
+         <td class="cellule-content">Name</td>
+         <td class="cellule-content">Sale Price</td>
+         <td class="cellule-content">Cost</td>
+         <td class="cellule-content">Product Type</td>
+         <td class="cellule-content">Quantity On Hand</td>
+        </tr>
+          <tbody *ngFor="let item2 of tableau_cat;let i= index;">
+            <tr >
+              <td colspan="8" class="row-status" (click)="functionShowtable(item2.category_pro,i)">{{item2.category_pro}} ({{item2.quatity}})
+                <i class="glyphicon glyphicon-triangle-bottom icon" id={{item2.category_pro}}{{i}} >
+                </i></td>
+              </tr>
+             <tr *ngFor="let item of tableau3" [ngClass]="(item.status)+'row'"> 
+             <td class="input-cel" *ngIf="(item.category == item2.category_pro)" ><input type="checkbox" class="checkbox3" (click)="FunctionCheckBox2('checkbox3')"></td>
+                <td class="cellule-content" *ngIf="(item.category == item2.category_pro)" >{{item.ir}}</td>
+                <td class="cellule-content" *ngIf="(item.category == item2.category_pro)" >{{item.names}}</td>
+                <td class="cellule-content" *ngIf="(item.category == item2.category_pro)" >{{item.sp}}</td>
+                <td class="cellule-content" *ngIf="(item.category == item2.category_pro)" >{{item.cost}}</td>
+                <td class="cellule-content" *ngIf="(item.category == item2.category_pro)">{{item.types}}</td>
+                <td class="cellule-content" *ngIf="(item.category == item2.category_pro)">{{item.qt}}</td>
+                
+             </tr>   
+            </tbody>
+        </table>
+        
+     </div>
+    <!-------->
+    <div id="div-group2" >
+      <table id ="table-group2" class="table table-hover" >
+        <tr class="table-header-group2">
+         <td class="input-cel"><input type="checkbox" id="checkbox-principal3" (click)="FunctionCheckBox('checkbox3','checkbox-principal3')"></td>
+         <td class="cellule-content">Internal References</td>
+         <td class="cellule-content">Name</td>
+         <td class="cellule-content">Sale Price</td>
+         <td class="cellule-content">Cost</td>
+         <td class="cellule-content">Product Type</td>
+         <td class="cellule-content">Quantity On Hand</td>
+        </tr>
+          <tbody *ngFor="let item2 of tableau_type;let i= index;">
+            <tr >
+              <td colspan="8" class="row-status" (click)="functionShowtable(item2.type,i)">{{item2.type}} ({{item2.quatity}})
+                <i class="glyphicon glyphicon-triangle-bottom icon" id={{item2.type}}{{i}} >
+                </i></td>
+              </tr>
+             <tr *ngFor="let item of tableau3" [ngClass]="(item.status)+'row'"> 
+             <td class="input-cel" *ngIf="(item.types == item2.type)" ><input type="checkbox" class="checkbox3" (click)="FunctionCheckBox2('checkbox3')"></td>
+                <td class="cellule-content" *ngIf="(item.types == item2.type)" >{{item.ir}}</td>
+                <td class="cellule-content" *ngIf="(item.types == item2.type)" >{{item.names}}</td>
+                <td class="cellule-content" *ngIf="(item.types == item2.type)" >{{item.sp}}</td>
+                <td class="cellule-content" *ngIf="(item.types == item2.type)" >{{item.cost}}</td>
+                <td class="cellule-content" *ngIf="(item.types == item2.type)">{{item.types}}</td>
+                <td class="cellule-content" *ngIf="(item.types == item2.type)">{{item.qt}}</td>
+                
+             </tr>   
+            </tbody>
+        </table>
+        
+     </div>
+     <!--------------------------->
+
+
+</div>

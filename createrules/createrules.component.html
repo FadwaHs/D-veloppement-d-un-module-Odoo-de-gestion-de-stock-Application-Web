@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Products table</title> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="navbarrules">
+
+    <button type="button" class="btn" (click)="functionBackReorderingRules()">Back to Reordering Rules</button>
+    <button type="button" class="btn btn-default">Discard</button>
+    <div class="div-1-2">
+        <button type="button" class="saverules" (click)="createRules()">Save</button>
+    </div> 
+    </div>
+
+    <div class="alert alert-info">
+            <strong> <a> Run the scheduler </a></strong>manually to trigger the reordering rules right now. 
+    </div>
+
+    <div class="div-2">
+         <h1>OP/NUMBER</h1>
+      <table>
+        <tbody>
+            <tr>
+                <td>
+                        <p>Product Id</p>
+                </td>
+                <td>
+                        <div class="input-tab" >
+                           <input type="text" id="productinput">
+                           <i (click)="FunctionShowOptions('myDropdown1')" class="glyphicon glyphicon-triangle-bottom" > </i>  
+                        <div id="myDropdown1" class="dropdown-content1">
+                            
+                                <table>
+                                 <tr *ngFor = 'let item of itemsName'>
+
+                                      <td>{{item.names}}</td>      
+                                </tr>
+                                </table>
+                         </div>               
+                        </div>           
+                </td>
+
+                <td> <p>Procurement Group Company </p> </td>
+                <td>
+                        <select class="form-control" id="selectcompany">
+                          <option>My Company (San Francisco)</option>
+                          <option>My Company (Chicago)</option>  
+                       </select>    
+                </td>
+                <td> <button type="button" id="externalbtn" class="btn" (click)="OpenCreateCompany()">
+                        <span class="glyphicon glyphicon-share"></span> 
+                </button><br>
+                </td>      
+            </tr>
+            <tr>
+                    <td>
+                            <p>Minimum Quantity</p>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="form-control2-min" placeholder="0.00"/><br> 
+                    </td>
+                    <td>
+                            <p>Lead Time</p><br>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="form-control3"  placeholder="1" />
+                        <select class="form-control" id="selectday">
+                                <option>Days to get the Products</option>
+                                <option>Days to purchase</option>    
+                        </select>        
+                    </td>        
+            </tr>
+            <tr>
+                    <td>
+                            <p> Maximum Quantity</p>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="form-control2-max" placeholder="0.00"/><br> 
+                    </td>        
+            </tr>
+            <tr>
+                    <td>
+                            <p>Multiple Quantity</p>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="form-control2-mul" placeholder="1.000"/><br> 
+                    </td>        
+            </tr>
+        </tbody>
+      </table>
+        
+    </div>        
+
+</body>
+</html>
+
+

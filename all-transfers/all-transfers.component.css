@@ -1,0 +1,588 @@
+/* Begin style de head*/
+.section-title
+{
+    float: left;
+    color: #2a3f5a;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+
+.input-group .input-group-btn .btn i{
+    color: #007bff;
+}
+
+.input-group
+{
+    float: right;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    width: 400px;
+}
+
+/* End style de head*/
+
+/*
+head2 begin
+*/
+.head2
+{
+    margin-bottom: 10px;
+}
+.head-principal
+{
+    position: fixed;
+    background-color: #fff;
+    border-bottom: 1px solid #BDBDBD;
+    width: 86%;
+    display: block;
+    padding-right: 20px;
+    z-index: 5;
+}
+.container-fluid {
+      padding-right: 0px !important;
+      padding-left: 0px !important;
+
+}
+.button-group2
+{
+    float: right;
+    display: block;
+}
+.none
+{
+    display: none !important;
+}
+/*Dropdown Button */
+.dropbtn {
+  background-color: #ffff;
+  color: black;
+  padding: 7px;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  border: #BDBDBD 1px solid;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: #818091;
+    height: 35px;
+    width: 199px;
+    font-weight: bold;
+    padding: 12px 16px;
+    font-size: 13px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+      background-color: #007bff;
+      color: white;
+  }
+  .dropdown-content tr{
+     border-bottom: 0.1px solid #e9ecef;
+  }
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+/*
+head2 end
+*/
+.row
+{  
+    margin-right: 15px !important;
+    margin-left: 15px !important;    
+}
+
+
+div#divkanbanview
+{
+    display: none;
+}
+.main
+{
+    margin-top: 100px;
+}
+@media (max-width:428px)
+{
+.button-group2
+{
+    width: 100%;
+    
+   
+}
+.head2
+{
+     padding-right: 0px;
+}
+}
+@media (max-width:650px)
+{
+.button-group
+{
+    text-align: center;
+}
+.input-group
+{
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 330px;
+  
+}
+
+.section-title
+{
+ display: block;
+ padding-left: 10px;
+ width: 100%;
+}
+.button-group2
+{
+    float: left;
+    display: block;
+    width: 100%;
+    padding-left: 10px;
+}
+.main
+{
+   margin-top: 180px;
+
+}
+}
+
+@media (max-width:960px)
+{
+   .head-principal
+   {
+       width: 100%;
+       padding-right: 20px;
+   }
+   .button-group
+   {
+    text-align: center;
+   }
+}
+@media (max-width:950px)
+{
+    .row
+    {
+        
+        margin-right: 0px !important;
+        margin-left: 0px !important;    
+        
+    }
+    .col-xs-4
+    {
+        margin-left: 0px !important;
+        width: 300px;
+        height: 200px; 
+    }
+   
+}
+@media (max-width:977px)
+{
+   .head-principal
+   {
+       padding-right: 20px;
+   }
+}
+@media only screen and (max-width: 1200px) {
+    .head-principal{
+      padding-right: 50px;
+      padding-left: 20px;
+    }
+}
+.button-create
+{
+    background-color:#007bff;
+    padding: 8px;
+    margin-right: 10px;
+    font-size: 15px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    
+}
+button#exportbtn
+{
+    margin-left: 10px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+#btnCompView
+{
+    cursor: pointer;
+    margin-left: 12px;
+    margin-right:5px;
+  
+}
+
+
+/*-------------------------------------------------------------------------------------*/
+/*style of table*/
+
+.table-transfers
+{
+    background-color: white;
+    color: #0a8ea4;
+    overflow: auto;
+    width: 1105px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.19); 
+}
+
+.table-transfers thead
+{
+   
+    background-color: #eeeeee;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+  
+}
+.table-transfers tr
+{
+    border-bottom: 1px solid #eee;
+}
+table td
+{
+  cursor: pointer;
+}
+.table-transfers thead th,.table-transfers tbody td
+{
+    padding: 8px 8px;
+}
+.input-cel
+{
+    width: 3%;
+}
+.icon-cel
+{
+  cursor: pointer;
+}
+.table-header-body
+{
+    width: 95%;
+}
+
+.dropdown {
+    position: relative;
+    
+  } 
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 4;
+    right: 2px;
+}
+.dropdown-content div
+{
+    font-weight: 400;
+    padding: 8px 16px;
+}
+.dropdown-content div:hover
+{
+    background-color: #007bff;
+    color: white;
+}
+.dropdown-content div input
+{
+  margin-right: 5px;
+}
+.show
+{
+    display: block;
+}
+
+/*end style of table */
+
+.cards
+{
+    display: none;
+ 
+}
+
+.col-md-4
+{
+    display: inline-block;
+    height: 80px;
+    width: 340px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-top: 20px;
+
+    border:#d2d2ff 2px solid;
+    border-radius: 3px;
+    background-color: white;
+    -webkit-box-shadow: 0 0 6px 4px #DCDCDC;
+   -moz-box-shadow: 0 0 6px 4px #DCDCDC;
+    box-shadow: 0 0 6px 4px #DCDCDC;
+    border-radius: 4px;
+    padding: 10px 8px !important;
+}
+.col-md-4 .left
+{
+    
+     display: inline-block;
+     width: 50%;
+     
+    
+}
+.col-md-4 .right
+{
+    
+     display: inline-block;
+     width: 50%;
+     
+     
+    
+}
+.col-md-4 .left .text1
+{
+  
+     display: inline-block;
+     width: 100%;
+     margin-bottom: 20px;
+     
+}
+.col-md-4 .left .text2
+{
+     display: inline-block;
+     width: 100%;
+     text-align:start;
+    
+     
+}
+.col-md-4 .left .text2 i
+{
+    color: #ccc;
+    padding-left: 3px;
+    padding-top: 3px;
+    font-size: 15px;
+}
+.col-md-4 .right .text1
+{
+   
+     display: inline-block;
+     width: 100%;
+     margin-bottom: 20px;
+     text-align: end;
+    
+}
+.col-md-4 .right .text1 button
+{
+    color: white;
+    border: none;
+    border-radius: 2px;
+}
+.col-md-4 .right .text2
+{   
+    color: #66add6; 
+    font-weight: bold;
+    font-size: 12px;
+     display: inline-block;
+     width: 100%;
+     text-align: end;
+     
+    
+}
+@media (max-width:735px)
+{
+    .inside
+    {
+       text-align: center;
+      
+    }
+    .col-md-4 
+    {
+        text-align: start;
+    }
+}
+
+.draftbutton
+{
+    background-color: #dc3545;
+}
+.waitingbutton
+{
+  background-color: #00a65a;
+}
+.readybutton
+{
+  background-color: #007bff;
+}
+.donebutton
+{
+  background-color: #f39c12;
+}
+.cancelledbutton
+{
+  background-color: #00c0ef;
+}
+.donerow td
+{
+  color: black;
+}
+/*----------------------------------------------------------------*/
+/*-----------------------------------------------------------------------*/
+.create-new
+{
+    text-align: center;
+    display: none;
+    padding-top: 150px;
+}
+.create-new-img
+{
+  margin-bottom: 20px;
+  width: 100px;
+}
+.create-new-title
+{
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 20px;
+}
+/*--------------------------------------------------------*/
+.table
+{
+    margin-bottom: 0px !important;
+}
+#div-group1,#div-group2
+{
+    overflow: auto;
+    background-color: white;
+    width: 1100px;
+    display: none;
+}
+.table-header-group1,.table-header-group2
+{
+    background-color: #eeeeee;  
+}
+.table-header-group1 td.cellule-content,
+.table-header-group2 td.cellule-content
+{
+    color: black;
+    font-weight: 590;
+    width: 16%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 3px;
+}
+.table-body-group1 td.cellule-content,
+.table-body-group2 td.cellule-content
+{
+    width: 16%;
+    color:red;
+}
+#table-group1,#table-group2
+{
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.19);
+}
+.table-header-group1 td input,.table-header-group2 td input
+{
+   margin-left: 7px;
+   
+} 
+.table-group1 .table-header-group1 .input-cel,
+.table-group1 .table-body-group1 .input-cel,
+.table-group2 .table-header-group2 .input-cel,
+.table-group2 .table-body-group2 .input-cel
+{
+    width: 5%;
+}
+
+.row-status
+{
+    width: 100%;
+    font-size: 15px;
+    padding: 8px;
+    background-color: #eeeeee;  
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.19);
+    font-weight: 500;
+
+}
+.row-status i{
+     
+    font-size: 8px;
+    margin-left: 5px;
+}
+#draft,#done,#waiting,#ready
+{
+    display: none;
+}
+@media (max-width:428px)
+{
+    table
+    {
+        width: 1200px;
+    }
+}
+@media (max-width:650px)
+{
+
+table{
+   width: 1200px;
+}
+}
+
+@media (max-width:960px)
+{
+    table{
+        width: 1000px;
+     }
+}
+
+@media (max-width:1200px)
+{
+    table{
+        width: 1100px;
+     }
+}
+
+/*-----------------------------------------------------------------------*/
+.create-new
+{
+    text-align: center;
+    display: none;
+    padding-top: 150px;
+}
+.create-new-img
+{
+  margin-bottom: 20px;
+  width: 100px;
+}
+.create-new-title
+{
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 20px;
+}
+/*--------------------------------------------------------*/

@@ -1,0 +1,145 @@
+<div class="container-fluid">
+  <!-- Begin of head-->
+  <div class="head-principal">
+  <div class="row head"> 
+  
+      <div class="section-title"> 
+         <span>Update Quantity</span>
+      </div>
+         <div class="input-group">
+             <input type="text" class="form-control" placeholder="Search" name="search">
+             <div class="input-group-btn">
+               <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+             </div>
+        </div>
+        
+     </div>
+     <div class="row head2">
+         <div class="button-group2">
+          <div class="dropdown">
+              <button (click)="Function2('myDropdown1')" class="dropbtn">
+                  <i class="glyphicon glyphicon-filter"></i>
+                  Filters
+                  <i class="glyphicon glyphicon-menu-down"></i>
+              </button>
+              <div id="myDropdown1" class="dropdown-content">
+                <a href="#">Onternal Location</a>
+                <a href="#">Transit Location</a>
+                <a href="#">On hand</a>
+                <a href="#">Negative Stock</a>
+                <a href="#">Positive Stock</a>
+                <a href="#">Reservation</a>
+              </div>
+          </div>
+          <div class="dropdown">
+              <button (click)="Function2('myDropdown2')" class="dropbtn">
+                  <i class="glyphicon glyphicon-tasks"></i>
+                  Group By
+                  <i class="glyphicon glyphicon-menu-down"></i>
+              </button>
+              <div id="myDropdown2" class="dropdown-content">
+                <a href="#">Product</a>
+                <a href="#">Location</a>
+                <a href="#">Company</a>
+              </div>
+          </div> 
+          <div class="dropdown">
+              <button (click)="Function2('myDropdown3')" class="dropbtn">
+                  <i class="glyphicon glyphicon-star"></i>
+                  Favorites
+                  <i class="glyphicon glyphicon-menu-down"></i>
+              </button>
+              <div id="myDropdown3" class="dropdown-content">
+                <a href="#">Save Current Search</a>
+              </div>
+          </div>
+
+          <button  id="btn2kanban" class="btn btn-default" (click)="Active('btn2kanban','btnChar3','btnChart')"
+          (click)="OpenCharts('divtable','canvasdiv','divboundery','canvasdiv2','canvasdiv3')" (click)="showExport('divtable','canvasdiv','divboundery')" >
+              <i class="glyphicon glyphicon-th-list"></i>
+            </button>  
+          </div>
+          <div class="btn-group">
+              <button type="button" class="button-measures" (click)="Function2('myDropdown4')">Measures
+                <span class="caret"></span>
+              </button>
+              
+              <div id="myDropdown4" class="dropdown-content">
+                  <a   (click)="showreservedqty('canvasdiv','canvasdiv2','canvasdiv3')" >Quantity</a>
+                  <a (click)="showreservedqty('canvasdiv2','canvasdiv','canvasdiv3')">Reserved Quantity</a>
+                  <a (click)="showreservedqty('canvasdiv3','canvasdiv','canvasdiv2')" >Negative Stock</a>
+                </div>  
+          </div>
+          <button  id="btnchart" class="btn btn-default" (click)="Active('btnchart','btnChar3','btn2kanban')" (click)="OpenCharts('divboundery','canvasdiv','divtable','canvasdiv2','canvasdiv3')"
+          (click)="showExport('divtable','canvasdiv','divboundery')"   >
+              <i class="fa fa-area-chart"></i>
+          </button>
+          <button  id="btnChar3" class="btn btn-default active" (click)="Active('btnchar3','btnChart','btn2kanban')" (click)="OpenCharts('canvasdiv','divboundery','divtable','canvasdiv2','canvasdiv3')" 
+          (click)="showExport('divtable','canvasdiv','divboundery')"  >
+            <i class="fa fa-bar-chart"></i>
+          </button> 
+          <table id="buttongroup2">
+          <tr>
+
+              <td><button id="exportbtn2" type="button" class="button-measures">
+                  Create
+             </button></td>
+
+            <td><button id="exportbtn" class="btn btn-default ">
+              <i class="glyphicon glyphicon-download-alt"></i>
+          </button></td>
+         
+        </tr>
+        </table>
+          
+        </div>
+        </div>
+     <!-- End of head-->
+     <div class="main"> 
+
+        <div id="canvasdiv" > 
+            <canvas id="canvas"></canvas>
+          </div>
+
+          <div id="canvasdiv2" >
+            <canvas id="canvas2"></canvas>
+          </div>
+
+          <div id="canvasdiv3" >
+            <canvas id="canvas3"></canvas>
+          </div>
+          
+
+          <div id="divboundery" class="wrapper col-2">
+            <canvas id="chart-2"></canvas>
+          </div>
+
+          <div id="divtable">
+             
+              <table id="tableQuantity" class="table table-hover">
+                  <thead> 
+                    <tr>
+                      <th>Product</th>
+                      <th>Location</th>
+                      <th>On Hand Quanity</th>  
+                      <th>Reserved Quantity</th>
+                      <th>Company</th> 
+                    </tr>
+                  </thead>
+          
+                  <tbody>
+                      <tr *ngFor = 'let item of items6'>
+                          <td>{{item.pid}}</td>
+                          <td>{{item.lci}}</td>
+                          <td>{{item.ivnqty}}</td> 
+                          <td>{{item.rsvqty}}</td>
+                          <td>{{item.comi}}</td>            
+                        </tr>
+                                                              
+                  </tbody>
+              </table>
+          </div>
+
+
+     </div>
+</div>

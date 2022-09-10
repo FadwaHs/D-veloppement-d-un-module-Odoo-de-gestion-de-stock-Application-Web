@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Products table</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="navbarrules">
+
+    <button type="button" class="btn">Back to Operations Types</button>
+    <button type="button" class="btn btn-default">Discard</button>
+    <div class="div-1-2">
+        <button type="button" class="saveoperation">Save</button>
+    </div> 
+    </div>
+
+    <div class="div-2">
+         
+      <table>
+        <tbody>
+            <tr>
+                <td>
+                        <p>Operation Type</p>
+                </td>
+                <td>
+                        <input  type="text" class="form-control" id="form-control2"> 
+                </td>
+
+                <td> <p>Type of Operation</p> </td>
+                <td>
+                        <select  class="form-control" id="selectoperation" (change)="showElement()">
+                            <option></option>
+                          <option value="1" >Internal Transfer</option>
+                          <option value="3">Receipt</option>
+                          <option value="2">Delivery</option> 
+                         
+                       </select>    
+                </td>
+                    
+            </tr>
+            <tr>
+                    <td>
+                            <p>Code</p>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="form-control3"/>
+                    </td>
+                    <td> <p>Company</p></td>
+                    <td>
+                      <input  type="text" class="form-control" id="form-control4">
+                    </td> 
+                    <td> <button type="button" id="externalbtn" class="btn" >
+                        <span class="glyphicon glyphicon-share"></span> 
+                       </button>
+                    </td>     
+            </tr>
+            <tr>
+              <td >
+                 <p> Reference Sequence </p>
+              </td>
+              <td>
+                  <input  type="text" class="form-control" id="form-control2">
+         
+              </td> 
+              <td >
+                  <p> Show Detailed Operations </p>
+               </td>
+               <td>
+                  <label><input type="checkbox" checked></label>
+               </td>
+                       
+            </tr>
+        </tbody>
+      </table>
+
+       <div id="divtoshow1">
+          <p id="taceabilitytext">Traceability</p>
+          <table>
+            <tbody>
+              <tr>
+                  <td >
+                      <p> Create New Lots/Serial Numbers	​</p>  
+                   </td>
+                   <td>
+                      <label><input type="checkbox" checked></label>
+                   </td>         
+              </tr>
+              <tr>
+                  <td >
+                      <p>  Use Existing Lots/Serial Numbers	​</p>
+                   </td>
+                   <td>
+                      <label><input type="checkbox" checked></label>
+                   </td>         
+              </tr>
+              <tr>
+                  <td >
+                      <p>Pre-fill Detailed Operations</p>
+                   </td>
+                   <td>
+                      <label><input type="checkbox" cheked></label>
+                   </td>         
+              </tr>             
+              <tr>
+                  <td >
+                      <p> Operation Type For Returns </p>
+                   </td>
+                   <td>
+                       <input  type="text" class="form-control" id="form-control2">
+              
+                   </td> 
+
+              </tr>
+            </tbody>
+          </table>
+
+              
+        </div>
+        
+        <div id="divtoshow2">
+            <p id="taceabilitytext">Traceability</p>
+            <table>
+              <tbody>
+                <tr>
+                    <td >
+                        <p> Create New Lots/Serial Numbers	​</p>  
+                     </td>
+                     <td>
+                        <label><input type="checkbox" checked></label>
+                     </td>         
+                </tr>
+                <tr>
+                    <td >
+                        <p>  Use Existing Lots/Serial Numbers	​</p>
+                     </td>
+                     <td>
+                        <label><input type="checkbox" checked></label>
+                     </td>         
+                </tr>           
+                <tr>
+                    <td >
+                        <p> Operation Type For Returns </p>
+                     </td>
+                     <td>
+                         <input  type="text" class="form-control" id="form-control2">
+                
+                     </td> 
+  
+                </tr>
+              </tbody>
+            </table>
+  
+                
+          </div>       
+    </div>        
+
+</body>
+</html>
+
+
+

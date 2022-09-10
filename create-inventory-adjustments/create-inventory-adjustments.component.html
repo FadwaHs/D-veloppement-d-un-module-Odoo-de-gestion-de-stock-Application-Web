@@ -1,0 +1,103 @@
+
+<div class="container-fluid">
+    <!-- Begin of head-->
+    <div class="head-principal">
+       <div class="row head">
+    
+         <div class="section-title">
+            <span> Inventory Adjustments / New</span>
+         </div> 
+          
+       </div>
+       <div class="row head2">
+          <div class="button-group1">
+           <button  class="save" (click)="createinventory()">Save</button>
+           <button class="btn btn-default">Discard</button>
+          </div>
+       </div>
+       <div class="row head3">
+         <div class="button-group2">
+          <button class="StartINV">Start Inventory</button>
+         </div>
+         <div class="comp-right">
+      
+         </div>
+      </div>
+    </div>
+       <!-- End of head-->
+       <div class="main">
+         <div class="principal">
+           <div class="inside1">
+            <div class="inside1-header">
+               <label>Inventory Reference
+                <input type="text" value="Inventory" id="inventoryname">
+               </label> 
+            </div>
+               <table id="table-principal">
+                  <!---First Row-->
+                  <tr>
+                     <!--First cellule-->
+                   <td class="label-tab">Products</td>
+                   <td class="input-tab-td dropdown">
+                      <div class="input-tab">
+                         <input type="text">
+                         <i  (click)="FunctionShowOptions('myDropdown1')" class="glyphicon glyphicon-triangle-bottom" > </i>
+                            <div id="myDropdown1" class="dropdown-content1">
+                            
+                            </div>  
+                      </div>
+                    </td> 
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <!--End first cellule-->
+                     <!--Second cellule-->
+                   <td class="label-tab">Counted Quantities</td>
+                   <td class="input-tab-td">
+                      <div>
+                        <label><input type="radio">Default to stock on hand
+                        </label><br>
+                        <label><input type="radio">Default to zero
+                        </label>
+                      </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <!--End second cellule-->
+                  </tr>
+                  <tr>
+                     <td>
+                     <label for="sel1">Company id </label></td>
+                     <td class="input-tab-td dropdown"> 
+                        <div class="input-tab">
+                           <input type="text" id="selectcom">
+                           <i  (click)="FunctionShowOptions('myDropdown3')" class="glyphicon glyphicon-triangle-bottom" > </i>
+                              <div id="myDropdown3" class="dropdown-content1">
+                                
+                                         <a>My Company (Chicago)</a> 
+                                         <a>My Company (San Francisco)</a>  
+                                 
+                              </div>  
+                        </div>
+                     </td>
+                  </tr>
+
+
+                  <!---End first Rowwww-->
+                  <!--Second Row-->
+                  <tr>
+                       
+                  </tr>
+                  <!--End Second Row-->
+               </table>
+            </div>
+         </div>
+         <!----Ennnnnnnnnnnnnnnnnnnnnnnnnnnnd-->
+           
+           
+           
+      </div>
+         
+      
+</div>
