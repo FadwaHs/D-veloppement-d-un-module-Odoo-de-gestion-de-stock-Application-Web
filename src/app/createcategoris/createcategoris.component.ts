@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { PopsuccesComponent } from '../popsucces/popsucces.component';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 let headers = new HttpHeaders();
@@ -11,13 +13,14 @@ headers = headers.append("Content-Type", "application/json");
 })
 export class CreatecategorisComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private Dialog : MatDialog) { }
 
   ngOnInit(): void { 
   } 
 
   createcategorie()
   {
+    this.Dialog.open(PopsuccesComponent);
     var namecate = (document.getElementById("form-control1-namecat") as HTMLInputElement).value;
     var catid = (document.getElementById("categorieinput") as HTMLInputElement).value;
   

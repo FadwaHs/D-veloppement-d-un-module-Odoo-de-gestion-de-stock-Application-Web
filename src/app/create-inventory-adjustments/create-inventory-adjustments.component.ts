@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { PopsuccesComponent } from '../popsucces/popsucces.component';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 let headers = new HttpHeaders();
-headers = headers.append("Content-Type", "application/json");
+headers = headers.append("Content-Type", "application/json"); 
 
 @Component({
   selector: 'app-create-inventory-adjustments',
@@ -11,12 +13,13 @@ headers = headers.append("Content-Type", "application/json");
 })
 export class CreateInventoryAdjustmentsComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient ,private Dialog : MatDialog ) { }
 
   ngOnInit(): void {
   }
   createinventory()
   {
+    this.Dialog.open(PopsuccesComponent);
     var nameinventory = (document.getElementById("inventoryname") as HTMLInputElement).value;
     var namecompany = (document.getElementById("selectcom") as HTMLInputElement).value;
   

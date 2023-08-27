@@ -4,13 +4,13 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 
 @Component({
-  selector: 'app-all-transfers', 
+  selector: 'app-all-transfers',
   templateUrl: './all-transfers.component.html',
   styleUrls: ['./all-transfers.component.css']
 })
 export class AllTransfersComponent implements OnInit {
 
-  TransferData: JSON;  
+  TransferData: JSON;
   ourdata: JSON;
   items3 = [];
   tableau_oper=[];
@@ -20,7 +20,7 @@ export class AllTransfersComponent implements OnInit {
   tableau2 = [];
 
   constructor(private activatedroute: ActivatedRoute , private route: Router , private http: HttpClient)
-   { 
+   {
      this.http.get('http://127.0.0.1:5002/transfers').subscribe(data => {
       this.TransferData = data as JSON;
       this.ourdata = this.TransferData["result"]["response"];
@@ -30,7 +30,7 @@ export class AllTransfersComponent implements OnInit {
         this.items3.push(this.TransferData["result"]["response"][key]);
       }
 
-            
+
       for(var i=0;i<this.items3.length;i++)
       {
           if(this.items3[i].status=="confirmed")
@@ -42,8 +42,8 @@ export class AllTransfersComponent implements OnInit {
             this.items3[i].status = "ready";
           }
           this.items3[i].date = this.items3[i].date.slice(0,10);
-          
-      } 
+
+      }
 
       for(var i=0;i<this.items3.length;i++)
       {
@@ -63,7 +63,7 @@ export class AllTransfersComponent implements OnInit {
           case "waiting":this.waiting++;break;
           case "draft":this.draft++;break;
           default:break;
-        }        
+        }
       }
       this.tabStatus[0]={"status":'draft',"count":this.draft};
       this.tabStatus[1]={"status":'done',"count":this.done};
@@ -80,7 +80,7 @@ export class AllTransfersComponent implements OnInit {
        {
         this.tableau_oper.push(this.TransferData["result"]["response"][key]);
       }
-      
+
 
     });
     for(var t=0;t<this.tableau_oper.length;t++)
@@ -92,7 +92,7 @@ export class AllTransfersComponent implements OnInit {
 
   ngOnInit(): void
    {
-       
+
    }
 
   Openview(id1: string , id2: string)
@@ -114,7 +114,7 @@ export class AllTransfersComponent implements OnInit {
   }
 
   Activer(id1: string ,id2: string)
-  { 
+  {
     document.getElementById(id1).classList.toggle("active");
     document.getElementById(id2).classList.remove("active");
 
@@ -126,7 +126,7 @@ export class AllTransfersComponent implements OnInit {
 
   functionGetWidthCellul(){
   var x = document.getElementsByClassName('table-header-body');
-  var n=x.length;var t=1047/n; 
+  var n=x.length;var t=1047/n;
   for(var i=0;i<x.length;i++)
     {
       (x[i] as HTMLTableCellElement).style.width=t+"px";
@@ -151,7 +151,7 @@ addAllCellul(num:number,name:string,idTable:string,checkmenu:string,idHeader:str
     caseLis=num-checkCel;
     caseCel= (num-caseLis)+2;
     if((element[num] as HTMLInputElement).checked == true)
-    {   
+    {
        var td=(row as HTMLTableRowElement).insertCell(caseCel);
        td.innerHTML=name;
        td.setAttribute("style","padding:8px;font-weight:600;");
@@ -161,7 +161,7 @@ addAllCellul(num:number,name:string,idTable:string,checkmenu:string,idHeader:str
         var td2=document.createElement('td');
         td2=table.rows[i].insertCell(caseCel);
         td2.setAttribute("style","padding:8px;");
-        
+
         switch (num){
           case 0:
              td2.innerHTML=this.tableau1[i-1].partner;
@@ -195,7 +195,7 @@ addAllCellul(num:number,name:string,idTable:string,checkmenu:string,idHeader:str
     }
     else
     {
-     
+
       for(var i=0;i<numRow;i++)
       {
        table.rows[i].deleteCell(caseCel);
@@ -210,9 +210,9 @@ addAllCellul(num:number,name:string,idTable:string,checkmenu:string,idHeader:str
   }
   FunctionCheckBox(id: string,class1: string)
   {
-    
+
     var element = document.getElementsByClassName(class1);
-    
+
     var element2 = document.getElementById(id);
     var element4 = document.getElementById('dropdown-list2');
     if ((element2 as HTMLInputElement).checked == true){
@@ -261,8 +261,8 @@ addAllCellul(num:number,name:string,idTable:string,checkmenu:string,idHeader:str
     {
       if(this.tableau2[i].status==status)
        this.tableau1.push(this.tableau2[i])
-    }  
-   
+    }
+
     if(this.tableau1.length==0)
     {
      document.getElementById('create-new').style.display="block";
@@ -273,7 +273,7 @@ addAllCellul(num:number,name:string,idTable:string,checkmenu:string,idHeader:str
       document.getElementById('create-new').style.display="none";
       if(document.getElementById('divCompView').style.display=="none")
           document.getElementById('divlistview').style.display="block";
-   
+
     }
     var element=document.getElementsByClassName('check-menu');
     var table=<HTMLTableElement> document.getElementById('div-table');
@@ -281,7 +281,7 @@ addAllCellul(num:number,name:string,idTable:string,checkmenu:string,idHeader:str
     for(var tmp=0;tmp<8;tmp++)
     {
        (element[tmp] as HTMLInputElement).checked =false;
-    
+
     }
     var numCel=table.rows[0].cells.length;
     if(numCel>3){
@@ -304,7 +304,7 @@ addAllCellul(num:number,name:string,idTable:string,checkmenu:string,idHeader:str
   {
     if(document.getElementById(status+i).className=="glyphicon glyphicon-triangle-bottom icon")
     {
-     
+
       document.getElementById(status).style.display="block";
       document.getElementById(status+i).className="glyphicon glyphicon-triangle-top icon";
     }

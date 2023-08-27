@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { filter } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-product',
+  selector: 'app-product', 
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })

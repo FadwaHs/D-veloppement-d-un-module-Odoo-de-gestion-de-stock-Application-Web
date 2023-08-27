@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ActivatedRoute, Router,ParamMap } from '@angular/router';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { PopsuccesComponent } from '../popsucces/popsucces.component';
 
 let headers = new HttpHeaders();
 headers = headers.append("Content-Type", "application/json");
@@ -9,21 +11,22 @@ headers = headers.append("Content-Type", "application/json");
   selector: 'app-createproduct',
   templateUrl: './createproduct.component.html',
   styleUrls: ['./createproduct.component.css']
-})
+}) 
 
 export class CreateproductComponent implements OnInit {
   
   urlImage:string;
   succes: JSON;
 
-  constructor(private _activatedroute:ActivatedRoute,private _route:Router,private http: HttpClient) { }
+  constructor(private _activatedroute:ActivatedRoute,private _route:Router,private http: HttpClient ,private Dialog : MatDialog ) { }
 
   ngOnInit(): void {
     this.urlImage="assets/add.png";
   }
-
   createproduct()
   {
+    this.Dialog.open(PopsuccesComponent);
+
     var ProductName = (document.getElementById("form-control1") as HTMLInputElement).value;
     var IR = (document.getElementById("form-control2-In") as HTMLInputElement).value;
     var Barcode = (document.getElementById("form-control2-br") as HTMLInputElement).value;
@@ -35,6 +38,7 @@ export class CreateproductComponent implements OnInit {
 
     this.http.post(url, body, {headers}).subscribe(data => {
     this.succes = data as JSON;
+    
       
     });
   }

@@ -45,6 +45,8 @@ import { CreateScarpComponent } from './create-scarp/create-scarp.component';
 import { OvreviewDashboardComponent } from './ovreview-dashboard/ovreview-dashboard.component';
 import { InventoryDetailsComponent } from './inventory-details/inventory-details.component';
 import { OperationDetailsComponent } from './operation-details/operation-details.component';
+import { PopsuccesComponent } from './popsucces/popsucces.component';
+
 
 
 @NgModule({
@@ -79,7 +81,8 @@ import { OperationDetailsComponent } from './operation-details/operation-details
     CreateScarpComponent,
     OvreviewDashboardComponent,
     InventoryDetailsComponent,
-    OperationDetailsComponent
+    OperationDetailsComponent,
+    PopsuccesComponent
   ],
   imports: [
     BrowserModule,
@@ -99,6 +102,6 @@ import { OperationDetailsComponent } from './operation-details/operation-details
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [CreatecompanyComponent,PopupstockmovesComponent] 
+  entryComponents: [CreatecompanyComponent,PopupstockmovesComponent,PopsuccesComponent] 
 })
 export class AppModule { }

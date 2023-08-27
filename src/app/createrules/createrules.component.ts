@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { PopsuccesComponent } from '../popsucces/popsucces.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CreatecompanyComponent } from '../createcompany/createcompany.component';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
@@ -22,7 +23,7 @@ export class CreaterulesComponent implements OnInit {
   succes : JSON;
 	itemsName = []; 
 
-  constructor( private Dialog : MatDialog,private _activatedroute:ActivatedRoute,private _route:Router ,private http: HttpClient) 
+  constructor( private Dialog : MatDialog,private Dialog2 : MatDialog,private _activatedroute:ActivatedRoute,private _route:Router ,private http: HttpClient) 
   { 
     this.http.get('http://127.0.0.1:5002/products').subscribe(data => {
       this.ProductnameData = data as JSON;
@@ -41,6 +42,7 @@ export class CreaterulesComponent implements OnInit {
   }
   createRules()
   {
+    this.Dialog2.open(PopsuccesComponent);
     var Productid = (document.getElementById("productinput") as HTMLInputElement).value;
     var minqty = (document.getElementById("form-control2-min") as HTMLInputElement).value;
     var maxqty = (document.getElementById("form-control2-max") as HTMLInputElement).value;

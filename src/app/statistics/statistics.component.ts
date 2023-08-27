@@ -111,6 +111,7 @@ export class StatisticsComponent implements OnInit {
       }
      
       this.functionDonutChart(this.receiptlength,this.deliverylength,this.scraplength);
+      
       this.lineChart=new Chart(document.getElementById("line-chart"), {
         type: 'line',
         data: {
@@ -153,12 +154,11 @@ export class StatisticsComponent implements OnInit {
         options: {
           title: {
             display: true,
-            text: '############'
+            text: 'Receipts and delivery in 2020 '
           }
         }
       });
     });
-
 
 
 }
