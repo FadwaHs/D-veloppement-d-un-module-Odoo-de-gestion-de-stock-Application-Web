@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router,ParamMap } from '@angular/router';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 
-
 @Component({
   selector: 'app-all-transfers',
   templateUrl: './all-transfers.component.html',
