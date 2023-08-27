@@ -1,2 +1,0 @@
-# gstock
-SFE Project
