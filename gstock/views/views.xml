@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="gstock.list">
+      <field name="name">gstock list</field>
+      <field name="model">gstock.gstock</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="gstock.action_window">
+      <field name="name">gstock window</field>
+      <field name="res_model">gstock.gstock</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="gstock.action_server">
+      <field name="name">gstock server</field>
+      <field name="model_id" ref="model_gstock_gstock"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="gstock" id="gstock.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="gstock.menu_1" parent="gstock.menu_root"/>
+    <menuitem name="Menu 2" id="gstock.menu_2" parent="gstock.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="gstock.menu_1_list" parent="gstock.menu_1"
+              action="gstock.action_window"/>
+    <menuitem name="Server to list" id="gstock" parent="gstock.menu_2"
+              action="gstock.action_server"/>
+-->
+  </data>
+</odoo>
